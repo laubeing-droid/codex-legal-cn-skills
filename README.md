@@ -135,7 +135,16 @@ anthropics/claude-for-legal        ─  Anthropic 官方, 美国法参考实现
 
 ## 上游监测
 
-GitHub Actions 每周一自动检查上游链和 npm 包更新，仅在检测到实际变化时创建 Issue。
+GitHub Actions 每周一自动执行：
+
+| 监测目标 | 行为 |
+|---------|------|
+| claude-for-legal 上游链（4 仓库） | 检测新提交 -> 创建 Issue |
+| npm 包（chineselaw-mcp, @pkulaw/mcp-cli） | 检测新版本 -> 创建 Issue |
+| **solo-law-firm-agents** | 检测新技能 -> **自动同步 + 创建 PR** |
+
+> solo-law-firm 新增技能自动按部门合入；已合并/重命名技能跳过自动同步，标记需人工审核。
+> 详见 [docs/architecture.md](docs/architecture.md)
 
 ---
 
