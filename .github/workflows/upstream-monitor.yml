@@ -128,3 +128,95 @@ jobs:
           git add "$CACHE_FILE"
           git diff --cached --quiet || git commit -m "chore: update upstream cache"
           git push
+
+  sync-solo-law-firm:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check solo-law-firm upstream for new content
+        id: check
+        run: |
+          UPSTREAM="saysoph/solo-law-firm-agents"
+          LOCAL_SKILLS="skills/solo-law-firm"
+          UPSTREAM_SHA=
+          echo "Upstream SHA: "
+          echo "upstream_sha=" >> 
+          CACHE_FILE=".solo-law-firm-cache"
+          CACHED_SHA=""
+          if [ -f "" ]; then
+            CACHED_SHA=
+          fi
+          echo "Cached SHA: "
+          if [ "" = "" ] && [ -n "" ]; then
+            echo "No upstream changes."
+            echo "changed=false" >> 
+            exit 0
+          fi
+          echo "Upstream has new commits. Syncing..."
+          echo "changed=true" >> 
+          git clone --depth 1 "https://github.com/.git" /tmp/solo-upstream
+          MODIFIED="case-progress-reporter evidence-manager statute-monitor regulation-monitor"
+          NEW_COUNT=0
+          SKIP_COUNT=0
+          UPDATE_COUNT=0
+          for upstream_skill in /tmp/solo-upstream/*/; do
+            skill_name=
+            skill_file="SKILL.md"
+            if [ ! -f "" ]; then continue; fi
+            case "" in
+              regulation-monitor) local_name="regulatory-change-monitor" ;;
+              statute-monitor) local_name="deadline-monitor" ;;
+              *) local_name="" ;;
+            esac
+            if echo "" | grep -qw ""; then
+              echo "  SKIP (merged): "
+              SKIP_COUNT=
+              continue
+            fi
+            LOCAL_PATH=
+            if [ -z "" ]; then
+              echo "  NEW: "
+              NEW_COUNT=
+              DEPT=
+              case "" in
+                case-practice) DEPT_DIR="01-case-practice" ;;
+                case-management) DEPT_DIR="02-case-management" ;;
+                client-relations) DEPT_DIR="03-client-relations" ;;
+                due-diligence) DEPT_DIR="04-due-diligence" ;;
+                business-development) DEPT_DIR="05-business-development" ;;
+                finance-admin) DEPT_DIR="06-finance-admin" ;;
+                knowledge-management) DEPT_DIR="07-knowledge-management" ;;
+                risk-compliance) DEPT_DIR="08-risk-compliance" ;;
+                *) DEPT_DIR="00-new-skills" ;;
+              esac
+              mkdir -p "//"
+              cp "" "///SKILL.md"
+            else
+              echo "  UNCHANGED: "
+            fi
+          done
+          echo "Summary: NEW= UPDATE= SKIP="
+          echo "new_count=" >> 
+          echo "update_count=" >> 
+          echo "skip_count=" >> 
+          echo "" > ""
+
+      - name: Create PR for synced changes
+        if: steps.check.outputs.changed == 'true' && (steps.check.outputs.new_count != '0' || steps.check.outputs.update_count != '0')
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'sync: solo-law-firm upstream update'
+          title: 'solo-law-firm upstream auto-sync'
+          body: |
+            ## solo-law-firm upstream auto-sync
+            Source: https://github.com/saysoph/solo-law-firm-agents
+            Merged/renamed skills are NOT auto-synced: case-progress-reporter, evidence-manager, statute-monitor, regulation-monitor
+            Please review and merge.
+          branch: sync/solo-law-firm-upstream
+          delete-branch: true
+          labels: upstream-sync, automated
