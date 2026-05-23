@@ -4,7 +4,7 @@
 
 ## 安装
 
-```
+```powershell
 git clone https://github.com/laubeing-droid/codex-legal-cn-skills.git
 cd codex-legal-cn-skills
 .\install.ps1
@@ -12,7 +12,8 @@ cd codex-legal-cn-skills
 
 ## 验证安装
 
-检查 ~/.codex/skills/ 目录，应包含 13 个法律技能目录。
+检查 `~/.codex/skills/` 目录，应包含 13 个法律技能目录。
+如使用默认路径，对应 `C:\Users\你的用户名\.codex\skills\`。
 
 ## 开始使用
 
@@ -28,8 +29,8 @@ cd codex-legal-cn-skills
 
 ## 常见问题
 
-- Command not found？重启 Codex Desktop
-- 引用标注[需验证]？连接法律检索工具
-- 如何手动更新？运行 .\update.ps1
+- **Command not found？** 重启 Codex Desktop
+- **引用标注[需验证]？** 连接法律检索工具（见 docs/connectors.md）
+- **如何手动更新？** 运行 `.\update.ps1`
 
 详细说明见 docs/usage-guide.md。
