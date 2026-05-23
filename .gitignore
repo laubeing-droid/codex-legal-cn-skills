@@ -1,11 +1,18 @@
-﻿# OS files
+﻿# OS
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# Editor files
+# Editor
 *.swp
 *.swo
 *~
+*.bak
 
 # Logs
 *.log
+upstream-logs/
+
+# Temp
+/
+temp/
