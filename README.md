@@ -9,11 +9,11 @@
 
 ## 快速安装
 
-`powershell
+```powershell
 git clone https://github.com/laubeing-droid/codex-legal-cn-skills.git
 cd codex-legal-cn-skills
 .\install.ps1
-`
+```
 
 重启 Codex Desktop，直接描述法律任务即可自动启用。
 
@@ -29,8 +29,8 @@ cd codex-legal-cn-skills
 
 | 文件 | 说明 |
 |------|------|
-| install.ps1 | 一键安装：克隆上游、部署技能、写入 MCP 配置到 config.toml |
-| update.ps1 | 手动同步上游最新内容 + 检查 MCP 状态 |
+| install.ps1 | 一键安装：克隆上游、部署技能、委托 MCP 连接器安装 |
+| update.ps1 | 同步上游 + 技能更新 + 委托 MCP 连接器验证/更新 |
 | uninstall.ps1 | 一键卸载所有已安装技能和上游缓存 |
 | verify.ps1 | 检查安装完整性 |
 | skills/ | 13 个技能入口定义（SKILL.md） |
@@ -42,7 +42,7 @@ cd codex-legal-cn-skills
 ## MCP 法律检索连接器
 
 MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubeing-droid/codex-legal-mcp-connectors) 管理，
-`install.ps1` 会自动克隆并部署。支持三种方式：
+`install.ps1` 和 `update.ps1` 均自动委托给该仓库。支持三种方式：
 
 | 连接器 | 方式 | 工具数 | 推荐 |
 |--------|------|--------|------|
@@ -51,7 +51,10 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 | **北大法宝 CLI 命令行** | CLI 工具 | — | 调试/验证 |
 
 快速配置：编辑 `~/.codex/config.toml` → 替换凭证 → 重启 Codex。
-详细指南见 docs/connectors.md。
+详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
+
+---
+
 ## 技能清单
 
 | skill | area | size |
@@ -69,6 +72,8 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 | law-student | 法学生/法考 | 35KB + 13 sub-skills |
 | legal-clinic | 法律诊所 | 29KB + 16 sub-skills |
 | legal-builder-hub | 技能治理中心 | 11KB + 10 sub-skills |
+
+---
 
 ## 自动路由
 
@@ -92,13 +97,14 @@ MCP 配置由独立仓库 [codex-legal-mcp-connectors](https://github.com/laubei
 
 ## 自动更新机制
 
-每次触发法律任务时，根技能自动 git pull 同步上游。手动更新：.\update.ps1
+每次触发法律任务时，根技能自动 git pull 同步上游。手动更新：`.\update.ps1`
+`update.ps1` 会同步技能包装层，并委托 `codex-legal-mcp-connectors` 仓库处理 MCP 连接器检查与更新。
 
 ---
 
 ## 架构
 
-`
+```
 codex-legal-cn-skills                  ← 包装层（本仓库）
   skills/SKILL.md                      入口定义 + 路由规则
   install.ps1 / update.ps1             安装与更新
@@ -113,19 +119,19 @@ codex-legal-cn-skills                  ← 包装层（本仓库）
   SKILL.md + CLAUDE.md + references
        |
        ▼
-~/.codex/config.toml                   ← MCP 层
+~/.codex/config.toml                   ← MCP 层（由 mcp-connectors 仓库管理）
   [mcp_servers.chineselaw]
   [mcp_servers.pkulaw-*]
-`
+```
 
 ---
 
 ## 上游依赖链
 
-`
+```
 anthropics/claude-for-legal → zhou210712/claude-for-legal-ZH
 → SH88-source/claude-for-legal-CN → codex-legal-cn-skills（本仓库）
-`
+```
 
 详细项目分析见 docs/project-analysis.md。
 
