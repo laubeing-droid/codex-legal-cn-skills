@@ -5,8 +5,8 @@
 | 连接器 | 方式 | 工具数 | 推荐 |
 |--------|------|--------|------|
 | **chineselaw（元典智库）** | MCP 协议 stdio | 33 | ⭐ 首选 |
-| **北大法宝 MCP 协议** | MCP 协议 HTTP | 10 服务 | ⭐ 推荐 |
-| **北大法宝 CLI 命令行** | CLI 工具 | 调试/验证用 | 配合使用 |
+| **北大法宝 MCP 协议** | MCP 协议 HTTP | 10 服务 | 推荐 |
+| **北大法宝 CLI 命令行** | CLI 调试工具 | — | 配合验证 |
 
 ---
 
@@ -100,7 +100,7 @@ CHINESELAW_API_KEY = "YOUR_API_KEY"    # ← 替换为真实 API Key
 
 ---
 
-## 二、北大法宝 MCP 协议 — 推荐
+## 二、北大法宝 MCP 协议 — Codex 集成方式
 
 北大法宝提供 10 个独立的 HTTP MCP 服务。安装脚本已在 `~/.codex/config.toml` 写入全部配置，
 你只需替换 Token 即可在 Codex 中直接使用。
@@ -151,13 +151,12 @@ enabled = true
 
 ---
 
-## 三、北大法宝 CLI 命令行 — 调试与验证工具
+## 三、使用 pkulaw-mcp-cli 验证配置
 
 基于 [@pkulaw/mcp-cli](https://www.npmjs.com/package/@pkulaw/mcp-cli)（北大法宝官方，MIT 协议），
-在终端中提供法律检索、案号识别、法条校验等能力。**不经 Codex，直接通过命令行调用**。
+**在安装和配置完 MCP 协议后，用于诊断 Token 有效性、发现已订阅服务、验证 API 返回结果**。
 
-> **用途**：调试 Token 是否有效、查看已订阅的服务、快速验证 API 返回结果。
-> 不替代 MCP 协议配置，而是配合使用。
+运行 `.\update.ps1` 会自动检测是否已安装此工具。本页说明手动操作步骤。
 
 ### 安装
 
@@ -165,47 +164,48 @@ enabled = true
 npm install -g @pkulaw/mcp-cli
 ```
 
-### 初始化
+### 初始化（只需一次）
 
 ```bash
 pkulaw-mcp init --authorization "Bearer YOUR_ACCESS_TOKEN"
 ```
 
-将 `YOUR_ACCESS_TOKEN` 替换为你的真实 Token（与 MCP 协议配置使用同一个 Token）。
+`YOUR_ACCESS_TOKEN` 与上一节 MCP 协议配置使用**同一个 Token**。
 
-### 常用命令
+### 验证流程
 
-| 命令 | 用途 |
-|------|------|
-| `pkulaw-mcp update` | 拉取已订阅的北大法宝服务列表 |
-| `pkulaw-mcp tools` | 列出所有可用工具 |
-| `pkulaw-mcp tools <serverId>` | 查看某个服务的所有工具和参数 |
-| `pkulaw-mcp <serverId> <tool> [params]` | 直接调用某个工具 |
-| `pkulaw-mcp check` | 检查配置完整性 |
-| `pkulaw-mcp config list` | 查看当前配置 |
-
-### 使用场景
-
-**验证 Token 是否有效**：
+**第 1 步：确认 Token 有效、拉取已订阅服务**
 ```bash
 pkulaw-mcp update
 ```
+成功后会显示你实际已订阅的北大法宝服务列表。如果失败，说明 Token 有误或网关不可达。
 
-**查看有哪些检索服务可用**：
+**第 2 步：查看每个服务下有哪些工具可用**
 ```bash
-pkulaw-mcp tools
+pkulaw-mcp tools law-search
+pkulaw-mcp tools case-keyword
 ```
 
-**直接搜索法规**（不打开 Codex）：
+**第 3 步：直接调用工具验证返回数据**
 ```bash
 pkulaw-mcp law-search search_regulations --searchKey "民法典 合同无效"
+pkulaw-mcp case-keyword search_cases --searchKey "买卖合同纠纷"
 ```
+
+### 其他诊断命令
+
+| 命令 | 用途 |
+|------|------|
+| `pkulaw-mcp check` | 检查配置文件完整性 |
+| `pkulaw-mcp config list` | 查看当前配置 |
+| `pkulaw-mcp docs` | 查看各服务在线文档 |
+| `pkulaw-mcp --help` | 查看所有命令 |
 
 ---
 
-## 四、验证连接
+## 四、验证 Codex 连接
 
-配置完成后重启 Codex Desktop，输入以下任一问题测试：
+配置完成并重启 Codex Desktop 后，输入以下任一问题测试：
 
 **chineselaw 用户**：
 ```
@@ -219,8 +219,6 @@ pkulaw-mcp law-search search_regulations --searchKey "民法典 合同无效"
 
 连接成功时输出中的法规引用会标注具体来源；未连接时标注 `[需验证]`。
 
-运行 `.\update.ps1` 可快速检查各 MCP 配置状态（显示 [OK] / [!] / [!!]）。
-
 ---
 
 ## 五、常见问题
@@ -230,7 +228,7 @@ pkulaw-mcp law-search search_regulations --searchKey "民法典 合同无效"
 1. 确认 Token/API Key 已替换为真实值（不是 `YOUR_xxx` 占位符）
 2. 确认已重启 Codex Desktop
 3. 确认 `config.toml` 中 `enabled = true` 存在
-4. 使用北大法宝 CLI 验证：`pkulaw-mcp update`
+4. 使用 `.\update.ps1` 检查 MCP 状态（自动检测 pkulaw-mcp-cli）
 5. 运行 `.\verify.ps1` 检查安装完整性
 
 ### chineselaw 报 npx 相关错误？
@@ -240,11 +238,11 @@ node --version                          # 确认 Node.js 已安装
 npm config set proxy http://127.0.0.1:7890   # 如网络受限
 ```
 
-### 三个连接方式都要配吗？
+### 需要同时配置多个连接器吗？
 
-**不需要**。推荐组合：
-- **chineselaw**（首选，33 个工具）或 **北大法宝 MCP 协议**（10 个服务），二选一即可
-- **北大法宝 CLI** 可选安装，用于调试和脚本自动化
+不需要。推荐组合：
+- **chineselaw** 或 **北大法宝 MCP 协议**（二选一作为 Codex 集成）
+- **北大法宝 CLI 命令行**（可选安装，用于调试和验证）
 
 ### 无连接器还能用吗？
 
