@@ -69,6 +69,7 @@ jobs:
           check_repo "中文汉化版" "zhou210712/claude-for-legal-ZH"
           check_repo "当前直接上游" "SH88-source/claude-for-legal-CN"
           check_repo "Codex 封装版" "gjhcsjamin/codex-for-legal-CN"
+          check_repo "solo-law-firm 独立执业技能" "saysoph/solo-law-firm-agents"
           check_npm "chineselaw-mcp（元典智库 MCP）" "chineselaw-mcp"
           check_npm "@pkulaw/mcp-cli（北大法宝 CLI）" "@pkulaw/mcp-cli"
 
@@ -109,7 +110,7 @@ jobs:
           CACHE_FILE=".upstream-last-check"
           > "$CACHE_FILE"
           # Git repos
-          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH SH88-source/claude-for-legal-CN gjhcsjamin/codex-for-legal-CN; do
+          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH SH88-source/claude-for-legal-CN gjhcsjamin/codex-for-legal-CN saysoph/solo-law-firm-agents; do
             sha=$(curl -s "https://api.github.com/repos/$repo/commits?per_page=1" | jq -r '.[0].sha // ""')
             if [ -n "$sha" ]; then
               echo "$repo=$sha" >> "$CACHE_FILE"
