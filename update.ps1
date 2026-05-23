@@ -2,12 +2,13 @@
 .SYNOPSIS
   手动更新 Codex 中国法律技能包
 .DESCRIPTION
-  从上游拉取最新内容，同步技能 + MCP 连接器配置到 ~/.codex/skills/。
+  从上游拉取最新内容，同步技能和 MCP 连接器配置。
 #>
 
 $ErrorActionPreference = 'Stop'
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $UpstreamDir = "$env:USERPROFILE\.codex\vendor\claude-for-legal-CN"
+$ConfigPath = "$env:USERPROFILE\.codex\config.toml"
 
 $domains = @(
     'commercial-legal','privacy-legal','product-legal','corporate-legal',
@@ -27,31 +28,6 @@ $result = git pull 2>&1
 Pop-Location
 Write-Host "  [上游] $($result -join '')"
 
-function Add-LegalMcpServers {
-    param($McpPath)
-    $mcp = Get-Content $McpPath -Encoding UTF8 | ConvertFrom-Json
-    if (-not $mcp.mcpServers.PSObject.Properties.Name -contains 'chineselaw') {
-        $mcp.mcpServers | Add-Member -NotePropertyName 'chineselaw' -NotePropertyValue @{
-            type = "stdio"
-            command = "npx"
-            args = @("-y", "chineselaw-mcp")
-            env = @{ CHINESELAW_API_KEY = "你的_API_KEY" }
-            title = "chineselaw（元典智库）"
-            description = "中国法律检索 — 33 个工具：法规检索、法条查询、案例检索、企业信息查询。需在 https://open.chineselaw.com 注册获取 API Key。"
-        }
-    }
-    if (-not $mcp.mcpServers.PSObject.Properties.Name -contains '北大法宝') {
-        $mcp.mcpServers | Add-Member -NotePropertyName '北大法宝' -NotePropertyValue @{
-            type = "http"
-            url = "https://apim-gateway.pkulaw.com/{{YOUR_SERVICE_ID}}"
-            headers = @{ Authorization = "Bearer {{YOUR_ACCESS_TOKEN}}" }
-            title = "北大法宝"
-            description = "中国法律法规与裁判文书检索 — 需在 https://mcp.pkulaw.com 注册获取 Service ID 和 Token。"
-        }
-    }
-    $mcp | ConvertTo-Json -Depth 10 | Out-File $McpPath -Encoding UTF8 -Force
-}
-
 $count = 0
 foreach ($name in $domains) {
     $src = "$UpstreamDir\$name"
@@ -61,12 +37,7 @@ foreach ($name in $domains) {
 
     Copy-Item "$src\CLAUDE.md" "$tgt\CLAUDE.md" -Force -ErrorAction SilentlyContinue
     Copy-Item "$src\README.md" "$tgt\README.md" -Force -ErrorAction SilentlyContinue
-    if (Test-Path "$src\.mcp.json") {
-        Copy-Item "$src\.mcp.json" "$tgt\.mcp.json" -Force
-        try { Add-LegalMcpServers -McpPath "$tgt\.mcp.json" } catch {
-            Write-Host "  [警告] MCP 注入失败 ($name): $_" -ForegroundColor Yellow
-        }
-    }
+    if (Test-Path "$src\.mcp.json") { Copy-Item "$src\.mcp.json" "$tgt\.mcp.json" -Force -ErrorAction SilentlyContinue }
     if (Test-Path "$src\references") {
         $null = New-Item -ItemType Directory -Force "$tgt\references"
         Get-ChildItem "$src\references\*" -File -ErrorAction SilentlyContinue | ForEach-Object {
@@ -88,13 +59,32 @@ foreach ($name in $domains) {
     }
     $count++
 }
+Write-Host "  已更新 $count 个技能领域"
 
-# 根技能
-$rootTgt = "$SkillsDir\codex-for-legal-cn"
-if (Test-Path "$rootTgt\.mcp.json") {
-    try { Add-LegalMcpServers -McpPath "$rootTgt\.mcp.json" } catch {}
+# 检查 MCP 配置是否完整
+Write-Host ''
+Write-Host '检查 MCP 连接器状态...' -ForegroundColor Yellow
+if (Test-Path $ConfigPath) {
+    $config = Get-Content $ConfigPath -Encoding UTF8 -Raw
+    $checks = @{
+        'chineselaw'           = 'mcp_servers.chineselaw'
+        'pkulaw-law-search'    = 'mcp_servers.pkulaw-law-search'
+        'pkulaw-case-keyword'  = 'mcp_servers.pkulaw-case-keyword'
+    }
+    foreach ($name in $checks.Keys) {
+        if ($config -match "(?ms)^\[$($checks[$name])\]") {
+            if ($config -match "(?ms)^\[$($checks[$name])\].*?enabled\s*=\s*true") {
+                Write-Host "  [OK] $name" -ForegroundColor Green
+            } else {
+                Write-Host "  [!]  $name（已配置但未启用）" -ForegroundColor Yellow
+            }
+        } else {
+            Write-Host "  [!!] $name（未配置，请重新运行 install.ps1）" -ForegroundColor Red
+        }
+    }
+} else {
+    Write-Host '  [!!] config.toml 不存在，请重新运行 install.ps1' -ForegroundColor Red
 }
 
-Write-Host "  已更新 $count 个技能领域（含 MCP 连接器）"
 Write-Host ''
 Write-Host '更新完成。重启 Codex Desktop 使新内容生效。' -ForegroundColor Green

@@ -35,13 +35,25 @@ description: >
 | 法律诊所、法律援助 | legal-clinic |
 | 技能安装、技能管理 | legal-builder-hub |
 
+## MCP 连接器
+
+技能预配置了两个中国法律 MCP 连接器（在 ~/.codex/config.toml 的 [mcp_servers] 段）：
+
+- **chineselaw（推荐）**：33 个工具，覆盖法规检索、案例检索、企业信息查询
+- **北大法宝（备选）**：10 个专用 MCP 服务
+
+使用法律检索任务时优先调用已配置的 MCP 连接器获取当前有效法条和案例。
+如未找到已启用的 MCP 连接器，基于模型训练数据工作，引用标注 [需验证]。
+
 ## 工作流程
 
 1. 执行自动更新
 2. 判定任务是否属于法律工作流程
-3. 选择最匹配的领域模块
-4. 读取该模块 SKILL.md + CLAUDE.md + references
-5. 法规、案例须核验现行有效性
+3. 检查 MCP 连接器状态（config.toml 的 [mcp_servers] 段）
+4. 选择最匹配的领域模块
+5. 读取该模块 SKILL.md + CLAUDE.md + references
+6. 如有可用 MCP 连接器，优先通过 MCP 检索当前有效法条和案例
+7. 法规、案例须核验现行有效性
 
 ## 重要限制
 

@@ -4,7 +4,7 @@
 .DESCRIPTION
   1. 克隆上游法律内容 (SH88-source/claude-for-legal-CN)
   2. 安装 SKILL.md 包装层到 ~/.codex/skills/
-  3. 注入 MCP 连接器配置（chineselaw-mcp + 北大法宝）
+  3. 注入 MCP 连接器配置到 ~/.codex/config.toml
   4. 设置内容链接便于自动更新
 #>
 
@@ -13,6 +13,7 @@ $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $VendorDir = "$env:USERPROFILE\.codex\vendor"
 $UpstreamDir = "$VendorDir\claude-for-legal-CN"
+$ConfigPath = "$env:USERPROFILE\.codex\config.toml"
 $GitUrl = 'https://github.com/SH88-source/claude-for-legal-CN.git'
 
 Write-Host '=== Codex 中国法律技能包 安装 ===' -ForegroundColor Green
@@ -44,40 +45,6 @@ $domains = @(
     'law-student','legal-clinic','legal-builder-hub','ip-legal'
 )
 
-function Add-LegalMcpServers {
-    param($McpPath)
-    $mcp = Get-Content $McpPath -Encoding UTF8 | ConvertFrom-Json
-
-    # chineselaw-mcp — 元典智库 API 封装，33 个工具
-    if (-not $mcp.mcpServers.PSObject.Properties.Name -contains 'chineselaw') {
-        $mcp.mcpServers | Add-Member -NotePropertyName 'chineselaw' -NotePropertyValue @{
-            type = "stdio"
-            command = "npx"
-            args = @("-y", "chineselaw-mcp")
-            env = @{
-                CHINESELAW_API_KEY = "你的_API_KEY"
-            }
-            title = "chineselaw（元典智库）"
-            description = "中国法律检索 — 33 个工具：法规检索、法条查询、案例检索、企业信息查询。需在 https://open.chineselaw.com 注册获取 API Key。"
-        }
-    }
-
-    # 北大法宝 MCP
-    if (-not $mcp.mcpServers.PSObject.Properties.Name -contains '北大法宝') {
-        $mcp.mcpServers | Add-Member -NotePropertyName '北大法宝' -NotePropertyValue @{
-            type = "http"
-            url = "https://apim-gateway.pkulaw.com/{{YOUR_SERVICE_ID}}"
-            headers = @{
-                Authorization = "Bearer {{YOUR_ACCESS_TOKEN}}"
-            }
-            title = "北大法宝"
-            description = "中国法律法规与裁判文书检索 — 需在 https://mcp.pkulaw.com 注册获取 Service ID 和 Token。"
-        }
-    }
-
-    $mcp | ConvertTo-Json -Depth 10 | Out-File $McpPath -Encoding UTF8 -Force
-}
-
 foreach ($name in $domains) {
     $srcSkill = "$RepoRoot\skills\$name\SKILL.md"
     $tgtDir = "$SkillsDir\$name"
@@ -87,14 +54,8 @@ foreach ($name in $domains) {
     $upstreamModule = "$UpstreamDir\$name"
     if (Test-Path "$upstreamModule\CLAUDE.md") { Copy-Item "$upstreamModule\CLAUDE.md" "$tgtDir\CLAUDE.md" -Force }
     if (Test-Path "$upstreamModule\README.md") { Copy-Item "$upstreamModule\README.md" "$tgtDir\README.md" -Force }
-
-    # .mcp.json：复制上游并注入中国法律 MCP 连接器
-    if (Test-Path "$upstreamModule\.mcp.json") {
-        Copy-Item "$upstreamModule\.mcp.json" "$tgtDir\.mcp.json" -Force
-        try { Add-LegalMcpServers -McpPath "$tgtDir\.mcp.json" } catch {
-            Write-Host "  [警告] MCP 注入失败 ($name): $_" -ForegroundColor Yellow
-        }
-    }
+    # 保留上游 .mcp.json（用于 Codex CLI 兼容）
+    if (Test-Path "$upstreamModule\.mcp.json") { Copy-Item "$upstreamModule\.mcp.json" "$tgtDir\.mcp.json" -Force }
 
     if (Test-Path "$upstreamModule\references") {
         $null = New-Item -ItemType Directory -Force "$tgtDir\references"
@@ -116,21 +77,73 @@ foreach ($name in $domains) {
         }
     }
 }
-
 # 根技能
 $rootTgt = "$SkillsDir\codex-for-legal-cn"
 $null = New-Item -ItemType Directory -Force $rootTgt
 Copy-Item "$RepoRoot\skills\codex-for-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
-if (Test-Path "$rootTgt\.mcp.json") {
-    try { Add-LegalMcpServers -McpPath "$rootTgt\.mcp.json" } catch {}
-} else {
-    @{ mcpServers = @{} } | ConvertTo-Json | Out-File "$rootTgt\.mcp.json" -Encoding UTF8 -Force
-    try { Add-LegalMcpServers -McpPath "$rootTgt\.mcp.json" } catch {}
+Write-Host '  技能安装完成'
+
+<#
+.SYNOPSIS
+  向 ~/.codex/config.toml 写入 MCP 服务器配置
+  仅添加不存在的条目，不删除或覆盖已有配置
+#>
+function Add-McpServerToConfig {
+    param([string]$Section, [string]$TomlBlock)
+    $content = Get-Content $ConfigPath -Encoding UTF8 -Raw
+    if ($content -match "(?ms)^\[mcp_servers\.\Q$Section\E\]") {
+        Write-Host "  [跳过] MCP '$Section' 已存在" -ForegroundColor DarkYellow
+        return $false
+    }
+    # 追加到文件末尾
+    Add-Content -Path $ConfigPath -Value "`n$TomlBlock" -Encoding UTF8
+    Write-Host "  [添加] MCP '$Section' 已写入 config.toml" -ForegroundColor Green
+    return $true
 }
 
-Write-Host '  技能安装完成（含 MCP 连接器配置）'
+Write-Host '[3/4] 配置 MCP 连接器...' -ForegroundColor Yellow
 
-Write-Host '[3/4] 配置 PowerShell 执行策略...' -ForegroundColor Yellow
+# ========== chineselaw（元典智库）==========
+Add-McpServerToConfig -Section 'chineselaw' -TomlBlock @"
+[mcp_servers.chineselaw]
+command = "npx"
+args = ["-y", "chineselaw-mcp"]
+startup_timeout_sec = 30
+tool_timeout_sec = 600
+enabled = true
+
+[mcp_servers.chineselaw.env]
+CHINESELAW_API_KEY = "YOUR_API_KEY"
+"@
+
+# ========== 北大法宝 10 个 MCP 服务 ==========
+$pkulawServices = @(
+    @{ name = "pkulaw-law-search"; url = "https://apim-gateway.pkulaw.com/mcp-law-search-service" },
+    @{ name = "pkulaw-law-keyword"; url = "https://apim-gateway.pkulaw.com/mcp-law" },
+    @{ name = "pkulaw-case-semantic-search"; url = "https://apim-gateway.pkulaw.com/mcp-case-search-service" },
+    @{ name = "pkulaw-case-keyword"; url = "https://apim-gateway.pkulaw.com/mcp-case" },
+    @{ name = "pkulaw-law-item-keyword"; url = "https://apim-gateway.pkulaw.com/mcp-fatiao" },
+    @{ name = "pkulaw-law-recognition"; url = "https://apim-gateway.pkulaw.com/law_recognition" },
+    @{ name = "pkulaw-case-number-recognition"; url = "https://apim-gateway.pkulaw.com/case_number_recognition" },
+    @{ name = "pkulaw-citation-validator"; url = "https://apim-gateway.pkulaw.com/pku_citation_validator" },
+    @{ name = "pkulaw-doc-link"; url = "https://apim-gateway.pkulaw.com/add-doc-link" },
+    @{ name = "pkulaw-semantic-nlsql"; url = "https://apim-gateway.pkulaw.com/YOUR_NL_SQL_SERVICE_ID" }
+)
+
+foreach ($svc in $pkulawServices) {
+    Add-McpServerToConfig -Section $svc.name -TomlBlock @"
+[mcp_servers.$($svc.name)]
+url = "$($svc.url)"
+http_headers = { Authorization = "Bearer YOUR_ACCESS_TOKEN" }
+startup_timeout_sec = 30
+tool_timeout_sec = 600
+enabled = true
+"@
+}
+
+Write-Host '  MCP 连接器配置完成（需手动替换 TOKEN/API Key）'
+
+Write-Host '[4/4] 配置 PowerShell 执行策略...' -ForegroundColor Yellow
 $policy = Get-ExecutionPolicy -Scope CurrentUser 2>$null
 if ($policy -eq 'Restricted') {
     Set-ExecutionPolicy -Scope CurrentUser -RemoteSigned -Force
@@ -139,7 +152,7 @@ if ($policy -eq 'Restricted') {
     Write-Host '  执行策略正常'
 }
 
-Write-Host '[4/4] 验证安装...' -ForegroundColor Yellow
+# 验证
 $missing = @()
 $all = $domains + @('codex-for-legal-cn')
 foreach ($name in $all) {
@@ -155,9 +168,18 @@ if ($missing.Count -eq 0) {
 Write-Host ''
 Write-Host '安装完成！请重启 Codex Desktop 使技能生效。' -ForegroundColor Green
 Write-Host ''
-Write-Host 'MCP 法律检索连接器已预配置：' -ForegroundColor Cyan
-Write-Host '  1. chineselaw（元典智库）— 33 个工具，推荐首选' -ForegroundColor Cyan
-Write-Host '     注册: https://open.chineselaw.com → 获取 API Key' -ForegroundColor Cyan
-Write-Host '  2. 北大法宝 — 备选 HTTP 方案' -ForegroundColor Cyan
-Write-Host '     注册: https://mcp.pkulaw.com → 获取 Service ID + Token' -ForegroundColor Cyan
-Write-Host '  配置指南见 docs/connectors.md' -ForegroundColor Cyan
+Write-Host '===== 下一步：配置 MCP 连接器 =====' -ForegroundColor Cyan
+Write-Host '打开 config.toml 并替换凭证：' -ForegroundColor Cyan
+Write-Host '  notepad "$env:USERPROFILE\.codex\config.toml"' -ForegroundColor Cyan
+Write-Host ''
+Write-Host 'chineselaw（推荐，33 个工具）：' -ForegroundColor Cyan
+Write-Host '  1. 注册 https://open.chineselaw.com → 获取 API Key' -ForegroundColor Cyan
+Write-Host '  2. 在 config.toml 中找到 [mcp_servers.chineselaw.env]' -ForegroundColor Cyan
+Write-Host '  3. 将 CHINESELAW_API_KEY 的值替换为真实 Key' -ForegroundColor Cyan
+Write-Host ''
+Write-Host '北大法宝（备选，10 个服务）：' -ForegroundColor Cyan
+Write-Host '  1. 注册 https://mcp.pkulaw.com → 获取 Access Token' -ForegroundColor Cyan
+Write-Host '  2. 将所有 "YOUR_ACCESS_TOKEN" 替换为真实 Token' -ForegroundColor Cyan
+Write-Host '  3. 如有 NL SQL 服务，替换 YOUR_NL_SQL_SERVICE_ID' -ForegroundColor Cyan
+Write-Host ''
+Write-Host '详细配置指南见 docs/connectors.md' -ForegroundColor Cyan
