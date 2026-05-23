@@ -51,7 +51,8 @@ description: >
 | 诉讼策略、攻防、起诉 | 01-case-practice | \~/.codex/skills/solo-law-firm/01-case-practice/litigation-strategist/SKILL.md\ |
 | 文书、起诉状、答辩状 | 01-case-practice | \~/.codex/skills/solo-law-firm/01-case-practice/legal-document-drafter/SKILL.md\ |
 | 证据、质证、证据链 | 01-case-practice | \~/.codex/skills/solo-law-firm/01-case-practice/evidence-analyst/SKILL.md\ |
-| 排期、开庭、庭前 | 02-case-management | \~/.codex/skills/solo-law-firm/02-case-management/trial-preparation-checker/SKILL.md\ |
+| 排期、开庭、庭前 | 02-case-management | \~/.codex/skills/solo-law-firm/02-case-management/trial-preparation-checker/SKILL.md\
+| 开庭提纲、庭审提纲、庭前准备 | 02-case-management | \~/.codex/skills/solo-law-firm/02-case-management/trial-outline-generator/SKILL.md\ |
 | 时效、诉讼时效 | 02-case-management | \~/.codex/skills/solo-law-firm/02-case-management/deadline-monitor/SKILL.md\ |
 | 案件排期、日程 | 02-case-management | \~/.codex/skills/solo-law-firm/02-case-management/case-scheduler/SKILL.md\ |
 | 初次咨询、接案、案情 | 03-client-relations | \~/.codex/skills/solo-law-firm/03-client-relations/initial-consultation/SKILL.md\ |
@@ -112,7 +113,7 @@ description: >
 | 部门 | 技能数 | 核心职能 |
 |------|:------:|------|
 | 01-案件实务部 | 5 | 合同审查、法律检索、诉讼策略、文书撰写、证据分析 |
-| 02-案件管理部 | 3 | 案件排期、时效监控、庭前准备 |
+| 02-案件管理部 | 4 | 案件排期、时效监控、庭前准备 |
 | 03-客户关系部 | 3 | 初次咨询、沟通起草（含进展通报）、满意度回访 |
 | 04-尽职调查部 | 4 | 企业背调、股权穿透、诉讼风险排查、资产线索追踪 |
 | 05-市场拓展部 | 4 | SEO优化、公众号、小红书/知乎、短视频策划 |
