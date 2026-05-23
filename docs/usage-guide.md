@@ -140,3 +140,4 @@ pkulaw-mcp tools
 
 MCP 配置问题优先查看 [MCP 连接器仓库](https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors)。
 常见问题见 docs/troubleshooting.md。
+
