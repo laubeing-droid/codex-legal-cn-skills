@@ -74,9 +74,9 @@ foreach ($name in $domains) {
     }
 }
 # 根技能
-$rootTgt = "$SkillsDir\codex-claude-legal-cn"
+$rootTgt = "$SkillsDir\claude-legal-cn"
 $null = New-Item -ItemType Directory -Force $rootTgt
-Copy-Item "$RepoRoot\skills\codex-claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
+Copy-Item "$RepoRoot\skills\claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
 Write-Host '  技能安装完成'
 
 
@@ -128,7 +128,7 @@ if ($policy -eq 'Restricted') {
 
 # 验证
 $missing = @()
-$all = $domains + @('codex-claude-legal-cn'); $soloCount = 0; if (Test-Path "$SkillsDir\solo-law-firm") { Get-ChildItem -Recurse "$SkillsDir\solo-law-firm" -Filter 'SKILL.md' | ForEach-Object { $soloCount++ } }
+$all = $domains + @('claude-legal-cn'); $soloCount = 0; if (Test-Path "$SkillsDir\solo-law-firm") { Get-ChildItem -Recurse "$SkillsDir\solo-law-firm" -Filter 'SKILL.md' | ForEach-Object { $soloCount++ } }
 foreach ($name in $all) {
     if (-not (Test-Path "$SkillsDir\$name\SKILL.md")) { $missing += $name }
 }

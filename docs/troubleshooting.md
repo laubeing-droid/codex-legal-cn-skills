@@ -29,7 +29,7 @@ MCP 连接器未配置。运行 `.\update.ps1` 查看状态，然后：
 
 ### 没有自动进入法律模式
 ```
-@codex-claude-legal-cn 你的问题
+@claude-legal-cn 你的问题
 ```
 
 ### 输出不准确

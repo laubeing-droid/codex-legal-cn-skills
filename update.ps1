@@ -75,9 +75,9 @@ foreach ($name in $domains) {
     $count++
 }
 # 根技能
-$rootTgt = "$SkillsDir\codex-claude-legal-cn"
+$rootTgt = "$SkillsDir\claude-legal-cn"
 $null = New-Item -ItemType Directory -Force $rootTgt
-Copy-Item "$RepoRoot\skills\codex-claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
+Copy-Item "$RepoRoot\skills\claude-legal-cn\SKILL.md" "$rootTgt\SKILL.md" -Force
 Write-Host "  已同步 $count 个技能领域 + 根技能"
 
 # ---- [3/5] MCP 连接器检查（委托给独立仓库） ----
@@ -108,7 +108,7 @@ if (Test-Path "$McpDir\update.ps1") {
 # ---- [5/5] 验证安装完整性 ----
 Write-Host '[5/5] 验证安装完整性...' -ForegroundColor Yellow
 $missing = @()
-$all = $domains + @('codex-claude-legal-cn'); $soloCount = 0; if (Test-Path "$SkillsDir\solo-law-firm") { Get-ChildItem -Recurse "$SkillsDir\solo-law-firm" -Filter 'SKILL.md' | ForEach-Object { $soloCount++ } }
+$all = $domains + @('claude-legal-cn'); $soloCount = 0; if (Test-Path "$SkillsDir\solo-law-firm") { Get-ChildItem -Recurse "$SkillsDir\solo-law-firm" -Filter 'SKILL.md' | ForEach-Object { $soloCount++ } }
 foreach ($name in $all) {
     if (-not (Test-Path "$SkillsDir\$name\SKILL.md")) { $missing += $name }
 }

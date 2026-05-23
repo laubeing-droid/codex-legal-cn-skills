@@ -63,7 +63,7 @@ cd Claude-for-Legal-CN-to-Codex
 
 | 技能 | 领域 | 子技能数 |
 |------|------|:--------:|
-| `codex-claude-legal-cn` | 根技能（路由+自动更新） | — |
+| `claude-legal-cn` | 根技能（路由+自动更新） | — |
 | `commercial-legal` | 商事合同 | 12 |
 | `litigation-legal` | 诉讼仲裁 | 19 |
 | `employment-legal` | 劳动用工 | 20 |
@@ -98,7 +98,7 @@ cd Claude-for-Legal-CN-to-Codex
 | 帮我分析这个法考案例 | `law-student` |
 | 法律援助接谈记录 | `legal-clinic` |
 
-也可手动指定：`@codex-claude-legal-cn 帮我审这份合同`
+也可手动指定：`@claude-legal-cn 帮我审这份合同`
 
 ---
 

@@ -1,11 +1,11 @@
 ﻿---
-name: codex-claude-legal-cn
+name: claude-legal-cn
 description: >
   中国法律工作总入口。自动识别律师工作场景并路由到对应领域技能。
   每次启用时自动检查上游更新，静默同步。
 ---
 
-# codex-claude-legal-cn
+# claude-legal-cn
 
 ## 自动更新
 
@@ -20,7 +20,7 @@ description: >
 
 ## 自动路由规则
 
-当用户以 \@codex-claude-legal-cn\ 触发或输入法律任务关键词时，按以下规则选择技能文件：
+当用户以 \@claude-legal-cn\ 触发或输入法律任务关键词时，按以下规则选择技能文件：
 
 ### 匹配后执行
 1. 匹配关键词 -> 确定目标技能路径

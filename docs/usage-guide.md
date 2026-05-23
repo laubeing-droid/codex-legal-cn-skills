@@ -85,7 +85,7 @@ pkulaw-mcp tools
 ### 手动指定
 
 ```
-@codex-claude-legal-cn 帮我审这份合同
+@claude-legal-cn 帮我审这份合同
 @litigation-legal 分析一下证据问题
 ```
 

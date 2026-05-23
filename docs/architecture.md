@@ -67,7 +67,7 @@
 ### claude-for-legal 更新
 `
 用户触发法律任务
-  -> 根技能 codex-claude-legal-cn 激活
+  -> 根技能 claude-legal-cn 激活
     -> 自动 git pull 上游 SH88-source 最新内容
       -> 同步 CLAUDE.md + references 到 ~/.codex/skills/
         -> 检查 config.toml MCP 状态

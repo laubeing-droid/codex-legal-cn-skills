@@ -5,7 +5,7 @@
 `
 Claude-for-Legal-CN-to-Codex/
   skills/
-    codex-claude-legal-cn/      根路由（关键词 + 自动更新）
+    claude-legal-cn/      根路由（关键词 + 自动更新）
     <domain>/SKILL.md            12 领域入口定义（薄，托管上游）
     solo-law-firm/               独立执业技能集（厚，自包含）
       01-case-practice/           案件实务部 (5)

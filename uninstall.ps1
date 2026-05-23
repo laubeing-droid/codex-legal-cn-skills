@@ -15,7 +15,7 @@ Write-Host '=== 卸载 Claude for Legal CN to Codex ===' -ForegroundColor Yellow
 Write-Host ''
 
 $domains = @(
-    'codex-claude-legal-cn',
+    'claude-legal-cn',
     'commercial-legal','privacy-legal','product-legal','corporate-legal',
     'employment-legal','regulatory-legal','ai-governance-legal','litigation-legal',
     'law-student','legal-clinic','legal-builder-hub','ip-legal','solo-law-firm'

@@ -6,7 +6,7 @@
 - 新增 solo-law-firm 独立执业技能集（26 个自包含技能，8 个部门）
   - 上游来源: saysoph/solo-law-firm-agents（修改版 v1.1.0）
   - 修改记录: 合并 2 项、重命名 2 项、部门调整 1 项、新增上下游协作引用 19 项
-- 根路由 codex-claude-legal-cn 新增 solo-law-firm 关键词路由（7 条）
+- 根路由 claude-legal-cn 新增 solo-law-firm 关键词路由（7 条）
 - install.ps1 / update.ps1 / verify.ps1 / uninstall.ps1 新增 solo-law-firm 支持
 - upstream-monitor.yml 新增 saysoph/solo-law-firm-agents 上游监控
 - upstream-monitor.yml 新增 sync-solo-law-firm 自动同步 PR job
@@ -15,7 +15,7 @@
 - 新增 docs/skills-crosswalk.md 两套技能对照索引
 
 ## [2.4.0] - 2026-05-23
-- 根技能重命名：codex-for-legal-cn -> codex-claude-legal-cn
+- 根技能重命名：codex-for-legal-cn -> claude-legal-cn
 - MCP 连接器仓库重命名：codex-legal-mcp-connectors -> Codex-Claude-legal-CN-mcp-connectors
 - 更新全部脚本和文档中的引用
 
