@@ -10,7 +10,7 @@ cd codex-legal-cn-skills
 .\install.ps1
 ```
 
-安装过程会自动克隆 MCP 连接器配置（codex-legal-mcp-connectors）并写入 config.toml。
+安装过程会自动克隆 MCP 连接器配置（codex-legal-mcp-connectors）并写入配置。
 
 ## 验证
 
@@ -20,14 +20,11 @@ cd codex-legal-cn-skills
 
 ## 配置 MCP（可选但推荐）
 
-安装脚本会在安装时提示输入 API Key / Access Token。如留空，之后手动配置：
+运行 `.\mcp-connectors\update.ps1` 验证凭证状态。
 
-1. 编辑 `~/.codex/config.toml`，替换 `CHINESELAW_API_KEY` 和 `YOUR_ACCESS_TOKEN`
-2. 运行 `.\update.ps1` 验证凭证状态（自动调用 mcp-connectors 仓库的脚本）
-3. 重启 Codex Desktop
-
-**chineselaw（推荐）**：注册 https://open.chineselaw.com → 获取 API Key
-**北大法宝**：注册 https://mcp.pkulaw.com → 获取 Access Token
+如需手动替换凭证：
+- **chineselaw**：注册 https://open.chineselaw.com → 编辑 `~/.codex/config.toml` 替换 `CHINESELAW_API_KEY`
+- **北大法宝**：注册 https://mcp.pkulaw.com → 编辑配置替换 `YOUR_ACCESS_TOKEN`
 
 详细指南见 [MCP 连接器仓库](https://github.com/laubeing-droid/codex-legal-mcp-connectors)。
 
@@ -46,9 +43,8 @@ cd codex-legal-cn-skills
 ## 常见问题
 
 - **技能没生效？** 重启 Codex Desktop
-- **引用标注[需验证]？** 运行 `.\update.ps1` 查看 MCP 连接器状态
-- **如何更新？** 运行 `.\update.ps1`（同步技能 + 委托 MCP 连接器更新）
-- **MCP 连接器问题？** 直接运行 `.\mcp-connectors\update.ps1` 获取详细诊断
+- **引用标注[需验证]？** 运行 `.\mcp-connectors\update.ps1` 查看 MCP 状态
+- **如何更新？** 运行 `.\update.ps1`
 - **如何卸载？** 运行 `.\uninstall.ps1`
 
 详细说明见 docs/usage-guide.md。
