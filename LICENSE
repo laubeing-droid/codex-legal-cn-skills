@@ -1,4 +1,16 @@
-﻿                                 Apache License
+﻿Claude for Legal CN to Codex
+Copyright 2026 laubeing-droid
+
+Based on:
+  - anthropics/claude-for-legal (Apache 2.0, Copyright 2026 Anthropic PBC)
+  - zhou210712/claude-for-legal-ZH (Apache 2.0)
+  - saysoph/solo-law-firm-agents (MIT)
+  - MAXXXXXLI/workbuddy-cn-legal-skills
+
+Full attribution in CREDITS.md.
+
+---------------------------------------------------------------------
+Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
 
@@ -174,3 +186,4 @@
       of your accepting any such warranty or additional liability.
 
    END OF TERMS AND CONDITIONS
+
