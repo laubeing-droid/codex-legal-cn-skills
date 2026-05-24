@@ -15,7 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch upstream updates (git repos + npm packages)
         id: fetch
         run: |
           CACHE_FILE=".upstream-last-check"
@@ -43,20 +42,15 @@ jobs:
             fi
           }
 
-          # --- npm packages ---
-          check_npm() {
             LABEL="$1"
             PKG="$2"
             REPORT+="### $LABEL%0A"
-            REPORT+="- npm: $PKG%0A"
-            INFO=$(curl -s "https://registry.npmjs.org/$PKG/latest")
             LATEST=$(echo "$INFO" | jq -r '.version // "unknown"')
             DESC=$(echo "$INFO" | jq -r '.description // ""' | head -c 120)
             REPORT+="- 最新版本: $LATEST%0A"
             REPORT+="- 说明: $DESC%0A"
             REPORT+="%0A%0A"
             if [ -f "$CACHE_FILE" ]; then
-              OLD=$(grep "^npm:$PKG=" "$CACHE_FILE" 2>/dev/null | cut -d= -f2 || echo "")
               if [ "$OLD" != "$LATEST" ] && [ "$LATEST" != "unknown" ] && [ -n "$LATEST" ]; then
                 CHANGED=true
               fi
@@ -69,7 +63,6 @@ jobs:
           check_repo "中文汉化版" "zhou210712/claude-for-legal-ZH"
           check_repo "solo-law-firm 独立执业技能" "saysoph/solo-law-firm-agents"
           check_repo "MAXXXXXLI WorkBuddy 中国法版" "MAXXXXXLI/workbuddy-cn-legal-skills"
-                    check_npm "@pkulaw/mcp-cli（北大法宝 CLI）" "@pkulaw/mcp-cli"
 
           echo "report=$REPORT" >> $GITHUB_OUTPUT
           echo "changed=$CHANGED" >> $GITHUB_OUTPUT
@@ -114,11 +107,7 @@ jobs:
               echo "$repo=$sha" >> "$CACHE_FILE"
             fi
           done
-          # npm packages
-          for pkg in @pkulaw/mcp-cli; do
-            ver=$(curl -s "https://registry.npmjs.org/$pkg/latest" | jq -r '.version // ""')
             if [ -n "$ver" ]; then
-              echo "npm:$pkg=$ver" >> "$CACHE_FILE"
             fi
           done
           git config user.name "github-actions"
