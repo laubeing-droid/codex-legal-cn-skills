@@ -20,7 +20,25 @@ description: 公司治理、并购尽调、股权交易、决议文件起草
 - 子技能：./skills/
 - MCP 配置：./.mcp.json
 
+## 中美法律概念对齐
+
+当处理涉及中美法律概念对应的问题时，参考以下对齐指南：
+
+### 阻断清单（无对应中国法制度，须拦截）
+
+
+### 制度映射参考
+- company-law-2024-core
+- piercing veil
+- fiduciary duty
+- shadow director
+- automatic stay
+- DIP
+
+如需完整映射表，见 patches/references/alignment/corporate-legal.md。
+
 ## 重要限制
 - 所有输出均为律师审查草稿，不构成法律意见
 - 引用法规、案例时必须另行核验现行有效性
 - 任何提交、发送或依赖前需经执业律师审核
+

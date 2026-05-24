@@ -1,0 +1,81 @@
+﻿name: Patches Integrity Check
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # 每周一早上6点
+  workflow_dispatch:
+
+jobs:
+  verify-patches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check directory structure
+        run: |
+          ERRORS=0
+          
+          # Expected directories
+          for dir in \
+            patches/references/laws \
+            patches/references/context \
+            patches/references/alignment \
+            patches/workflows \
+            patches/connectors \
+            patches/guards \
+            patches/metadata \
+            patches/full; do
+            if [ -d "$dir" ]; then
+              COUNT=$(find "$dir" -maxdepth 1 -type f | wc -l)
+              echo "  ✅ $dir ($COUNT files)"
+            else
+              echo "  ❌ $dir MISSING"
+              ERRORS=$((ERRORS+1))
+            fi
+          done
+
+      - name: Verify diff-tools exist
+        run: |
+          ERRORS=0
+          for script in diff-tool-zhou.ps1 diff-tool-max.ps1 diff-tool-align.ps1; do
+            if [ -f "patches/$script" ]; then
+              echo "  ✅ patches/$script"
+            else
+              echo "  ❌ patches/$script MISSING"
+              ERRORS=$((ERRORS+1))
+            fi
+          done
+
+      - name: Verify key file counts
+        run: |
+          echo "### 文件计数" >> $GITHUB_STEP_SUMMARY
+          echo "| 目录 | 应有 | 实有 | 状态 |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          
+          declare -A EXPECTED
+          EXPECTED["references/laws"]=11
+          EXPECTED["references/context"]=14
+          EXPECTED["references/alignment"]=12
+          EXPECTED["workflows"]=12
+          EXPECTED["connectors"]=12
+          EXPECTED["guards"]=6
+          
+          ALL_OK=true
+          for dir in "${!EXPECTED[@]}"; do
+            COUNT=$(find "patches/$dir" -maxdepth 1 -type f | wc -l)
+            if [ "$COUNT" -eq "${EXPECTED[$dir]}" ]; then
+              echo "| $dir | ${EXPECTED[$dir]} | $COUNT | ✅ |" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "| $dir | ${EXPECTED[$dir]} | $COUNT | ❌ |" >> $GITHUB_STEP_SUMMARY
+              ALL_OK=false
+            fi
+          done
+          
+          TOTAL=$(find patches -type f | wc -l)
+          echo "| **总计** | **~76** | **$TOTAL** | |" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "$ALL_OK" = false ]; then
+            echo "## ⚠️ 补丁结构异常，请检查 patches/ 目录" >> $GITHUB_STEP_SUMMARY
+            exit 1
+          fi
+          echo "## ✅ 补丁完整性检查通过" >> $GITHUB_STEP_SUMMARY
