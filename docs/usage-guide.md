@@ -1,35 +1,33 @@
 ﻿# 使用指南
 
-## 基本使用
+## 本仓库 vs 原版的使用差异
 
-安装重启后，直接输入自然语言，系统自动路由：
+原版（anthropic 美国法）的技能名是英文的：`deposition-prep`、`cease-desist`。  
+本仓库改成中文了：**调查取证准备**、**律师函生成**。直接说中文就能用：
 
-| 你说 | 调用领域 |
-|:----|:---------|
-| "审查这份 SaaS 协议" | commercial-legal |
-| "管辖权分析" | litigation-legal |
-| "个人信息保护合规" | privacy-legal |
-| "做证据保全" | litigation-legal → 证据保全与留存 |
-| "起草律师函" | ip-legal → 律师函生成 |
-| "申请调查令" | litigation-legal → 调查取证准备 |
+| 你说 | 系统怎么处理 |
+|:-----|:------------|
+| "做证据保全" | → 调用 证据保全与留存（原名 legal-hold，已重写为中国版） |
+| "起草律师函" | → 调用 律师函生成（原名 cease-desist，已改名） |
+| "申请调查令" | → 调用 调查取证准备（原名 deposition-prep，已重写） |
+| "收到法院协查通知" | → 调用 司法协查响应（原名 subpoena-triage，已重写） |
+| "审查合同" | → commercial-legal/review |
+| "分析管辖权" | → litigation-legal/claim-chart |
+| "查商标" | → ip-legal/clearance |
+| "合规风险" | → privacy-legal/use-case-triage |
 
 ## 手动调用
 
-```
-/领域名:技能名
-/ip-legal:律师函生成 --send
+```powershell
 /litigation-legal:调查取证准备 [案件名]
+/ip-legal:律师函生成 --send
+/litigation-legal:证据保全与留存 --issue
 ```
 
-## 更新
+## 更新检测
 
 ```powershell
-.\update.ps1                           # 从本仓库同步
-.\patches\diff-tool-zhou.ps1           # 检查上游更新
-.\patches\diff-tool-zhou.ps1 -Diff     # 看行级差异
-.\patches\diff-tool-zhou.ps1 -Update   # 更新快照
+.\patches\diff-tool-zhou.ps1           # 看 zhou210712 有没有更新
+.\patches\diff-tool-zhou.ps1 -Diff     # 看改了哪行
+.\patches\diff-tool-zhou.ps1 -Update   # 决定同步后更新快照
 ```
-
-## 查看上游通知
-
-GitHub 仓库 → Issues → 标签 `upstream-update`

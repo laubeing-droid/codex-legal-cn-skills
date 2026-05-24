@@ -1,18 +1,31 @@
 ﻿# 贡献指南
 
-## 修改技能
+## 本仓库不是普通项目
 
-1. 直接编辑 `skills/<domain>/skills/<skill>/SKILL.md`
-2. 运行 `.\verify.ps1` 验证完整性
-3. 提交 PR
+这是**三上游整合 + 自研对齐框架 + 自制护栏 + 自建监控**的系统。每一层有独立的贡献入口：
 
-## 处理上游更新
+### 法条层（qulv）
+贡献入口：`skills/knowledge-base/`
+- 新增法律 → 放官方 PDF，更新 MAPPING.md
+- 修正条文 → 替换 PDF，标注变更
 
-1. 查看 Issues 标签 `upstream-update`
-2. 运行对应 diff-tool 比对差异
-3. 手动合并有价值的变更到本地 skills/
-4. 提交 PR
+### 内容层（子技能）
+贡献入口：`skills/*/skills/`
+- 新增中国法子技能 → 创建目录 + SKILL.md  
+- 修改已有技能 → 编辑 SKILL.md，更新命令引用
+- 合并上游更新 → 跑 diff-tool，手动合
 
-## 新增上游监控
+### 护栏层
+贡献入口：`patches/guards/` + `skills/references/`
+- 新增阻断概念 → blocking-list.md
+- 新增中美映射 → alignment/
+- 新增香港桥梁 → hk-bridge.md
 
-在 `upstream-monitor.yml` 的 `check_repo` 调用列表中添加。
+### 监控层
+贡献入口：`patches/diff-tool-*.ps1`
+- 新增跟踪文件 → 加入 $files
+- 新增上游 → 创建新的 diff-tool
+
+## 注意
+- 不提交 API Key
+- 上游变更不自动合并

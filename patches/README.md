@@ -1,18 +1,22 @@
 ﻿# patches/ — 上游补丁统一目录
 
-## 目录说明
+## 为什么会有这个目录？
 
-| 路径 | 来源 | 文件数 |
-|------|------|:------:|
-| references/context/ | MAXXXXXLI 法源语境 | 14 |
-| references/alignment/ | 自研框架·中美概念映射 | 12 |
-| workflows/ | zhou210712 CLAUDE.md 快照 | 12 |
-| connectors/ | zhou210712 MCP 配置快照 | 12 |
-| guards/ | 自研框架·阻断/元规则 | 6 |
-| sub-skills/ | zhou210712 子技能快照 | 150+ |
-| metadata/ | 汇总 | 5 |
+因为**只有这个仓库同时跟踪 4 个上游**，所以需要一个统一目录存快照。
 
-## 检查更新
+| 路径 | 来源 | 文件数 | 用途 |
+|:-----|:-----|:-----:|:-----|
+| references/context/ | MAXXXXXLI | 14 | 中国法语境背景提示 |
+| references/alignment/ | **自研** | 12 | 中美法律概念映射（本仓库独有） |
+| workflows/ | zhou210712 | 12 | 中文化 CLAUDE.md 快照 |
+| connectors/ | zhou210712 | 12 | 中国 MCP 连接器快照 |
+| guards/ | **自研** | 6 | 阻断/元规则/香港桥梁（本仓库独有） |
+| sub-skills/ | zhou210712 | 150+ | 子技能原版快照 |
+| metadata/ | 汇总 | 5 | marketplace/NOTICE |
+
+## 4 路 diff-tool
+
+只有本仓库有这么多 diff-tool，因为只有本仓库跟踪多个上游：
 
 | 命令 | 检查谁 | 跟踪数 |
 |:-----|:-------|:------:|

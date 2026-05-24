@@ -1,24 +1,28 @@
 ﻿# MCP 连接器
 
-MCP 连接器由独立仓库 [Codex-Claude-legal-cn-mcp-hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) 管理。
-本仓库的 `install.ps1` 和 `update.ps1` 自动克隆并调用其安装脚本。
+## 为什么单独搞一个仓库？
 
-## 配置凭证
+所有上游版本（zhou210712、gjhcsjamin）都把 MCP 配置硬编码在仓库里。  
+你做了一个**关键决策**：把它拆成独立仓库 `Codex-Claude-legal-cn-mcp-hub`。
 
-编辑 `~/.codex/config.toml`，替换对应 API Key：
+好处：
+- 凭证信息不会混入主仓库
+- MCP 更新不影响技能内容
+- 其他人可以直接复用这套连接器配置
 
-```toml
-[mcp_servers.chineselaw]
-command = "npx"
-args = ["-y", "@pkulaw/mcp-cli"]
-env = { CHINESELAW_API_KEY = "你的密钥" }
+## 替换了什么
 
-[mcp_servers.feishu]
-command = "npx"
-args = ["-y", "@yuri2/feishu-mcp"]
-env = { FEISHU_APP_ID = "...", FEISHU_APP_SECRET = "..." }
-```
+| 原版（美国工具） | 本仓库（中国工具） |
+|:----------------|:-----------------|
+| Ironclad | e签宝 |
+| DocuSign | 法大大 |
+| iManage | 飞书 |
+| TopCounsel | 元典法律检索 |
+| Westlaw/LexisNexis | 北大法宝 |
+| USPTO API | 国家知识产权局 |
+| PACER | 中国裁判文书网 |
+| Slack | 飞书消息 |
 
-## 安全
+## 使用
 
-API 密钥通过 `config.toml` 或环境变量注入，**切勿提交到 Git**。
+`install.ps1` 自动克隆 MCP Hub，编辑 `~/.codex/config.toml` 替换 API Key 即可。
