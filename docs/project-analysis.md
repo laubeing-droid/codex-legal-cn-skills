@@ -2,29 +2,33 @@
 
 > 最后更新：2026-05-25
 
-## 生态演进
+## 生态总览
 
 ```
-anthropics/claude-for-legal（Anthropic 官方，美国法）
-  → zhou210712/claude-for-legal-ZH（中国化汉化）
-    → 本仓库（Codex 全功能整合）
+anthropics/claude-for-legal          ─  Anthropic 官方, 美国法 (150 技能)
+  → zhou210712/claude-for-legal-ZH   ─  汉化版 (中文化 UI + 法条替换)
+    → Claude-for-Legal-CN-to-Codex   ─  本仓库 (Codex 全功能整合 + 扩展)
 ```
 
-## 上游关系（当前）
+## 各版本中国化深度对比
 
-| 上游 | 关系 | 状态 |
-|:----|:----|:----:|
-| zhou210712/claude-for-legal-ZH | 12 个法律领域的内容来源 | 已断开自动同步，仅监控 |
-| saysoph/solo-law-firm-agents | solo-law-firm 来源 | 已断开自动同步，仅监控 |
-| MAXXXXXLI/workbuddy-cn-legal-skills | 14 个语境文件来源 | 仅通过 diff-tool 比对 |
-| anthropics/claude-for-legal | 原始 US 版框架 | 仅参考监控 |
+| 维度 | anthropic | zhou210712 | MAXXXXXLI | **本仓库** |
+|:-----|:---------|:-----------|:----------|:----------|
+| 法条引用 | 美国法 | 9 个摘要文件 | 14 个语境文件 | **22 部官方 PDF** |
+| 子技能 | 150 个美国法 | 精简 29% | 外层包裹 | **5 个重写为中国版** |
+| CLAUDE.md | 英文 | UI 中文化 | 外层包裹 | **全中文 + 护栏** |
+| MCP 连接 | 美国工具 | 中国工具 | N/A | **中国工具 + 独立 MCP Hub** |
+| 概念对齐 | 无 | 无 | 无 | **12 领域 PRC-US 映射** |
+| 护栏 | 无 | 无 | 无 | **8 个阻断/元规则** |
+| 语境补充 | 无 | 无 | 14 文件 | **14 文件 + 自研** |
+| 部署方式 | Claude Code | Claude Code | WorkBuddy ZIP | **Codex install.ps1** |
+| 上游依赖 | — | anthropic | anthropic | **无（参考窗口模式）** |
 
-## 本仓库增强
+## 本仓库独有增强
 
-| 增强 | 说明 |
-|:----|:-----|
-| qulv 知识库 | 22 部官方 PDF，替代摘要式法条 |
-| PRC-US 对齐 | 12 领域映射 + 6 护栏文件 |
-| 5 个子技能中国化 | 删除 1 + 改名 1 + 重写 3 |
-| solo-law-firm 自研 | 27 技能含自研庭审提纲生成器 |
-| 4 路 diff-tool | 统一上游变更检测 |
+1. **qulv 知识库**：22 部中国法律官方 PDF，替代摘要式法条
+2. **PRC-US 对齐框架**：12 领域中美概念映射 + 6 护栏
+3. **5 个子技能中国化**：调查取证准备/证据保全/司法协查/律师函/删除
+4. **solo-law-firm**：27 个独立执业技能（8 科室）
+5. **4 路 diff-tool**：统一上游变更检测
+6. **参考窗口架构**：上游仅监控，不自动同步
