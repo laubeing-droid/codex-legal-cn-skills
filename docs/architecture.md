@@ -3,7 +3,7 @@
 ## 项目定位
 
 **Claude for Legal CN to Codex** 是一个包装层项目。它将两套技能体系以 Codex Desktop 可识别的格式部署到用户环境，并在此基础上自行研发新技能补全业务闭环：
-- [SH88-source/claude-for-legal-CN](https://github.com/SH88-source/claude-for-legal-CN) — 12 领域法律工作流（薄入口 + 上游 CLAUDE.md）
+- [zhou210712/claude-for-legal-ZH](https://github.com/zhou210712/claude-for-legal-ZH) — 12 领域法律工作流（薄入口 + 上游 CLAUDE.md）
 - [saysoph/solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents) — 26 个自包含执业技能（厚 SKILL.md，修改版）。**本仓库在此之上新增 1 个自研技能，合计 27 个。**
 
 ## 五层架构
@@ -38,7 +38,7 @@
 | 层级 | 内容 | 维护者 |
 |------|------|--------|
 | 包装层 | SKILL.md（入口定义）、安装脚本、文档 | 本仓库 |
-| 内容层A（claude-for-legal） | CLAUDE.md（工作流指令）、references（法条参考） | 上游 SH88-source |
+| 内容层A（claude-for-legal） | CLAUDE.md（工作流指令）、references（法条参考） | 上游 zhou210712 |
 | 内容层B（solo-law-firm） | 自包含 SKILL.md（完整角色 prompt + 模板），含本仓库自研技能 | 上游 saysoph（本仓库修改版 + 自研） |
 | 运行层 | skills/ 下各领域执行目录 | install.ps1 自动管理 |
 | MCP 层 | chineselaw + 北大法宝连接器配置 | Codex-Claude-legal-CN-mcp-connectors |
@@ -82,7 +82,7 @@
 `
 用户触发法律任务
   -> 根技能 claude-legal-cn 激活
-    -> 自动 git pull 上游 SH88-source 最新内容
+    -> 自动 git pull 上游 zhou210712 最新内容
       -> 同步 CLAUDE.md + references 到 ~/.codex/skills/
         -> 检查 config.toml MCP 状态
           -> 读取最新工作流指令
@@ -112,6 +112,7 @@ GitHub Actions 每周一触发
 
 ## 依赖关系
 
-- **SH88-source/claude-for-legal-CN**（Apache 2.0）— claude-for-legal 直接上游
+- **zhou210712/claude-for-legal-ZH**（Apache 2.0）— claude-for-legal 直接上游
 - **saysoph/solo-law-firm-agents**（MIT）— solo-law-firm 上游，**本仓库持有修改版 + 自研新增**
 - **Codex-Claude-legal-CN-mcp-connectors**（独立仓库）— MCP 连接器管理
+

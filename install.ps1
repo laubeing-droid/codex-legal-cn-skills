@@ -2,7 +2,7 @@
 .SYNOPSIS
   一键安装 Claude for Legal CN to Codex
 .DESCRIPTION
-  1. 克隆上游法律内容 (SH88-source/claude-for-legal-CN)
+  1. 克隆上游法律内容 (zhou210712/claude-for-legal-ZH)
   2. 安装 SKILL.md 包装层到 ~/.codex/skills/
   3. 配置 MCP 连接器（通过 Codex-Claude-legal-CN-mcp-connectors 独立仓库）
   4. 设置内容链接便于自动更新
@@ -15,7 +15,7 @@ $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
 $VendorDir = "$env:USERPROFILE\.codex\vendor"
 $UpstreamDir = "$VendorDir\claude-for-legal-CN"
-$GitUrl = 'https://github.com/SH88-source/claude-for-legal-CN.git'
+$GitUrl = 'https://github.com/zhou210712/claude-for-legal-ZH.git'
 
 Write-Host '=== Claude for Legal CN to Codex 安装 ===' -ForegroundColor Green
 Write-Host ''
@@ -144,3 +144,4 @@ Write-Host '安装完成！重启 Codex Desktop 使技能生效。' -ForegroundC
 Write-Host 'MCP 连接器由 Codex-Claude-legal-CN-mcp-connectors 管理，替换凭证即可使用。' -ForegroundColor Cyan
 Write-Host '  配置指南: docs/connectors.md' -ForegroundColor Cyan
 Write-Host '  独立仓库: https://github.com/laubeing-droid/Codex-Claude-legal-CN-mcp-connectors' -ForegroundColor Cyan
+

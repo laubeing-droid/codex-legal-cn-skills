@@ -1,6 +1,6 @@
 ﻿# 技能对照索引
 
-本文档对照 [claude-for-legal-CN](https://github.com/SH88-source/claude-for-legal-CN) 领域技能与 [solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents) 执业技能，帮助快速定位适用技能。
+本文档对照 [claude-for-legal-CN](https://github.com/zhou210712/claude-for-legal-ZH) 领域技能与 [solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents) 执业技能，帮助快速定位适用技能。
 
 > 🆕 **本仓库自研技能**以 🆕 标记，这些技能在上游 saysoph/solo-law-firm-agents 中不存在，由本仓库独立研发补全。
 
@@ -8,7 +8,7 @@
 
 | 体系 | 来源 | 技能数 | 架构 | 适用场景 |
 |------|------|:------:|------|------|
-| **claude-for-legal-CN** | SH88-source 上游 | 12 领域 / 150+ 子技能 | 薄入口 + CLAUDE.md 工作流 + references 法条库 | 各法律领域的专业分析、审查、起草 |
+| **claude-for-legal-CN** | zhou210712 上游 | 12 领域 / 150+ 子技能 | 薄入口 + CLAUDE.md 工作流 + references 法条库 | 各法律领域的专业分析、审查、起草 |
 | **solo-law-firm-agents** | saysoph 上游（修改版 + 自研） | 27 独立技能 / 8 部门 | 自包含厚 SKILL.md + 模板 + 禁止项 | 独立执业律师的端到端业务运营 |
 
 ## 二、按场景选择技能

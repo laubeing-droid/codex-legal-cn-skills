@@ -62,7 +62,7 @@ Claude-for-Legal-CN-to-Codex/
 
 ## 本仓库不直接修改的内容
 
-- claude-for-legal-CN 的 CLAUDE.md 工作流指令 — 请直接编辑上游 SH88-source/claude-for-legal-CN
+- claude-for-legal-CN 的 CLAUDE.md 工作流指令 — 请直接编辑上游 zhou210712/claude-for-legal-ZH
 - claude-for-legal-CN 的 references/ 法律参考文件 — 请直接编辑上游
 
 ## solo-law-firm 上游同步

@@ -1,6 +1,6 @@
 ﻿# Claude for Legal CN to Codex
 
-将 [Claude for Legal (China Law)](https://github.com/SH88-source/claude-for-legal-CN) 的中国法工作流一键移植到 **Codex Desktop**。覆盖诉讼仲裁、商事合同、劳动用工、数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
+将 [Claude for Legal (China Law)](https://github.com/zhou210712/claude-for-legal-ZH) 的中国法工作流一键移植到 **Codex Desktop**。覆盖诉讼仲裁、商事合同、劳动用工、数据合规、知识产权等 12 个核心法律领域，安装即用、自动更新。
 
 > **新用户？** 从 [QUICKSTART.md](QUICKSTART.md) 开始 —— 60 秒完成安装。
 
@@ -129,11 +129,9 @@ Claude-for-Legal-CN-to-Codex           ← 包装层（本仓库）
 ## 上游依赖链
 
 ```
-anthropics/claude-for-legal        ─  Anthropic 官方, 美国法参考实现
-  → zhou210712/claude-for-legal-ZH ─  首版中国法汉化适配
-    → SH88-source/claude-for-legal-CN ─  持续维护（本仓库直接上游）
-      → gjhcsjamin/codex-for-legal-CN ─  Codex 平台首次封装
-        → Claude-for-Legal-CN-to-Codex ─  本仓库（全功能整合）
+anthropics/claude-for-legal          ─  Anthropic 官方, 美国法参考实现
+  → zhou210712/claude-for-legal-ZH  ─  中国法汉化版（本仓库直接上游）
+    → Claude-for-Legal-CN-to-Codex  ─  本仓库（全功能整合）
 ```
 
 详细分析见 [docs/project-analysis.md](docs/project-analysis.md)。
@@ -146,7 +144,7 @@ GitHub Actions 每周一自动执行：
 
 | 监测目标 | 行为 |
 |---------|------|
-| claude-for-legal 上游链（4 仓库） | 检测新提交 -> 创建 Issue |
+| claude-for-legal 上游（1 仓库） | 检测新提交 -> 创建 Issue |
 | npm 包（chineselaw-mcp, @pkulaw/mcp-cli） | 检测新版本 -> 创建 Issue |
 | **solo-law-firm-agents** | 检测新技能 -> **自动同步 + 创建 PR** |
 

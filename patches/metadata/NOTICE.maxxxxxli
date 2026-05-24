@@ -1,0 +1,29 @@
+WorkBuddy China Legal Skills
+
+This repository is a China-context adaptation of the upstream "Claude for Legal"
+materials originally published by Anthropic PBC.
+
+Upstream attribution:
+
+  Project: Claude for Legal
+  Repository: https://github.com/anthropics/claude-for-legal
+  Copyright: Copyright 2026 Anthropic PBC
+  License: Apache License, Version 2.0
+
+This adaptation preserves the upstream legal-workflow structure and modifies it
+for WorkBuddy and Mainland China legal/compliance contexts. Major adaptation
+areas include:
+
+  - WorkBuddy-oriented plugin metadata and configuration paths.
+  - Mainland China as the default jurisdiction unless another jurisdiction is
+    explicitly specified.
+  - Added global and module-level China legal context references.
+  - Added Chinese triggers and WorkBuddy China-context override sections to
+    SKILL.md files.
+  - Adjusted terminology for PRC legal, regulatory, corporate, labor,
+    privacy/data, AI, IP, product, and dispute-resolution workflows.
+  - Added warnings that outputs are drafts for legal/professional review and
+    not legal advice.
+
+The adaptation does not represent Anthropic's, WorkBuddy's, Tencent's, or any
+other third party's legal positions.
