@@ -8,8 +8,6 @@
 #Requires -Version 5.1
 
 $SkillsDir = "$env:USERPROFILE\.codex\skills"
-$VendorDir = "$env:USERPROFILE\.codex\vendor"
-$UpstreamDir = "$VendorDir\claude-for-legal-CN"
 
 $domains = @(
     'claude-legal-cn',
@@ -48,12 +46,8 @@ foreach ($name in $domains) {
     }
 }
 
-# 检查上游缓存
 Write-Host ''
-if (Test-Path "$UpstreamDir\.git") {
-    Write-Host "[OK] 上游缓存: $UpstreamDir" -ForegroundColor Green
 } else {
-    Write-Host "[!]  上游缓存不存在（运行 install.ps1 后会自动克隆）" -ForegroundColor Yellow
 }
 
 
