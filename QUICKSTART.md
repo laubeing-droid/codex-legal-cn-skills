@@ -10,9 +10,9 @@ cd Claude-for-Legal-CN-to-Codex
 .\install.ps1
 ```
 
+
 安装过程自动完成：
-- 克隆上游法律内容到 `~/.codex/vendor/claude-for-legal-CN/`
-- 部署 13 个技能入口到 `~/.codex/skills/`
+- 从本仓库部署 13 个技能领域到 `~/.codex/skills/`
 - 克隆 MCP 连接器仓库并写入 `~/.codex/config.toml`
 
 ## 验证

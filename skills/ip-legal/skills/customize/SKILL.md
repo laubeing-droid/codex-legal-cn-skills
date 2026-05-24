@@ -70,7 +70,7 @@ interview and without hand-editing YAML.
    - *Adding a new 商标权（《中华人民共和国商标法》） watch class:* "`/portfolio` will include class
      XX in watch reports and `/infringement-triage` will route class-XX
      findings accordingly."
-   - *Enforcement posture aggressive → middle:* "`/cease-desist` will offer
+   - *Enforcement posture aggressive → middle:* "`/律师函生成` will offer
      cure-letter drafts as a first option for ambiguous cases instead of
      going straight to C&D."
    - *New ship-blocker OSS license:* "`/oss-review` will fail reviews that

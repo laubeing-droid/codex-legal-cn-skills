@@ -78,7 +78,7 @@ Rules for every skill, command, and agent in this plugin:
 
 *被告视角：风险校准围绕败诉敞口、对外披露/准备金（仅企业法务）、和解权限、保险覆盖。律师函是接收和分流的。证据收集是防守性的。*
 
-*按角色分支的技能：`demand-draft`/`demand-received`、`subpoena-triage`（subpoena：中国对应法院传票/协助调查通知书）、`matter-intake`（逐案）、`chronology`（进攻性 vs. 防守性框架）、`claim-chart`（证明构成要件 vs. 否定构成要件）。*
+*按角色分支的技能：`demand-draft`/`demand-received`、`司法协查响应`（助调查通知书）、`matter-intake`（逐案）、`chronology`（进攻性 vs. 防守性框架）、`claim-chart`（证明构成要件 vs. 否定构成要件）。*
 
 ---
 

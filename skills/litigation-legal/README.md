@@ -44,7 +44,7 @@ Cold-start 访谈编写*事务所/法务部*级别的实践画像——跨所有
 | `/litigation-legal:demand-draft [slug]` | 基于收集信息起草律师函——经保密性审查，输出 `.docx`，附发送后核查清单 |
 | `/litigation-legal:demand-received [path]` | 收悉对方律师函——方案分析、案件组合交叉检索、转交至案件登记 |
 | `/litigation-legal:subpoena（中国：法院传票/协助调查通知书）-triage [path]` | 法院调查令/协查通知分类——范围/负担/保密性分析、异议框架、合规方案 |
-| `/litigation-legal:legal-hold [slug] [--issue/--refresh/--release/--status]` | 证据保全通知的签发、更新、解除或状态报告 |
+| `/litigation-legal:证据保全与留存 [slug] [--issue/--refresh/--release/--status]` | 证据保全通知的签发、更新、解除或状态报告 |
 | `/litigation-legal:chronology [slug]` | 从已声明文件来源+上传材料构建或更新大事记/时间线——按案件理论标注重要性 |
 | `/litigation-legal:oc-status` | 起草周期性的外部律师案件进度询问函 |
 | `/litigation-legal:claim-chart` | 构建或审查要件分析表——对任一请求权基础或抗辩事由进行构成要件逐项分析，附法条编号，检测证据缺口 |
@@ -64,7 +64,7 @@ Cold-start 访谈编写*事务所/法务部*级别的实践画像——跨所有
 | **demand-draft** | 保密性审查，起草 `.docx`，附 `[CITE:___]` 占位符；输出发送后核查清单；提供案件创建选项 |
 | **demand-received** | 收悉对方函件——实体审查、方案分析、案件组合交叉检索 |
 | **subpoena（中国：法院传票/协助调查通知书）-triage** | 法院调查令分类、分析范围/负担/保密性，输出异议框架+合规方案 |
-| **legal-hold** | 证据保全通知的签发/更新/解除/状态报告 |
+| **证据保全与留存** | 证据保全通知的签发/更新/解除/状态报告 |
 | **chronology** | 从已声明文件来源+上传材料提取日期事件；去重；按案件理论标注重要性 |
 | **oc-status** | 周期性的外部律师案件进度询问函起草 |
 | **claim-chart** | 要件分析表——对任一请求权基础或抗辩事由进行构成要件逐项分析、逐项引用法条编号、证据缺口检测 |
@@ -88,7 +88,7 @@ litigation-legal/
 │       ├── matter.md                  # 案件级别的登记+诉讼理论+态势
 │       ├── history.md                 # 仅追加的事件日志
 │       ├── chronology.md              # 面向诉讼的大事记/时间线（按需生成）
-│       └── legal-hold-v[N].docx       # 证据保全通知
+│       └── 证据保全与留存-v[N].docx       # 证据保全通知
 ├── demand-letters/                    # 发出律师函
 │   └── [slug]/
 │       ├── intake.md
