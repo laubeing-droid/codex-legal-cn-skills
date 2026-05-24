@@ -1,23 +1,13 @@
 ﻿# Claude for Legal CN to Codex
 
-> **这不是"中文翻译版"——这是中国法律 AI 的全功能整合系统。**
-
-中国法律 AI 的开源生态里，有翻译者、有汉化者、有包裹者。  
-**但只有这个仓库，把三路上游整合到一起，自己补了缺失的法律框架，还做了上游监控。**
-
----
-
 ## 🔴 只有这个仓库做了的事
 
 ### 1. PRC-US 法律语义对齐框架（自研）
 市面上所有版本（zhou210712、MAXXXXXLI、gjhcsjamin）都只是"把美国法改成中文名"。
-**这个仓库是唯一一个做了中美法律概念映射的**——12 个领域逐一对照，并配套 8 个阻断护栏，
-防止 AI 在回答中国法律问题时，偷偷输出美国法概念（discovery、deposition、privilege 等）。
+**PRC-US 法律语义对齐框架** — 12 个领域逐一进行中美法律概念映射，配套 8 个阻断护栏，防止 AI 输出美国法概念（如 discovery、deposition、privilege）。
 
 ### 2. 官方 PDF 全文入库（qulv）
-别人给的是摘要（美其名曰"核心条款"），**你给的是官方原文**。
-民法典 1062 条、公司法 248 条——逐条可查、可引用、可交叉检索。
-22 部法律全部来自官方 PDF，不是 AI 生成的摘要。
+**qulv 知识库包含 22 部中国法律官方 PDF 全文**（民法典 1062 条、公司法 248 条等），可逐条检索引用。
 
 ### 3. 三上游整合
 `zhou210712` 的法条 + `MAXXXXXLI` 的语境 + `saysoph` 的独立执业技能——  
@@ -26,7 +16,7 @@
 ### 4. 参考窗口架构（独创）
 上游更新了，**不会自动覆盖你的修改**。  
 4 路 diff-tool 各自跟踪一个上游，告诉你"他改了啥，你看要不要抄"。  
-你是唯一一个拥有这个设计的人。
+
 
 ### 5. 五个美国法子技能重写
 不是翻译，是**法律重写**：
@@ -63,10 +53,10 @@ cd Claude-for-Legal-CN-to-Codex
 | 子技能 | zhou210712: 精简 29%，加中文注释 | **5 个全量重写为中国版** |
 | 工作流 | zhou210712: UI 中文化 | **全中文 + 护栏注入** |
 | MCP 连接 | zhou210712: 替换为中国工具 | **独立 MCP Hub 仓库管理** |
-| 概念对齐 | 无人做过 | **12 领域 PRC-US 映射 + 8 护栏** |
+| 概念对齐 | 上游版本未覆盖 | **12 领域 PRC-US 映射 + 8 护栏** |
 | 语境 | MAXXXXXLI: 14 个语境文件 | **整合进 12 领域 + 自研补充** |
 | 独立执业 | saysoph: 26 个技能 | **补充庭审提纲等缺失环节** |
-| 上游监控 | 无人做过 | **4 路 diff-tool 参考窗口** |
+| 上游监控 | 上游版本未覆盖 | **4 路 diff-tool 参考窗口** |
 
 ---
 
@@ -108,3 +98,5 @@ cd Claude-for-Legal-CN-to-Codex
 | [zhou210712/claude-for-legal-ZH](https://github.com/zhou210712/claude-for-legal-ZH) | 中国汉化版主体内容 |
 | [MAXXXXXLI/workbuddy-cn-legal-skills](https://github.com/MAXXXXXLI/workbuddy-cn-legal-skills) | 中国法律语境文件 |
 | [saysoph/solo-law-firm-agents](https://github.com/saysoph/solo-law-firm-agents) | 独立执业技能（MIT） |
+
+
