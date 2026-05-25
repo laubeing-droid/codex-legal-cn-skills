@@ -101,5 +101,6 @@ MCP 连接器由独立仓库 [Codex-Claude-legal-cn-mcp-hub](https://github.com/
 
 | 仓库 | 用途 |
 |:-----|:-----|
+| [Codex-Legal-CN-Judgment-Predictor](https://github.com/laubeing-droid/Codex-Legal-CN-Judgment-Predictor) | AI 裁判预测框架 |
 | [PRC-US-Legal-Semantic-Alignment-Framework](https://github.com/laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework) | 自研中美概念对齐框架 |
 | [Codex-Claude-legal-cn-mcp-hub](https://github.com/laubeing-droid/Codex-Claude-legal-cn-mcp-hub) | MCP 连接器独立管理 |
