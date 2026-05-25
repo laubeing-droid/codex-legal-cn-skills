@@ -155,7 +155,7 @@ else {
     
     # ─── 5. 重新扫描 ───
     Write-Host "`n重新扫描，更新索引..." -ForegroundColor Cyan
-    & "$RepoRoot\patches\law-citation-scan.ps1" -RepoRoot $RepoRoot | Out-Null
+    & "(Join-Path $RepoRoot "patches/law-citation-scan.ps1")" -RepoRoot $RepoRoot | Out-Null
     Write-Host "索引已更新。" -ForegroundColor Green
 }
 

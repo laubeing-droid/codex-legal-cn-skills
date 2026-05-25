@@ -1,0 +1,187 @@
+﻿# ──────────────────────────────────────────────
+# 月度法条引用过期扫描 + 自动更新 CI
+# 触发：每月1日 08:00 UTC + 手动触发
+# 平台：ubuntu-latest (PowerShell Core)
+# ──────────────────────────────────────────────
+
+name: "月度法条过期扫描与自动更新"
+
+on:
+  schedule:
+    - cron: "0 8 1 * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "仅预览不更新"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  scan-and-update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Git
+        run: |
+          git config user.name "law-citation-bot[bot]"
+          git config user.email "law-citation-bot[bot]@users.noreply.github.com"
+
+      # ─── 1. 全量扫描 ───
+      - name: "1/5 全量扫描法条引用"
+        shell: pwsh
+        run: |
+          Write-Host "=== 月度法条过期扫描 ===" -ForegroundColor Cyan
+          Write-Host "日期: $(Get-Date -Format 'yyyy-MM-dd HH:mm UTC')"
+          & ./patches/law-citation-scan.ps1 -RepoRoot $PWD
+          if ($LASTEXITCODE -ne 0) { throw "扫描失败" }
+
+          $idx = Get-Content "skills/references/law-citation-index.json" -Raw | ConvertFrom-Json
+          Write-Host "索引: $($idx.total_citations) 引用 / $($idx.by_law.PSObject.Properties.Count) 部法律"
+
+          # 保存计数供后续步骤
+          "total_citations=$($idx.total_citations)" >> $env:GITHUB_OUTPUT
+          "total_laws=$($idx.by_law.PSObject.Properties.Count)" >> $env:GITHUB_OUTPUT
+        id: scan
+
+      # ─── 2. 过期检测 ───
+      - name: "2/5 过期引用检测"
+        id: detect
+        shell: pwsh
+        run: |
+          $today = Get-Date
+          $mapPath = "skills/references/law-version-map.json"
+          $hasExpired = $false
+          $expiredList = @()
+
+          if (Test-Path $mapPath) {
+            $map = Get-Content $mapPath -Raw | ConvertFrom-Json
+            $mappings = $map.mappings
+
+            foreach ($law in $mappings.PSObject.Properties) {
+              if ($law.Name.StartsWith('_')) { continue }
+              $lawData = $law.Value
+              $eff = $lawData.PSObject.Properties | Where-Object { $_.Name -eq '_effective' }
+              $app = $lawData.PSObject.Properties | Where-Object { $_.Name -eq '_applied' }
+
+              if ($eff) {
+                $effDate = [DateTime]::Parse($eff.Value)
+                $isApplied = $app -and $app.Value -is [string] -and $app.Value -match '^\d{4}-\d{2}-\d{2}$'
+
+                if ($effDate -le $today -and -not $isApplied) {
+                  Write-Host "  ⚠ 过期: $($law.Name) 生效 $($eff.Value) 未更新" -ForegroundColor Yellow
+                  $hasExpired = $true
+                  $mappingCount = ($lawData.PSObject.Properties | Where-Object { -not $_.Name.StartsWith('_') }).Count
+                  $expiredList += "$($law.Name) ($($eff.Value), $mappingCount 条映射)"
+                }
+              }
+            }
+          }
+
+          "has_expired=$($hasExpired ? 'true' : 'false')" >> $env:GITHUB_OUTPUT
+          if ($hasExpired) {
+            $summary = ($expiredList -join '; ')
+            "expired_summary=$summary" >> $env:GITHUB_OUTPUT
+            "expired_count=$($expiredList.Count)" >> $env:GITHUB_OUTPUT
+            Write-Host "`n共 $($expiredList.Count) 部法律过期待更新" -ForegroundColor Red
+          } else {
+            Write-Host "无过期法律。" -ForegroundColor Green
+          }
+
+      # ─── 3. 自动更新 ───
+      - name: "3/5 执行批量更新"
+        if: steps.detect.outputs.has_expired == 'true' && inputs.dry_run != 'true'
+        shell: pwsh
+        run: |
+          Write-Host "=== 执行自动更新 ===" -ForegroundColor Cyan
+          & (Join-Path $PWD "patches/law-citation-update.ps1") -RepoRoot $PWD
+          if ($LASTEXITCODE -ne 0) { throw "更新失败" }
+          Write-Host "更新完成。" -ForegroundColor Green
+
+      # ─── 4. 标注同步 ───
+      - name: "4/5 标注同步状态"
+        if: steps.detect.outputs.has_expired == 'true' && inputs.dry_run != 'true'
+        shell: pwsh
+        run: |
+          $mapPath = "skills/references/law-version-map.json"
+          $map = Get-Content $mapPath -Raw | ConvertFrom-Json
+          $mappings = $map.mappings
+          $todayStr = (Get-Date).ToString('yyyy-MM-dd')
+          $modified = $false
+          $applied = @()
+
+          foreach ($law in $mappings.PSObject.Properties) {
+            if ($law.Name.StartsWith('_')) { continue }
+            $lawData = $law.Value
+            $eff = $lawData.PSObject.Properties | Where-Object { $_.Name -eq '_effective' }
+            $app = $lawData.PSObject.Properties | Where-Object { $_.Name -eq '_applied' }
+
+            if ($eff -and [DateTime]::Parse($eff.Value) -le (Get-Date)) {
+              $isApplied = $app -and $app.Value -is [string] -and $app.Value -match '^\d{4}-\d{2}-\d{2}$'
+              if (-not $isApplied) {
+                # Remove old _applied if exists, add new
+                if ($app) { $lawData.PSObject.Properties.Remove('_applied') }
+                $lawData | Add-Member -NotePropertyName '_applied' -NotePropertyValue $todayStr -Force
+                $modified = $true
+                $applied += $law.Name
+                Write-Host "  ✓ $($law.Name) → _applied: $todayStr" -ForegroundColor Green
+              }
+            }
+          }
+
+          if ($modified) {
+            $map | ConvertTo-Json -Depth 5 | Set-Content $mapPath -Encoding UTF8
+            Write-Host "`n$($applied.Count) 部法律已标注同步。" -ForegroundColor Green
+            "applied_count=$($applied.Count)" >> $env:GITHUB_OUTPUT
+          }
+
+      # ─── 5. 提交并推送 ───
+      - name: "5/5 提交变更"
+        if: steps.detect.outputs.has_expired == 'true' && inputs.dry_run != 'true'
+        shell: pwsh
+        run: |
+          $changed = git diff --name-only
+          $untracked = git ls-files --others --exclude-standard
+
+          if (-not $changed -and -not $untracked) {
+            Write-Host "无变更，跳过提交。" -ForegroundColor Yellow
+            "has_changes=false" >> $env:GITHUB_OUTPUT
+            exit 0
+          }
+
+          Write-Host "变更文件:" -ForegroundColor Cyan
+          if ($changed) { Write-Host $changed }
+          if ($untracked) { Write-Host $untracked }
+
+          git add -A
+          $msg = "ci: 月度法条过期自动更新 — $(Get-Date -Format 'yyyy-MM-dd')"
+          git commit -m $msg
+          git push origin main
+          Write-Host "✓ 已提交并推送。" -ForegroundColor Green
+          "has_changes=true" >> $env:GITHUB_OUTPUT
+        id: commit
+
+      # ─── 6. 摘要 ───
+      - name: 输出摘要
+        if: always()
+        shell: pwsh
+        run: |
+          Write-Host "`n====== 月度扫描摘要 ======" -ForegroundColor Cyan
+          Write-Host "  扫描引用: ${{ steps.scan.outputs.total_citations }}"
+          Write-Host "  涉及法律: ${{ steps.scan.outputs.total_laws }}"
+          Write-Host "  过期检测: ${{ steps.detect.outputs.has_expired }}"
+          if ("${{ steps.detect.outputs.has_expired }}" -eq "true") {
+            Write-Host "  过期法律: ${{ steps.detect.outputs.expired_summary }}"
+          }
+          if ("${{ steps.commit.outputs.has_changes }}" -eq "true") {
+            Write-Host "  已提交: ✓"
+          }
