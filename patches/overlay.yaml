@@ -1,0 +1,88 @@
+# Claude-for-Legal-CN-to-Codex — 修改声明（Overlay）
+# 最后更新: 2026-05-25
+# 格式: +新增 ~修改 -删除
+
+meta:
+  name: Claude-for-Legal-CN-to-Codex
+  version: 2.8.0
+  repo: https://github.com/laubeing-droid/Claude-for-Legal-CN-to-Codex
+  primary_upstream: zhou210712/claude-for-legal-ZH
+  upstream_root: anthropics/claude-for-legal
+skills:
+  litigation-legal:
+    deposition-prep:
+      action: '~'
+      new_name: 调查取证准备
+      scope: 全量重写
+      reason: 中国无庭前宣誓证言制度
+    legal-hold:
+      action: '~'
+      new_name: 证据保全与留存
+      scope: 全量重写
+      reason: 中国无美国式诉讼证据留存义务
+    subpoena-triage:
+      action: '~'
+      new_name: 司法协查响应
+      scope: 全量重写
+      reason: 中国无 subpoena 制度
+    privilege-log-review:
+      action: '-'
+      reason: 中国无 attorney-client privilege 制度
+  ip-legal:
+    cease-desist:
+      action: '~'
+      new_name: 律师函生成
+      scope: 改名+同步引用
+      reason: 中国对应为律师函
+guards:
+  injected_files:
+  - blocking-list.md
+  - meta-rules.md
+  - workflows.md
+  - china-unique.md
+  - hk-bridge.md
+  - appendix.md
+  path: patches/guards/
+  blocked_concepts: 29
+  injected_into: 12 个领域的 CLAUDE.md（中国法适配护栏区块 — 概念阻断/法域隔离/阻断必替代/输出自检）
+alignment:
+  path: patches/references/alignment/
+  domains: 12
+  source: 自研 laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+references:
+  removed: zhou210712 的 9+ 个引用文件 → 替换为 qulv 24 个官方 PDF
+  qulv_source: Daknniel-0881/qulv-china-legal-counsel-skill
+  context_source: MAXXXXXLI/workbuddy-cn-legal-skills (14 个语境文件)
+connectors:
+  path: patches/connectors/ (12 文件)
+  managed_by: Codex-Claude-legal-cn-mcp-hub
+  replacements: Ironclad→e签宝, DocuSign→法大大, iManage→飞书, Westlaw→北大法宝
+deployment:
+  scripts:
+  - install.ps1
+  - update.ps1
+  - verify.ps1
+  - uninstall.ps1
+  key_changes:
+  - 断开 zhou210712 上游自动克隆
+  - 从本仓库 skills/ 直接部署
+  - solo-law-firm 独立处理
+  - MCP 通过独立 Hub 仓库安装
+monitoring:
+  mode: 参考窗口（不自动合并）
+  diff_tools:
+    diff-tool-zhou.ps1: zhou210712/claude-for-legal-ZH
+    diff-tool-max.ps1: MAXXXXXLI/workbuddy-cn-legal-skills
+    diff-tool-solo.ps1: saysoph/solo-law-firm-agents
+    diff-tool-align.ps1: 自研对齐框架
+self_developed:
+- PRC-US 法律语义对齐框架
+- 4 路 diff-tool 参考窗口
+- benchmark 对抗测试体系 (15 用例)
+- 庭审提纲生成器
+- MCP Hub 独立仓库
+reasoning_templates:
+  path: skills/*/references/reasoning-template-zh.md
+  domains: 12
+  description: 中国法推理模板库——替代美国法推理骨架（IRAC/adversarial/discovery/precedent），注入三段论/请求权基础分析法/行政行为合法性审查
+  injected_into: 12 个领域 CLAUDE.md（启动时加载推理链）

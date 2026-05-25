@@ -1,0 +1,185 @@
+name: US Legal Terminology Scan
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**/*.md'
+      - 'patches/workflows/**'
+  schedule:
+    - cron: '0 10 * * 2'   # 每周二 UTC 10:00
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  scan-us-terms:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan for US legal terms
+        id: scan
+        run: |
+          # 29 blocked US legal concepts from blocking-list.md
+          TERMS=(
+            # Contract
+            "consideration(?!.*blocked|.*阻断|.*清单)"      "consideration（对价）"
+            "promissory estoppel"                           "promissory estoppel"
+            "statute of frauds"                             "statute of frauds"
+            "parol evidence"                                "parol evidence rule"
+            # Property
+            "adverse possession"                            "adverse possession"
+            "fee simple absolute"                           "fee simple absolute"
+            "future interest"                              "future interest"
+            # Tort/privacy
+            "false light(?!.*替换|.*侵害)"                  "false light"
+            "right of publicity"                           "right of publicity"
+            # Criminal
+            "Miranda rights"                               "Miranda rights"
+            "hearsay rule"                                 "hearsay rule"
+            "jury trial(?!.*人民陪审员)"                    "jury trial"
+            "fruit of poisonous tree"                      "fruit of poisonous tree"
+            "habeas corpus"                                "habeas corpus"
+            "plea bargain(?!.*认罪认罚)"                    "plea bargaining"
+            # Admin/constitutional
+            "Chevron deference"                            "Chevron deference"
+            "sovereign immunity"                           "sovereign immunity"
+            "qualified immunity"                           "qualified immunity"
+            "summary judgment"                             "summary judgment"
+            "consent decree"                               "consent decree"
+            "collateral estoppel"                          "collateral estoppel"
+            # Employment
+            "at-will employ"                               "at-will employment"
+            "severance package"                            "severance package"
+            # Tax/estate
+            "estate tax"                                   "estate tax"
+            "gift tax"                                     "gift tax"
+            # Discovery/evidence
+            "deposition(?!.*阻塞|.*阻断|.*调查取证)"        "deposition"
+            "discovery(?!.*替换|.*阻断|.*证据交换|.*禁止)"   "discovery"
+            "privilege log"                                "privilege log"
+            "attorney.client privilege"                     "attorney-client privilege"
+            # Jurisdiction/misc
+            "Delaware (General )?Corporation"              "Delaware corporation law"
+            "cease and desist(?!.*律师函)"                  "cease and desist"
+            "precedent(?!.*中国不|.*成文法|.*仅)"           "precedent-based reasoning"
+          )
+
+          VIOLATIONS_FILE="/tmp/violations.txt"
+          echo "" > "$VIOLATIONS_FILE"
+
+          TOTAL_PATTERNS=${#TERMS[@]}
+          FOUND_PATTERNS=0
+
+          for ((i=0; i<$TOTAL_PATTERNS; i+=2)); do
+            PATTERN="${TERMS[$i]}"
+            LABEL="${TERMS[$i+1]}"
+            
+            # Scan all markdown files in skills/ and patches/workflows/
+            # Exclude files that intentionally list blocked terms
+            RESULTS=$(grep -rnP "$PATTERN" \
+              --include="*.md" \
+              --exclude="22-blocked-concepts.md" \
+              --exclude="blocking-list.md" \
+              --exclude="meta-rules.md" \
+              --exclude="china-adaptation-analysis.md" \
+              --exclude="skills-crosswalk.md" \
+              --exclude="project-analysis.md" \
+              --exclude="architecture.md" \
+              --exclude="*-alignment.md" \
+              --exclude="*-guard.md" \
+              --exclude="hk-bridge-terminology.md" \
+              --exclude="hk-bridge.md" \
+              --exclude="appendix.md" \
+              --exclude="workflows.md" \
+              --exclude="china-unique.md" \
+              --exclude="*.SKILL.md" \
+              --exclude="reasoning-template-zh.md" \
+              --exclude="core-principles-guard.md" \
+              --exclude="evaluation-report-merged.md" \
+              --exclude="overview.md" \
+              --exclude="troubleshooting.md" \
+              --exclude="how-to-fix.md" \
+              --exclude="adversarial-tests.md" \
+              --exclude="ai-reasoning-chain.md" \
+              --exclude="skill-domain-index.md" \
+              --exclude="freshness.md" \
+              --exclude="hk-mainland-term-mapping.md" \
+              --exclude="source-catalog.md" \
+              --exclude="*_README.md" \
+              --exclude="legal-clinic/*" \
+              skills/ patches/workflows/ 2>/dev/null || true)
+            
+            if [ -n "$RESULTS" ]; then
+              FOUND_PATTERNS=$((FOUND_PATTERNS+1))
+              echo "### $LABEL" >> "$VIOLATIONS_FILE"
+              echo "" >> "$VIOLATIONS_FILE"
+              echo "$RESULTS" | sed 's/^/- `/; s/: /` /' | head -20 >> "$VIOLATIONS_FILE"
+              echo "" >> "$VIOLATIONS_FILE"
+            fi
+          done
+
+          TOTAL=$(wc -l < "$VIOLATIONS_FILE")
+          echo "total_lines=$TOTAL" >> "$GITHUB_OUTPUT"
+          echo "found_patterns=$FOUND_PATTERNS" >> "$GITHUB_OUTPUT"
+
+          if [ $TOTAL -gt 0 ]; then
+            echo "## ?? 美国法术语残留扫描结果" >> "$GITHUB_STEP_SUMMARY"
+            cat "$VIOLATIONS_FILE" >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "以上词汇在中国法律体系中均无对应制度或已在本仓库中定义了中文替代。" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "## ? 美国法术语扫描通过" >> "$GITHUB_STEP_SUMMARY"
+            echo "未在任何技能文件和工作流中发现美国法残留术语。" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          cat "$VIOLATIONS_FILE"
+
+      - name: Create issue for violations
+        if: steps.scan.outputs.found_patterns != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const violations = fs.readFileSync('/tmp/violations.txt', 'utf8');
+            
+            if (!violations.trim()) return;
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: ['us-legal-term-scan']
+            });
+
+            const body = `## ?? 美国法术语残留扫描
+
+扫描时间: ${new Date().toISOString().slice(0, 19)}Z
+发现 ${process.env.FOUND_PATTERNS} 个美国法概念残留。
+
+${violations}
+
+> 这些词汇在中国法律体系中均无对应制度。请检查是否需要替换为中文等效表述或从内容中移除。
+`;
+
+            if (issues.length > 0) {
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issues[0].number,
+                body: body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: '美国法术语残留 - ' + new Date().toISOString().slice(0, 10),
+                body: body,
+                labels: ['us-legal-term-scan']
+              });
+            }
+        env:
+          FOUND_PATTERNS: ${{ steps.scan.outputs.found_patterns }}

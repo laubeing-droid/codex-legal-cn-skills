@@ -1,47 +1,92 @@
-﻿> 来源: Daknniel-0881/qulv-china-legal-counsel-skill
-> 此文件为格式化转换，内容未做实质性修改
+# 中国法合规审查手册
 
-# Compliance Check Playbook
+> 按中国行政监管体系进行合规审查。采用"业务流映射→法规定位→合规差距→整改方案"四步法。
+> 来源标注：`[法规名称]` | `[监管机关]`
 
-Use this playbook for reviewing business flows, ads, content, AI services, data processing, privacy documents, labor processes, and regulatory workflows.
+## 禁用模式
 
-## Flow-Based Review
+- ❌ Reasonable person standard — 美国侵权法合理人标准
+- ❌ Safe harbor provisions — 美国法安全港规则（中国无对应）
+- ❌ Federal preemption analysis — 美国联邦优先分析
+- ❌ Chevron deference — 行政解释优先（中国法院独立审查行政行为）
 
-Map the business into:
+## 中国合规审查四步法
 
-- user/customer touchpoints;
-- data flow;
-- money flow;
-- content flow;
-- approval flow;
-- evidence and logging;
-- third-party processors or platforms.
+### Step 1 — 业务流映射
+将业务流程拆解为可合规审查的节点：
+→ **用户/客户触点**：注册/登录/浏览/下单/支付/评价/投诉/注销
+→ **数据流**：收集→存储→使用→加工→传输→提供→公开→删除
+→ **资金流**：收款→结算→分账→退款→对账
+→ **内容流**：发布→审核→分发→举报→下架→存档
+→ **审批流**：内部审批层级/外部监管审批节点
 
-Then match each node to external rules and internal policies.
+### Step 2 — 法规定位
+对每个节点匹配适用法规：
+→ 数据节点 → 个保法/数安法/网安法/网络数据安全管理条例
+→ 内容节点 → 广告法/生成式AI办法/深度合成规定/算法推荐规定
+→ 消费者节点 → 消费者权益保护法+实施条例/电子商务法
+→ 劳动节点 → 劳动合同法/社会保险法
+→ 行业节点 → 金融/医疗/教育/交通等专项规定
 
-## High-Value Domains
+### Step 3 — 合规差距分析
+对每个节点判断：
+→ 是否有适用法规？→ 未识别的法规盲区
+→ 是否满足合规义务？→ 未满足的具体差距
+→ 是否有风险敞口？→ 量化为 🔴🟡🟢
 
-### AI And Generated Content
+### Step 4 — 整改方案
+→ 差距描述 + 法规依据 + 整改措施 + 责任人 + 完成时限 + 是否需监管报备
 
-Check generated content labels, user agreement disclosures, deep synthesis rules, algorithm/generative AI rules, content safety, IP ownership, third-party rights, and training/RAG data provenance.
+## 重点领域合规清单
 
-### Data And Privacy
+### AI与生成内容
+- [ ] 安全评估是否完成？（具有舆论属性或社会动员能力的互联网信息服务安全评估规定）
+- [ ] 算法备案是否完成？（算法推荐管理规定 → 上线后10工作日内）
+- [ ] AI生成内容是否有显著标识？（深度合成管理规定第17条）
+- [ ] 训练数据来源是否合法？
+- [ ] 用户协议是否明确禁止生成违法内容？
+- [ ] 是否设置投诉举报入口？
 
-Check lawful basis, minimum necessity, separate consent for sensitive personal information, entrusted processing, joint processing, third-party sharing, data export, retention, deletion, breach notice, and impact assessments.
+### 数据与个人信息
+- [ ] 是否有合法性基础？（个保法第13条）
+- [ ] 敏感个人信息的单独同意是否取得？（个保法第29条）
+- [ ] 是否有个人信息保护影响评估(PIPIA)？（个保法第55条）
+- [ ] 受托处理是否有合同约束？（个保法第21条）
+- [ ] 数据出境是否满足条件？（安全评估/标准合同/认证 — 个保法第38条）
+- [ ] 是否建立了数据分类分级制度？（数安法第21条）
+- [ ] 是否有数据安全事件应急预案？（网络数据安全管理条例）
+- [ ] APP是否对照39类必要信息清单？隐私政策是否独立成文？
 
-### Advertising And Content
+### 广告与内容
+- [ ] 是否含有"国家级""最高级""最佳"等绝对化用语？（广告法第9条 → 罚款20万-100万）
+- [ ] 是否涉及医疗/金融/教育等特殊行业的广告审查？
+- [ ] 直播带货是否显著标明真实名称？（消保条例第14条）
+- [ ] 是否有"刷单""隐匿评价"行为？（消保条例第9条）
 
-Check absolute claims, medical/financial/education sensitive claims, endorsement, advertorial/native ads, platform rules, evidence for efficacy claims, and "experience sharing + purchase link" ad identification risk.
+### 劳动用工
+- [ ] 是否签订书面劳动合同？（1个月内，超期双倍工资 — 劳动合同法第10条）
+- [ ] 社保是否按时足额缴纳？
+- [ ] 解除程序是否合法？是否支付经济补偿/赔偿？
+- [ ] 竞业限制范围是否合理（人员/范围/期限/补偿金）？
 
-### Medical Beauty
+## 输出格式
 
-Check institution/practitioner/product qualification, medical advertising review, prohibition on creating appearance anxiety, treatment effect claims, before/after comparisons, and influencer endorsement.
+```
+合规审查报告
+审查对象：[产品/流程/APP/合同]
+审查日期：[]
 
-### Labor
+一、高风险项（需立即整改）
+| # | 差距 | 法规 | 风险 | 整改 | 时限 |
+|---|------|------|------|------|------|
 
-Check employment vs service relationship, working hours, remuneration, social insurance, termination basis, evidence, non-compete, confidentiality, IP/works, and arbitration（中国对应：仲裁，《仲裁法》） risk.
+二、中风险项（近期整改）
+三、低风险项（持续改进）
+四、监管报备要求
+```
 
-## Output
-
-List each compliance gap with rule, risk,整改 action, owner, deadline, and escalation flag.
-
+## 来源标签
+- `[个保法第X条]` / `[数安法第X条]` / `[网安法第X条]`
+- `[广告法第X条]` / `[消保条例第X条]`
+- `[生成式AI办法第X条]` / `[算法推荐规定第X条]`
+- `[劳动合同法第X条]`

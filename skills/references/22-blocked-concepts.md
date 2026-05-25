@@ -29,4 +29,13 @@
 | 20 | estate tax / gift tax | 继承/税法 | ❌ 整行删除 |
 | 21 | plea bargaining | 刑诉 | 替换为"认罪认罚从宽" |
 | 22 | discovery | 民诉 | 替换为"证据交换" |
-
+| 23 | deposition（庭前宣誓证言） | 民诉 | 阻断 + 替换为调查取证准备（调查令/证据保全/质证） |
+| 24 | privilege log / attorney-client privilege | 民诉 | 阻断，提示中国无此制度 |
+| 25 | cease and desist（停止侵权函） | 知识产权 | 替换为律师函 |
+| 26 | severance package（离职补偿方案） | 劳动法 | 替换为经济补偿金/离职补偿（劳动合同法第47条/第87条） |
+| 27 | precedent-based reasoning（判例推理） | 通用 | 阻断，提示中国为成文法国家，判例仅具参考价值 |
+| 28 | Delaware 公司法 / 美国州法引用 | 通用 | 阻断跨境法域引用，提示适用中国公司法 |
+| 29 | layoff / RIF（裁员） | 劳动法 | 替换为中国经济性裁员程序（劳动合同法第41条） |
+
+
+

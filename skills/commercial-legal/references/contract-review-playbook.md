@@ -1,50 +1,89 @@
-﻿> 来源: Daknniel-0881/qulv-china-legal-counsel-skill
-> 此文件为格式化转换，内容未做实质性修改
+# 中国法合同审查手册
 
-# Contract Review Playbook
+> 按中国民法典合同编体系进行合同审查。不采用美国对抗制立场博弈，而是以法定合规+风险分级+利益平衡为框架。
+> 来源标注：`[民法典第X条]` | `[司法解释X号]` | `[合同监管办法第X条]`
 
-Use this playbook for reviewing contracts, agreements, terms, orders, statements of work, NDAs, labor/service agreements, authorization documents, and settlement（中国对应：和解/调解协议） documents.
+## 禁用模式
 
-## Review Steps
+- ❌ Adversarial position-taking — 对抗制立场博弈（美国律师思维）
+- ❌ Consideration analysis — 对价分析（中国合同不以此成立）
+- ❌ Indemnity-centric negotiation — 以赔偿条款为核心谈判（中国法重违约责任法定化）
+- ❌ Parol evidence rule — 口头证据规则（中国法不适用）
+- ❌ Statute of frauds check — 反欺诈法审查（中国法无对应制度）
 
-1. Identify contract type and protection position: buyer/seller, service provider/customer, employer/worker, licensor/licensee.
-2. Extract core facts: parties, amount, term, deliverables, payment, acceptance, IP, data, confidentiality, liability, termination, dispute resolution.
-3. Check authority: legal names, unified social credit code, signing authority, licenses, branch/project department authority.
-4. Scan core risk clauses:
-   - payment and invoicing;
-   - delivery and acceptance;
-   - breach and liquidated damages;
-   - termination;
-   - IP ownership and license;
-   - confidentiality;
-   - data processing and privacy;
-   - liability cap/indemnity;
-   - force majeure/change;
-   - notice and evidence;
-   - dispute resolution.
-5. Compare with internal templates and official/model templates when available.
-6. Produce clause-level review with risk grade, legal basis, suggested redline, and negotiation fallback.
-7. Escalate high-risk matters.
+## 中国合同审查五步法
 
-## Red Flags
+### Step 1 — 合同性质与类型认定
+→ 有名合同还是无名合同？（民法典合同编第二分编典型合同）
+→ 双务/单务？有偿/无偿？诺成/实践？
+→ 是否有混合合同/联立合同？（适用民法典第467条）
 
-- No clear acceptance standard, but payment depends on acceptance.
-- Unlimited liability for one side without reciprocal control.
-- IP assignment broader than business need.
-- Confidentiality term is indefinite without trade-secret distinction.
-- Data processing, sensitive personal information, or data export is omitted.
-- One-sided termination right or refund obligation.
-- Penalty/liquidated damages grossly disproportionate.
-- Dispute forum is remote, ambiguous, or conflicts with transaction needs.
-- Oral change allowed without written confirmation.
-- Missing evidence clauses: contacts, notices, delivery records, acceptance forms.
+### Step 2 — 效力审查
+→ **成立要件**：要约+承诺完成？（民法典第472-477条）；合同形式是否满足法定要求？
+→ **效力状态**：
+  - 有效：民法典第143条（行为能力+真实意思+不违法+不违公序良俗）
+  - 无效：第153条（违反强制性规定/违背公序良俗）、第154条（恶意串通）
+  - 可撤销：重大误解(147条)/欺诈(148条)/胁迫(150条)/显失公平(151条)
+  - 效力待定：无权代理(171条)/无权处分(597条)
+→ **格式条款**：是否有第496-498条的提示说明义务/无效条款/"霸王条款"（合同行政监督管理办法第7-8条）
 
-## Contract Review Tone
+### Step 3 — 核心条款实质审查
+→ 标的/数量/质量/价款/履行期限和方式/违约责任/争议解决（民法典第470条）
+→ 违约金是否过高？（民法典第585条 → 超损失30%可减少）
+→ 免责条款效力？（民法典第506条 → 人身伤害免责/重大过失免责无效）
+→ 是否有"最终解释权"条款？（合同行政监督管理办法第8条 → 无效）
 
-Give business-usable advice. Do not only say "delete this"; offer:
+### Step 4 — 风险分级标识
+→ 🔴 **高风险**：违反强制性规定/格式条款无效/违约金畸高/管辖权不当
+→ 🟡 **中风险**：约定不明/单方权利过大/缺少必要条款
+→ 🟢 **低风险**：措辞优化/格式完善/行业惯例偏差
 
-- strong version;
-- balanced version;
-- minimum acceptable fallback;
-- what to ask the counterparty.
+### Step 5 — 修改建议输出
+→ 对每条风险条款输出：
+  - 风险描述 + 法条依据
+  - 修改建议（推荐方案 + 最低可接受方案）
+  - 谈判要点（对方可能不接受时的应对策略）
 
+## 专项审查清单
+
+### 格式条款专项（合同行政监督管理办法第6-9条）
+- [ ] 是否以显著方式（单独告知/字体加粗/弹窗）提请注意重大利害关系内容？
+- [ ] 是否含有免除经营者人身伤害责任条款？（无效）
+- [ ] 是否含有免除经营者故意或重大过失责任条款？（无效）
+- [ ] 是否有"最终解释权"条款？（无效）
+- [ ] 是否借助技术手段强制交易？（违法）
+
+### 消费者合同专项（消费者权益保护法实施条例2024）
+- [ ] 是否含有"自动续费"条款？是否显著提示？（第10条）
+- [ ] 是否有"大数据杀熟"嫌疑？（第9条）
+- [ ] 搭售/组合销售是否显著提示？（第11条）
+- [ ] 涉及预售/预付式消费是否约定退款机制？（第19条）
+
+### 数据条款专项
+- [ ] 是否涉及个人信息处理？（需独立授权+隐私政策）
+- [ ] 是否涉及数据出境？（需安全评估/SCC/认证）
+- [ ] 是否涉及重要数据？（需分类分级+风险评估）
+
+### 劳动条款专项（劳动合同法第39-42条）
+- [ ] 解除条件是否合法？（禁止"末位淘汰"——指导案例18号）
+- [ ] 经济补偿/赔偿金约定是否低于法定标准？
+- [ ] 竞业限制范围是否过宽？
+
+## 输出格式
+
+```
+合同名称：[]
+审查日期：[]
+审查立场：[甲方/乙方/中性审查]
+
+一、总体风险评级：🔴/🟡/🟢
+
+二、条款逐项分析
+| 条款 | 风险 | 法律依据 | 修改建议 | 谈判要点 |
+|------|------|----------|----------|----------|
+```
+
+## 来源标签
+- `[民法典第X条]` — 民法典原文
+- `[合同监管办法第X条]` — 合同行政监督管理办法
+- `[消保条例第X条]` — 消费者权益保护法实施条例

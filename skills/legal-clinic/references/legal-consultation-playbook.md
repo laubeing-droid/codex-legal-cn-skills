@@ -1,44 +1,74 @@
-> 来源: Daknniel-0881/qulv-china-legal-counsel-skill
-> 此文件为格式化转换，内容未做实质性修改
+# 中国法律咨询推理手册
 
-# Legal Consultation Playbook
+> 替换原 IRAC (Issue-Rule-Application-Conclusion) 判例法推理骨架，按中国成文法请求权基础分析法组织。
+> 来源标注：`[民法典第X条]` — 法条原文 | `[司法解释X号]` — 最高法司法解释 | `[指导案例X号]` — 最高法指导性案例
 
-Use this playbook when answering legal questions, preparing legal-risk memos, or helping the user decide a next step.
+## 禁用模式
 
-## Method
+- ❌ IRAC — 美式判例法推理结构
+- ❌ Issue spotting — 判例法争点识别
+- ❌ Precedent weighting — 判例权衡
+- ❌ Reasonable person / reasonable doubt — 美国法特有标准
+- ❌ Restatement / UCC / Model Rules 引用 — 禁止引用美国法渊源
 
-Use IRAC, but keep the output business-readable:
+## 中国法推理链：请求权基础分析法
 
-1. Issue: identify legal questions and separate them from business questions.
-2. Rule: retrieve current applicable law, regulation, judicial interpretation, regulator rule, or case.
-3. Application: apply rules to the facts and assumptions.
-4. Conclusion: give risk grade and action list.
+### Step 1 — 确定请求权目标
+→ 当事人想要什么？（赔偿/履行/撤销/解除/确认权利/停止侵害/排除妨碍）
+→ 是否有多个请求权竞合？（违约 vs 侵权 vs 不当得利 vs 无因管理）
 
-## Minimum Output
+### Step 2 — 寻找法条据点
+→ 该请求权的法律依据是什么？
+→ 检索顺序：
+  (1) 民法典合同编/侵权编/物权编/人格权编对应章节
+  (2) 特别法（公司法/劳动合同法/消费者权益保护法/个保法等）
+  (3) 最高人民法院相关司法解释
+  (4) 指导性案例中的裁判规则（仅参考，非裁判依据）
 
-- conclusion first;
-- facts assumed;
-- missing facts;
-- legal basis with citations;
-- risk level;
-- safe action list;
-- evidence to preserve;
-- whether human review is required.
+### Step 3 — 构成要件检视
+→ 逐项审查该法条的构成要件是否满足：
+  - 主体要件：当事人是否适格？
+  - 行为要件：是否实施了法律规定的行为/事实？
+  - 因果关系：行为与损害之间是否有因果关系？
+  - 主观要件：是否需要过错？（过错责任/无过错责任/推定过错）
+  - 无免责事由：不可抗力/正当防卫/紧急避险/自助行为/与有过失？
 
-## Evidence Lens
+### Step 4 — 法律效果确定
+→ 构成要件全部满足 → 法律效果如何？
+  - 赔偿范围：实际损失 + 可得利益（民法典第584条）
+  - 违约金调整：约定违约金 > 损失30% 可请求减少（民法典第585条）
+  - 是否有减损义务？（民法典第591条）
+  - 是否有时效问题？（一般3年/特殊情形 — 民法典第188条）
 
-For disputes or possible disputes, ask for:
+## 最低输出要求
 
-- signed contract/orders/SOW;
-- payment and invoice records;
-- delivery/acceptance evidence;
-- email/chat logs;
-- notices and meeting minutes;
-- screenshots with preservation;
-- identity/authorization documents;
-- loss calculation.
+- **结论先行**：一句话告知法律判断结果
+- **事实假设**：明确列出分析所依据的事实前提
+- **缺失信息**：告知还需要补充哪些事实/证据
+- **法律依据**：逐条引用法条编号和内容（民法典第X条/司法解释X号）
+- **风险等级**：🔴高 / 🟡中 / 🟢低
+- **行动建议**：具体可执行的下一步
+- **证据提示**：需要收集/保全什么证据
+- **是否需人工审查**：明确标注 AI 输出不可替代执业律师判断
 
-## Uncertainty Handling
+## 证据提示清单
 
-If law and practice diverge, say so. If no official source is found, label the answer as preliminary and propose source collection.
+- 书面合同/订单/工作说明书（原件或公证复印件）
+- 付款凭证、发票、对账单
+- 交付/验收记录
+- 微信/钉钉/邮件沟通记录（含原始载体或公证）
+- 通知函、催告函、律师函及送达凭证
+- 身份证明/授权委托书
+- 损失计算明细及支撑材料
 
+## 不确定性处理
+
+- 如现行法律与实践存在差异，明确指出并作相应风险提示
+- 如无法获取法条原文或权威司法观点，标注"初步分析，建议核实"
+- 涉及地方司法口径差异的（如北上广深劳动争议裁判尺度不同），提示地方实践差异
+
+## 来源标签
+- `[民法典第X条]` — 民法典原文引用
+- `[司法解释X号]` — 最高法司法解释
+- `[指导案例X号]` — 最高法指导性案例裁判要点
+- `[地方口径]` — 标注地方司法实践差异
