@@ -33,6 +33,26 @@
 ## [1.4.0-1.0.0] - 2026-05-23
 - MCP 闆嗘垚銆佹灦鏋勬暣鏀广€佹枃妗ｄ綋绯绘惌寤恒€佸垵濮嬪彂甯?
 
+## [2.9.0] - 2026-05-25
+### Rule Runtime
+- claude-legal-cn/SKILL.md: Rule Runtime mandatory enforcement (reasoning lock + blocking filter + output self-check)
+
+### Non-litigation Automation
+- contract-review-checklist.md: 51-item checklist (commercial-legal)
+- labor-compliance-sop.md: 46-item SOP (employment-legal)
+- data-compliance-sop.md: 55-item SOP (privacy-legal)
+
+### Tools
+- gen-knowledge-index.ps1: auto-scan and regenerate MAPPING.md (22 laws)
+- diff-tool-all.ps1: unified upstream check
+
+### CI
+- sync-aln-framework.yml: auto-sync from ALN Framework via repository_dispatch
+
+### Docs
+- README: add JDP to companion projects
+- Fix UPSTREAM_DIFF_POLICY.md upstream list
+
 ## [2.8.1] - 2026-05-25
 ### Rule Runtime
 - claude-legal-cn/SKILL.md new section: Rule Runtime (mandatory enforcement)
