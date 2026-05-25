@@ -23,9 +23,9 @@ status: active
 
 ## Output header
 
-Prepend the WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`). Every file, log, memo, and summary produced by this skill opens with that header.
+Prepend the WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`). Every file, log, memo, and summary produced by this skill opens with that header.
 
-> **Distribution discipline.** Every file this skill creates — log entries, memo drafts, audience summaries, document notes — inherits the privilege and confidentiality status of the underlying investigation. Distribution beyond the privilege circle (forwarding to non-attorneys outside the investigation team, cc'ing HR without scoping, handing to the business side) can waive privilege over the entire investigation. Store these files where privileged materials live, label per the WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER, and make every distribution decision deliberately.
+> **Distribution discipline.** Every file this skill creates — log entries, memo drafts, audience summaries, document notes — inherits the privilege and confidentiality status of the underlying investigation. Distribution beyond the privilege circle (forwarding to non-attorneys outside the investigation team, cc'ing HR without scoping, handing to the business side) can waive privilege over the entire investigation. Store these files where privileged materials live, label per the WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER, and make every distribution decision deliberately.
 
 ## ⚠️ Privilege notice — read before proceeding
 
@@ -85,7 +85,7 @@ Ask the following in a single block:
 >   manager observation)?
 > - Who is the respondent or subject?
 > - What is the approximate timeframe the alleged conduct occurred?
-> - Is this attorney-directed? (If yes: 律师工作成果（注意：中国无完整work product doctrine，仅律师法第38条保密义务） protection applies.
+> - Is this attorney-directed? (If yes: 律师工作成果（注意：中国无完整work product doctrine，仅中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法第38条保密义务） protection applies.
 >   If no: flag privilege risk before proceeding.)
 >
 > **Investigation type** (helps me suggest the right sources checklist)
@@ -120,7 +120,7 @@ Create the following files:
 `~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[matter-slug]/log.yaml`:
 
 ```yaml
-# [WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
+# [WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
 matter: "[matter name]"
 matter_slug: "[slug]"
 opened: "[ISO date]"
@@ -149,7 +149,7 @@ Generated from the investigation type. See sources checklist templates below.
 `~/.claude/plugins/config/claude-for-legal/employment-legal/investigation-[matter-slug]/documents-reviewed.yaml`:
 
 ```yaml
-# [WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
+# [WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
 matter: "[matter name]"
 total_reviewed: 0
 total_surfaced: 0
@@ -457,7 +457,7 @@ For each surfaced item, append to `log.yaml`:
   corroborates_entry: [entry_id or null]
   credibility_note: ""
   pull_criterion: "[which criterion triggered — for documents]"
-  privilege: attorney-律师工作成果（注意：中国无完整work product doctrine，仅律师法第38条保密义务）
+  privilege: attorney-律师工作成果（注意：中国无完整work product doctrine，仅中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法第38条保密义务）
 ```
 
 For evidentiary gaps:
@@ -533,7 +533,7 @@ Draft the memo in the following structure, following standard internal
 investigation memorandum practice:
 
 ```markdown
-[WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
+[WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
 
 ---
 
@@ -719,14 +719,14 @@ support?
 - Key findings
 - Business impact / exposure (high level — no specific legal analysis)
 - What the company is doing about it
-- Header: "[WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]"
+- Header: "[WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]"
 
 **Outside counsel briefing** (handing off for litigation or deeper review):
 - Full context including legal exposure analysis
 - Open evidentiary threads
 - Credibility issues that remain contested
 - Documents that would be most significant in litigation
-- Header: "[WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]"
+- Header: "[WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务，无完整work product doctrine） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]"
 
 ---
 

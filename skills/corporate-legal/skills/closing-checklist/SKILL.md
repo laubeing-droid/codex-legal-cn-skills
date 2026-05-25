@@ -116,7 +116,7 @@ handoff:
   # 公司行动字段
   approval_body: "[股东会 | 董事会 | 专门委员会 | 监管机构]"
   approval_threshold: "[例如：需经出席会议的股东所持表决权的三分之二以上通过]"
-  statutory_or_charter_source: "[例如：《公司法》第120条；公司章程第IV条第2节]"
+  statutory_or_charter_source: "[例如：《中华人民共和国公司法》第120条；公司章程第IV条第2节]"
 
   # 时间
   estimated_time_to_complete: "[例如：30天]"

@@ -19,7 +19,7 @@ Check with `python3 -c "import openpyxl"`. If not installed, offer to install (`
 ## Workbook structure
 
 **Sheet 1: `Review`** (the main grid)
-- Row 1: WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） header (merged cell, the header from plugin config `## Outputs`)
+- Row 1: WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国律师法》第38条保密义务） header (merged cell, the header from plugin config `## Outputs`)
 - Row 2: Column labels
 - Row 3+: One row per document
 - Column A: Document name / path

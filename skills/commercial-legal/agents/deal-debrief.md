@@ -100,7 +100,7 @@ What was the basis behind this deviation?
 [ ] Counterparty leverage (significant, well-known, or anchor client)
 [ ] Commercial priority (deal value or strategic importance justified the risk)
 [ ] Timeline pressure (needed to close by a specific date)
-[ ] Strategic relationship (long-term relationship consideration（中国合同成立不以对价为要件，《民法典》第471条）)
+[ ] Strategic relationship (long-term relationship consideration（中国合同成立不以对价为要件，《中华人民共和国民法典》第471条）)
 [ ] Negotiation stalemate (couldn't move them further on this point)
 [ ] Legal judgment (deviation is acceptable in this specific context)
 [ ] Other

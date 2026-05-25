@@ -248,7 +248,7 @@ status: active
 
 ### 管辖法律
 
-按 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 的管辖法律和管辖地。中国法下，《民法典》第467条规定当事人可以协议选择适用法律 `[法条原文]`，但涉及中国强制性规定或公共利益的合同应适用中国法。
+按 `~/.claude/plugins/config/claude-for-legal/commercial-legal/CLAUDE.md` 的管辖法律和管辖地。中国法下，《中华人民共和国民法典》第467条规定当事人可以协议选择适用法律 `[法条原文]`，但涉及中国强制性规定或公共利益的合同应适用中国法。
 
 ## 对方当事人背景
 

@@ -93,7 +93,7 @@ what the author did. The bumped date is a claim the user relies on.
 ## When to set `freshness_category: stable`
 
 Rarely. A skill that bundles the text of a doctrine (e.g., the elements of
-promissory estoppel（中国：缔约过失责任，《民法典》第500条）) or the structure of a framework (e.g., the FRCP（中国：《民事诉讼法》） discovery（中国：证据交换）
+promissory estoppel（中国：缔约过失责任，《中华人民共和国民法典》第500条）) or the structure of a framework (e.g., the FRCP（中国：《民事诉讼法》） discovery（中国：证据交换）
 timeline shape) is stable. A skill that bundles specific rule text, specific
 thresholds, specific forms, or specific procedural deadlines is NOT stable
 even if the underlying doctrine is — the bundled artifact is the thing that

@@ -56,7 +56,7 @@ Match the case's ID used elsewhere (intake record, `deadlines.yaml` `case_id`). 
 - Drafts of documents (those are in separate case folders)
 - Privileged attorney-only notes (those stay in whatever the clinic uses for internal case notes)
 
-The comms log is factual record of contact, not legal 律师工作成果（中国：仅《律师法》第38条保密义务）. Keep substance in the log; keep strategy and analysis elsewhere.
+The comms log is factual record of contact, not legal 律师工作成果（中国：仅《中华人民共和国律师法》第38条保密义务）. Keep substance in the log; keep strategy and analysis elsewhere.
 
 ## Retention
 

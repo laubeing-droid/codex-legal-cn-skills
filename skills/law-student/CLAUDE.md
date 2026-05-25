@@ -33,7 +33,7 @@ status: active
 
 ## Outputs
 
-This plugin produces study material, not legal WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务）. A privilege
+This plugin produces study material, not legal WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务）. A privilege
 header would misstate the nature of the output, so every study output —
 outlines, flashcards, IRAC practice, exam forecasts, writing feedback — is
 labeled with the same study-notes header regardless of Role:
@@ -42,7 +42,7 @@ labeled with the same study-notes header regardless of Role:
 
 请勿在未先查阅你所在学校的学术诚信规范和授课教师的 AI 政策的情况下将这些产出重新用于计分作业。法律诊所实践用户：不要在此处粘贴真实客户事实 — 请使用 `legal-clinic` 插件的受指导工作流程。
 
-**为什么不用"工作成果"头。**部分法律插件在其输出前置 `PRIVILEGED & CONFIDENTIAL — ATTORNEY WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） — PREPARED AT THE DIRECTION OF COUNSEL`（保密特免 — 律师工作成果 — 依律师指示编制）。本插件不这样做，理由有二：（1）学生学习材料并非律师指导下的法律工作，错误标记会造成虚假的保护预期；（2）即使属于，美国法下的"attorney WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务）"原则（FRCP（中国对应：《中华人民共和国民事诉讼法》及最高院司法解释；中国无FRCP体系） 26(b)(3)）在大多数其他法律体系中不存在 — 中国法律体系对律师工作成果的保护机制与美国不同，主要通过《律师法》规定的保密义务和律师-委托人特权（attorney-client privilege）框架来保护，而非美国式的工作成果保护原则（WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） doctrine）。为中国法考或中国法学院学习做准备的学生，不应将美国式工作成果头应用于其笔记并认为其具有任何法律意义。`STUDY NOTES — NOT LEGAL ADVICE` 是不论法域都诚实的标签。
+**为什么不用"工作成果"头。**部分法律插件在其输出前置 `PRIVILEGED & CONFIDENTIAL — ATTORNEY WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务） — PREPARED AT THE DIRECTION OF COUNSEL`（保密特免 — 律师工作成果 — 依律师指示编制）。本插件不这样做，理由有二：（1）学生学习材料并非律师指导下的法律工作，错误标记会造成虚假的保护预期；（2）即使属于，美国法下的"attorney WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务）"原则（FRCP（中国对应：《中华人民共和国民事诉讼法》及最高院司法解释；中国无FRCP体系） 26(b)(3)）在大多数其他法律体系中不存在 — 中国法律体系对律师工作成果的保护机制与美国不同，主要通过《中华人民共和国中华人民共和国中华人民共和国律师法》规定的保密义务和律师-委托人特权（attorney-client privilege）框架来保护，而非美国式的工作成果保护原则（WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务） doctrine）。为中国法考或中国法学院学习做准备的学生，不应将美国式工作成果头应用于其笔记并认为其具有任何法律意义。`STUDY NOTES — NOT LEGAL ADVICE` 是不论法域都诚实的标签。
 
 ---
 

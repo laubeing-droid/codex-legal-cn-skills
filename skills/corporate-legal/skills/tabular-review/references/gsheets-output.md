@@ -23,7 +23,7 @@ Do not assume write access you haven't verified. Check first; fall back graceful
 Mirror the Excel spec exactly — same sheets, same semantics, Sheets-native mechanics:
 
 **Sheet: `Review`** (the main grid)
-- Row 1: WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） header (merged cell)
+- Row 1: WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国律师法》第38条保密义务） header (merged cell)
 - Row 2: Column labels
 - Row 3+: One row per document
 - Column A: Document name / link (if source docs are in Drive, hyperlink to the file — this is a Sheets advantage over Excel)
@@ -52,7 +52,7 @@ Mirror the Excel spec exactly — same sheets, same semantics, Sheets-native mec
 
 - **Notes are per-cell and invisible in print.** If the output will be printed or PDFed for a partner meeting, also write the quotes into the `Flags` sheet so they survive.
 - **Sheets has a 10 million cell limit.** You won't hit it in a legal review, but if someone tries to grid 50,000 documents with 30 columns plus source columns, warn them.
-- **Sharing defaults.** Per the plugin practice profile, this is attorney WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务）. Create the spreadsheet with restricted sharing (owner only), and tell the user to share it deliberately. Do not default to "anyone with the link."
+- **Sharing defaults.** Per the plugin practice profile, this is attorney WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国律师法》第38条保密义务）. Create the spreadsheet with restricted sharing (owner only), and tell the user to share it deliberately. Do not default to "anyone with the link."
 - **Formula escaping.** If a verbatim quote begins with `=`, `+`, `-`, or `@`, prefix it with a single quote (`'`) so Sheets doesn't try to parse it as a formula. This is a real failure mode: a contract clause that starts "- The parties agree..." will render as a formula error without the escape.
 
 ## What not to do

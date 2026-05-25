@@ -46,7 +46,7 @@ expansion notes.
 
 ## Output header
 
-Prepend the WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） header from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`).
+Prepend the WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务） header from `~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md` → `## Outputs` (it differs by user role — see `## Who's using this`).
 
 ## Workflow
 
@@ -269,7 +269,7 @@ identified in Steps 2-4. This file persists across sessions.
 Format:
 
 ```yaml
-[WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
+[WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
 country: [Country name]
 country_slug: [lowercase-hyphenated]
 kickoff_date: [ISO date]
@@ -306,7 +306,7 @@ attributable to a single owner.
 > **Jurisdiction assumption.** This plan frames the expansion to the single country identified in intake. Local employment law, tax rules, employee-representation obligations, and data-protection requirements vary materially by country, region, industry, and headcount, and change frequently. Every substantive local-law answer comes from the outside-counsel briefing request, not from this skill. If the plan is adapted for another country later, re-run the briefing.
 
 ```markdown
-[WORK-PRODUCT（律师工作成果；中国仅《律师法》第38条保密义务） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
+[WORK-PRODUCT（律师工作成果；中国仅《中华人民共和国中华人民共和国中华人民共和国律师法》第38条保密义务） HEADER — per plugin config ## Outputs — differs by role; see `## Who's using this`]
 
 ## International Expansion: [Country] — [Date]
 

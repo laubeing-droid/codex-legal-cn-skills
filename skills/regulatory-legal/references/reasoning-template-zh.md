@@ -10,9 +10,9 @@ status: active
 
 ## 禁用的美国法推理模式
 
-- ❌ Chevron deference — 中国行政诉讼中法院对行政行为进行独立司法审查，不采纳行政机关法律解释优先原则（《行政诉讼法》第6条）
+- ❌ Chevron deference — 中国行政诉讼中法院对行政行为进行独立司法审查，不采纳行政机关法律解释优先原则（《中华人民共和国行政诉讼法》第6条）
 - ❌ APA rulemaking procedure — 中国有独立的行政法规/规章制定程序
-- ❌ Takings clause analysis — 中国征收征用制度为《民法典》第243条+《土地管理法》框架
+- ❌ Takings clause analysis — 中国征收征用制度为《中华人民共和国民法典》第243条+《土地管理法》框架
 - ❌ Exhaustion of administrative remedies — 中国行政复议非诉讼前置（复议前置情形有限）
 
 ## 中国法推理链

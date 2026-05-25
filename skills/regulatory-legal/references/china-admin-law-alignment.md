@@ -37,7 +37,7 @@ status: active
 ## 域专属阻断规则
 
 AI在处理中国行政法/跨境事务时须阻断：
-- Chevron deference → ❌ 整行删除（中国法院对行政行为进行独立司法审查，《行政诉讼法》第6条）
+- Chevron deference → ❌ 整行删除（中国法院对行政行为进行独立司法审查，《中华人民共和国行政诉讼法》第6条）
 - sovereign/qualified immunity → ❌ 整行删除
 - summary judgment / consent decree → ❌ 整行删除
 - collateral estoppel → ❌ 整行删除

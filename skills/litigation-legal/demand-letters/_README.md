@@ -6,7 +6,7 @@ status: active
 
 # demand-letters/ — pre-litigation demand work
 
-This folder holds the 律师工作成果（中国：仅《律师法》第38条保密义务） for every demand letter the counsel sends: payment demands, breach/cure notices, cease-and-desist, employment separation demands, preservation demands.
+This folder holds the 律师工作成果（中国：仅《中华人民共和国中华人民共和国律师法》第38条保密义务） for every demand letter the counsel sends: payment demands, breach/cure notices, cease-and-desist, employment separation demands, preservation demands.
 
 Separate from `matters/` because:
 
@@ -44,7 +44,7 @@ demand-letters/
 
 After a demand letter is drafted, `demand-draft` assesses materiality (heuristic from house `~/.claude/plugins/config/claude-for-legal/litigation-legal/CLAUDE.md`) and offers to create a matter. If yes, a matter row goes into `matters/_log.yaml` with `source: demand-letter`, and `matters/[matter-slug]/matter.md` links back to this demand-letter's folder.
 
-Immaterial demands stay here only. They're still a 律师工作成果（中国：仅《律师法》第38条保密义务） record — just not portfolio-tracked.
+Immaterial demands stay here only. They're still a 律师工作成果（中国：仅《中华人民共和国中华人民共和国律师法》第38条保密义务） record — just not portfolio-tracked.
 
 ## Corrections and versions
 
