@@ -15,6 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check upstream repos
         id: fetch
         run: |
           CACHE_FILE=".upstream-last-check"
@@ -22,7 +23,6 @@ jobs:
           REPORT+="检查时间: $(date -u '+%Y-%m-%d %H:%M UTC')%0A%0A"
           CHANGED=false
 
-          # --- Git repos ---
           check_repo() {
             LABEL="$1"
             REPO="$2"
@@ -46,6 +46,7 @@ jobs:
           check_repo "中文汉化版" "zhou210712/claude-for-legal-ZH"
           check_repo "solo-law-firm 独立执业技能" "saysoph/solo-law-firm-agents"
           check_repo "MAXXXXXLI WorkBuddy 中国法版" "MAXXXXXLI/workbuddy-cn-legal-skills"
+          check_repo "core-codices 本家法律库" "laubeing-droid/codex-claude-legal-cn-core-codices"
 
           echo "report=$REPORT" >> $GITHUB_OUTPUT
           echo "changed=$CHANGED" >> $GITHUB_OUTPUT
@@ -83,8 +84,7 @@ jobs:
         run: |
           CACHE_FILE=".upstream-last-check"
           > "$CACHE_FILE"
-          # Git repos
-          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH MAXXXXXLI/workbuddy-cn-legal-skills saysoph/solo-law-firm-agents; do
+          for repo in anthropics/claude-for-legal zhou210712/claude-for-legal-ZH MAXXXXXLI/workbuddy-cn-legal-skills saysoph/solo-law-firm-agents laubeing-droid/codex-claude-legal-cn-core-codices; do
             sha=$(curl -s "https://api.github.com/repos/$repo/commits?per_page=1" | jq -r '.[0].sha // ""')
             if [ -n "$sha" ]; then
               echo "$repo=$sha" >> "$CACHE_FILE"
@@ -95,4 +95,3 @@ jobs:
           git add "$CACHE_FILE"
           git diff --cached --quiet || git commit -m "chore: update upstream cache"
           git push
-
