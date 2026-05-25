@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
 # 中国法律咨询推理手册
 
 > 替换原 IRAC (Issue-Rule-Application-Conclusion) 判例法推理骨架，按中国成文法请求权基础分析法组织。

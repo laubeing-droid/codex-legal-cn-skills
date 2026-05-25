@@ -1,4 +1,4 @@
----
+﻿---
 name: wage-hour-qa
 description: >
   管辖地感知的劳动用工问答——工时制度分类、加班工资、最低工资、
@@ -7,6 +7,9 @@ description: >
   或说"[某地]的规则是什么"、"这个岗位是否适用不定时工作制"、
   "我们需要支付加班费吗"或"可以把这个岗位归类为"时使用。
 argument-hint: "[问题]"
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # /wage-hour-qa

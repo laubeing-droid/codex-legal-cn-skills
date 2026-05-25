@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: commercial-legal
+status: active
+-->
+
 # 民法典合同法核心规则速查
 
 > 日常合同审查快速参考。条文原文来源于《中华人民共和国民法典》（2021.1.1 施行），

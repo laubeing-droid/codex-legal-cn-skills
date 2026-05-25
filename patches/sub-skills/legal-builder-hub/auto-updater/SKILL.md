@@ -1,10 +1,13 @@
----
+﻿---
 name: auto-updater
 description: >
   检查已安装社区技能的更新。展示差异并要求明确批准后才应用。
   当用户说"检查更新""更新我的技能""已安装技能有什么更新"或从
   registry-sync agent 调用时使用。
 argument-hint: "[--apply 更新全部，否则仅通知]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /auto-updater

@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
 # 中华人民共和国公司法
 
 > 来源: 官方PDF全文提取 (29页)

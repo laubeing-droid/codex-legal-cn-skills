@@ -6,6 +6,9 @@ description: >
   用户粘贴查阅/删除/可携带/更正请求，或说"来了个DSAR""查阅请求""删除权""有人想要
   他们的数据"时使用。
 argument-hint: "[粘贴请求，或描述请求]"
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # /dsar-response

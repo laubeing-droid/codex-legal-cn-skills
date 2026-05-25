@@ -1,6 +1,9 @@
 ﻿---
 name: litigation-legal
 description: 案件管理、证据三性审查、诉讼文书起草、保全和管辖分析
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # 诉讼仲裁 法务技能

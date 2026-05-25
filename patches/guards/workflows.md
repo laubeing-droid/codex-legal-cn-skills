@@ -1,4 +1,10 @@
-﻿
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
+
 **Rule A — 中国法底线优先**：当美国法概念与中国强行法冲突（如At-Will Employment、Plea Bargaining、Discovery），优先适用中国强制性规定。
 
 **Rule B — 拒绝盲目直译**：禁止将美国法律术语直译为中国法概念。如：禁止将"Discovery"译为"证据开示"，应表述为"证据交换与法院调查取证程序"。

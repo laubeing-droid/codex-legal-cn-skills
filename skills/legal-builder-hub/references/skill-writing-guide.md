@@ -1,4 +1,10 @@
-﻿# claude-for-legal-ZH 法律技能（SKILL.md）编写指南
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
+# claude-for-legal-ZH 法律技能（SKILL.md）编写指南
 
 为了确保 AI 能够精准调用并输出符合中国执业律师标准的法律意见，所有技能文件必须严格执行以下规范：
 

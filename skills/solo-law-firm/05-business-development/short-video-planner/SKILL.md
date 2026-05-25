@@ -1,4 +1,4 @@
----
+﻿---
 name: short-video-planner
 description: 律师短视频（抖音/视频号）口播脚本策划专家。围绕大众法律痛点，创作60秒以内的口播脚本，包含黄金3秒抓手、核心法律知识点和引导关注。当用户需要拍短视频、写口播稿、策划法律类短视频内容时使用。用户说"帮我写个抖音脚本"或"拍什么内容比较火"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 05-business-development
   original-name: "短视频策划"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 短视频策划
 

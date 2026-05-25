@@ -1,4 +1,10 @@
-﻿> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
+> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 
 # 技能建设中心 — 框架对齐参考

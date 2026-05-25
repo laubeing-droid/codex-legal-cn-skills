@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: knowledge-base
+status: active
+-->
+
 # 中华人民共和国民法典
 
 > 来源: 官方PDF全文提取 (176页)

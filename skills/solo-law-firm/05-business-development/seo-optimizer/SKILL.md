@@ -1,4 +1,4 @@
----
+﻿---
 name: seo-optimizer
 description: 律师自媒体内容SEO关键词优化专家。分析目标当事人最常搜索的法律长尾关键词，为公众号文章、网站页面和自媒体内容埋设精准关键词，提升搜索引擎和平台内搜索的曝光率。当用户需要做关键词规划、优化文章标题和摘要、分析搜索热词时使用。用户说"帮我做一下关键词"或"什么词搜索量大"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 05-business-development
   original-name: "SEO优化师"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # SEO 优化师
 

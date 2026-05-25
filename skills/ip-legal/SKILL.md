@@ -1,6 +1,9 @@
 ﻿---
 name: ip-legal
 description: 商标检索、专利分析、著作权保护、开源合规审查
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # 知识产权 法务技能

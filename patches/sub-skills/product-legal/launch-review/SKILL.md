@@ -1,10 +1,13 @@
----
+﻿---
 name: launch-review
 description: >
   对照您的框架和风险校准进行全面产品上线审查。当用户说"审查这个上线"
   "[功能]法务审查""我们能上线吗""[产品]有什么法律问题"或引用了需要
   逐类审查备忘录的产品需求文档或上线追踪工单时使用。
 argument-hint: "[PRD文件 | 飞书文档链接 | 追踪工单号]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /launch-review

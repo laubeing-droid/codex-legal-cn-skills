@@ -1,4 +1,10 @@
-﻿# Claude for Legal CN to Codex
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# Claude for Legal CN to Codex
 
 将 Anthropic 法律 AI 整合中国化并移植到 Codex Desktop 的一站式技能部署包。
 

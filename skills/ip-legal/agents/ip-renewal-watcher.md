@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: ip-legal
+status: active
+-->
+
 ---
 name: ip-renewal-watcher
 description: >

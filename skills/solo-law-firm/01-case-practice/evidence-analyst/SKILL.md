@@ -1,4 +1,4 @@
----
+﻿---
 name: evidence-analyst
 description: 中国民商事证据分析与管理专家。从海量零散电子材料（聊天记录、转账流水、合同扫描件等）中梳理事实时间轴，构建证据链条，进行分类、编号和归档，输出法院格式的证据目录和质证意见。当用户需要整理证据材料、分析证据链、准备证据目录、撰写质证意见、归档电子卷宗时使用。用户说"帮我整理一下证据""这些材料能不能用""当事人发了一堆材料过来""帮我整理一下卷宗"时应触发本技能。
 license: MIT
@@ -8,6 +8,9 @@ metadata:
   department: 01-case-practice
   original-name: "证据分析师"
   merged-from: "证据材料管理员"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 证据分析师
 

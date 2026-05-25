@@ -1,4 +1,4 @@
----
+﻿---
 name: customize
 description: >
   引导式自定义你的劳动法实践画像——修改一项内容
@@ -8,6 +8,9 @@ description: >
   "修改我的[某物]"、"添加管辖地"、"更新我的画像"、
   "编辑我的配置"或"自定义"时使用。
 argument-hint: "[章节名称，或描述你要修改的内容]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /customize

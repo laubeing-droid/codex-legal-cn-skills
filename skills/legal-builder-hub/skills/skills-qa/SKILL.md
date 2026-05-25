@@ -1,4 +1,4 @@
----
+﻿---
 name: skills-qa
 description: >
   对照法律技能设计框架评估一个技能——十三个设计参数（包括信任面、新鲜度、
@@ -7,6 +7,9 @@ description: >
   或当用户问"我该信任这个吗？"或"这个技能设计得好吗？"时使用。
   作为 /legal-builder-hub:skill-installer 的一部分自动运行。
 argument-hint: "[技能路径 | SKILL.md 路径 | 粘贴内容]"
+version: 2.9.0
+module: legal-builder-hub
+status: active
 ---
 
 # /skills-qa

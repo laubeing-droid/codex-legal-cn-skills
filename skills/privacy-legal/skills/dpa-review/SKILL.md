@@ -5,6 +5,9 @@ description: >
   还是处理者，并应用操作手册正确的半部分。当用户说"审查这份DPA""检查这份
   数据处理附录""客户发来了他们的DPA""这份DPA可以吗"，或附上一份DPA时使用。
 argument-hint: "[文件 | 网盘链接 | 粘贴文本]"
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # /dpa-review

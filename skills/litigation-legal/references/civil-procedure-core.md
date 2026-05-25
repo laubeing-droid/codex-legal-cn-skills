@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
 # 民事诉讼法核心规则速查
 
 > 自足参考文件 —— 可直接用于诉讼实务，不依赖外部知识库。

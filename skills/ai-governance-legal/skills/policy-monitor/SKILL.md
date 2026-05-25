@@ -1,4 +1,4 @@
----
+﻿---
 name: policy-monitor
 description: >
   保持AI使用政策与当前实践一致。两种模式：每周扫描已保存的AI
@@ -7,6 +7,9 @@ description: >
   开始做X——政策需要更新吗"、"运行AI政策监测"、"政策扫描"
   或需要发现AI政策与实际操作不符之处时。
 argument-hint: "[描述提议的新AI实践 — 或省略/使用 --sweep 进入扫描模式]"
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 
 # /policy-monitor

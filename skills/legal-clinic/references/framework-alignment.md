@@ -1,4 +1,10 @@
-﻿> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
+> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 
 # 法律诊所 — 框架对齐参考（含香港法桥梁）

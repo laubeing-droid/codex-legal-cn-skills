@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: employment-legal
+status: active
+-->
+
 ---
 name: leave-tracker
 description: >

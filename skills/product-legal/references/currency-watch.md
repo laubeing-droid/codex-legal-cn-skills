@@ -1,4 +1,10 @@
-﻿# Product Legal Currency Watch
+﻿<!--
+version: 2.9.0
+module: product-legal
+status: active
+-->
+
+# Product Legal Currency Watch
 
 **Last verified: 2026-05-10.**
 

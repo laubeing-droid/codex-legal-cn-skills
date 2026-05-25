@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
 # 中国法合规审查手册
 
 > 按中国行政监管体系进行合规审查。采用"业务流映射→法规定位→合规差距→整改方案"四步法。

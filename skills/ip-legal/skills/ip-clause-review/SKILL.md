@@ -5,6 +5,9 @@ description: >
   保证、赔偿。用于审查劳动/顾问/SOW/供应商/许可协议中的知识产权条款，
   当被要求检查权利归属语言或许可范围时，或当知识产权条款的协议被粘贴或附加时。
 argument-hint: "[文件路径 | 网盘链接 | 粘贴文本]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /ip-clause-review

@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
 # Claude for 法学院法律诊所
 
 *通过 AI 赋能的诊所法律教育，放大司法可及性（access to justice）。*

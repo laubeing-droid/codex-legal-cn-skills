@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
 # handoffs/ — end-of-semester case handoff memos
 
 Per-semester folder with one handoff memo per active case. Produced by `/legal-clinic:semester-handoff` at end of semester. Read by incoming students during `/ramp` for the cases they inherit.

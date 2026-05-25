@@ -1,10 +1,13 @@
----
+﻿---
 name: cease-desist
 description: >
   起草侵权警告函（发送模式）或对收到的警告函进行分诊（接收模式）。当依你的
   执法姿态对侵权人主张权利并发送校准后的警告函，或对收到的警告函进行分诊生成
   结构化选项备忘录附建议时使用。
 argument-hint: "<--send | --receive> [上下文、对方当事人或收函路径]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /cease-desist

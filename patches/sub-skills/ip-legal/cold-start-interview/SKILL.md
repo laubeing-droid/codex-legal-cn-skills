@@ -1,4 +1,4 @@
----
+﻿---
 name: cold-start-interview
 description: >
   运行冷启动面谈以了解你的知识产权实务并撰写实务画像。
@@ -6,6 +6,9 @@ description: >
   或在连接或断开 MCP 后使用 --check-integrations 重新探测集成。
   这是全新安装时唯一应运行的技能。
 argument-hint: "[--redo 对已配置插件重新运行] [--check-integrations 仅重新探测集成]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /cold-start-interview

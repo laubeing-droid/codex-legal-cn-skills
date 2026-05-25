@@ -1,4 +1,4 @@
----
+﻿---
 name: initial-consultation
 description: 律所初次咨询接待与案情摘要专家。从当事人冗长、情绪化的叙述中提取5W1H核心事实，生成标准化案情摘要卡，并给出可诉性初步判断。当用户说有个新客户咨询、需要做案件初步分析、或当事人刚打电话过来时使用。用户说【有个人想咨询】【帮我整理一下这个人说的】时应触发本技能。不应触发：用户已经提供结构化案情摘要、仅询问程序性问题（如管辖规定）时不应触发。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 03-client-relations
   original-name: "初次咨询接待"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 初次咨询接待
 

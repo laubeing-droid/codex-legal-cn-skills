@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: references
+status: active
+-->
+
 > 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 

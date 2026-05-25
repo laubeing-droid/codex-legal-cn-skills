@@ -1,4 +1,10 @@
-﻿# 产品合规中国法推理模板
+﻿<!--
+version: 2.9.0
+module: product-legal
+status: active
+-->
+
+# 产品合规中国法推理模板
 
 > 用途：替代 U.S. product liability / FDA/CPSC regulation / FTC advertising rules 等美国法推理
 

@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
 # 行政法核心规则参考
 
 > 最后更新：2026-05-14 | 由 Claude 基于法律条文、知识库 wiki 及权威参考书编译

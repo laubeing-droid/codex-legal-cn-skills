@@ -1,4 +1,10 @@
-﻿# Freshness Fields for Community Skill Authors
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
+# Freshness Fields for Community Skill Authors
 
 If your skill bundles reference content under `references/` — regulations,
 statutes, procedures, forms, checklists keyed to current law — declare its

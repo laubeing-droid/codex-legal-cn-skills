@@ -1,4 +1,10 @@
-﻿
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
+
 # 中国法优先法律语义对齐框架
 
 ## 项目定位

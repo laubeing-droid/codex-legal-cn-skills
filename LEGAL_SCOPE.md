@@ -1,4 +1,10 @@
-﻿# LEGAL_SCOPE.md — 法律范围与责任声明
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# LEGAL_SCOPE.md — 法律范围与责任声明
 
 > 本文档明确本仓库的法律适用范围、不适用范围、局限性和免责声明。
 

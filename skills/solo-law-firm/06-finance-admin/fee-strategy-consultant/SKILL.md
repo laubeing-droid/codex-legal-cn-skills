@@ -1,4 +1,4 @@
----
+﻿---
 name: fee-strategy-consultant
 description: 律师收费方案设计专家。根据案件标的额、难度、工作量和客户付款意愿，制定最优收费方案组合（计时、固定、风险代理等），附报价话术。当用户需要给客户报价、设计收费方案、讨论收费模式时使用。用户说"这个案子该报多少钱"或"客户嫌贵了怎么办"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 06-finance-admin
   original-name: "收费策略顾问"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 收费策略顾问
 

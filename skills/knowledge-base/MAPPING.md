@@ -1,4 +1,10 @@
-﻿# Knowledge Base Index
+﻿<!--
+version: 2.9.0
+module: knowledge-base
+status: active
+-->
+
+# Knowledge Base Index
 
 > Auto-generated: 2026-05-25 | gen-knowledge-index.ps1
 > Scan: skills/*/references/ + skills/knowledge-base/

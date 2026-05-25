@@ -1,6 +1,9 @@
 ﻿---
 name: commercial-legal
 description: 合同审查、交易文件起草、合同风险分层与业务化摘要
+version: 2.9.0
+module: commercial-legal
+status: active
 ---
 
 # 商事合同 法务技能

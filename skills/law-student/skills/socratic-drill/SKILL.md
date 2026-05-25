@@ -1,9 +1,12 @@
----
+﻿---
 name: socratic-drill
 description: >
   苏格拉底式追问训练——我问，你答，我追问。在你真正掌握之前绝不给你答案。
   当用户说"训练我""提问我""苏格拉底式""测试我的[科目]"或想进行主动学习时使用。
 argument-hint: "[科目或主题]"
+version: 2.9.0
+module: law-student
+status: active
 ---
 
 # /socratic-drill

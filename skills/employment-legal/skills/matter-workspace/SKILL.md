@@ -1,4 +1,4 @@
----
+﻿---
 name: matter-workspace
 description: >
   管理案件工作空间——新建、列表、切换、关闭或解除（实务级）。
@@ -6,6 +6,9 @@ description: >
   绝不泄露到另一个。当多客户执业者说"新案件"、"切换案件"、
   "列出我的案件"、"关闭此案件"或需要管理哪个案件活跃时使用。
 argument-hint: "<new | list | switch | close | none> [slug]"
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # /matter-workspace

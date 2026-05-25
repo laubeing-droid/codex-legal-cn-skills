@@ -1,4 +1,10 @@
-﻿# 法学教育中国法推理模板
+﻿<!--
+version: 2.9.0
+module: law-student
+status: active
+-->
+
+# 法学教育中国法推理模板
 
 > 用途：替代 U.S. law school pedagogy / case method / Socratic method 等美国法推理
 

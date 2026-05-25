@@ -1,4 +1,4 @@
----
+﻿---
 name: research-start
 description: >
   法律问题的检索路线图——需查阅的法条、需调查的案例法领域、行政监管框架、
@@ -6,6 +6,9 @@ description: >
   发展所有内容。当学生询问从哪里开始检索、需要某个问题的检索路线图、
   或需要识别已有检索中的缺口时使用。
 argument-hint: "[法律问题]"
+version: 2.9.0
+module: legal-clinic
+status: active
 ---
 
 # /research-start

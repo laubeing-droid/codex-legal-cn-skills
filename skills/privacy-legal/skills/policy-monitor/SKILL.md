@@ -1,4 +1,4 @@
----
+﻿---
 name: policy-monitor
 description: >
   保持个人信息处理规则与实践一致。两种模式：周度扫描已保存的PIA、DPA审查和分诊结果以
@@ -6,6 +6,9 @@ description: >
   "我们想开始做X——处理规则需要更新吗""运行处理规则监控""处理规则扫描"，或想找到处理
   规则不再匹配团队实际操作的地方时使用。
 argument-hint: "[描述拟议的新实践 — 或省略 / 使用 --sweep 为扫描模式]"
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # /policy-monitor

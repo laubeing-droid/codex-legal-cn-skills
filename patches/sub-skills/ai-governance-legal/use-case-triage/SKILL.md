@@ -1,4 +1,4 @@
----
+﻿---
 name: use-case-triage
 description: >
   对提议的AI用例进行分类和风险排序：检索现有注册表、检查红线、
@@ -6,6 +6,9 @@ description: >
   适用于收到新的AI用例提案、产品团队询问"这个AI功能可以上线吗"、
   或需要运行AI用例审批委员会流程时。
 argument-hint: "[描述提议的AI用例或功能]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /use-case-triage

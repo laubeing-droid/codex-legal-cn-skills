@@ -1,4 +1,4 @@
----
+﻿---
 name: skill-installer
 description: >
   从已监视注册表安装社区技能。先读白名单，获取，展示原始 SKILL.md
@@ -6,6 +6,9 @@ description: >
   批准后才写入文件。当用户说"安装[技能]"、在浏览中选择安装、或提供
   直接技能 URL 时使用。
 argument-hint: "[技能名称或注册表 URL]"
+version: 2.9.0
+module: legal-builder-hub
+status: active
 ---
 
 # /skill-installer

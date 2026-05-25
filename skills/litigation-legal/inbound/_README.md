@@ -1,4 +1,10 @@
-﻿# inbound/ — incoming legal correspondence
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
+# inbound/ — incoming legal correspondence
 
 This folder holds triage and response work for anything arriving from the outside world: demand letters received, subpoenas served on the company, regulator inquiries, preservation demands, cease-and-desist letters aimed at us.
 

@@ -1,4 +1,10 @@
-﻿# 技能构建器中国法推理模板
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
+# 技能构建器中国法推理模板
 
 > 用途：确保新创建的法律子技能适配中国法律环境
 

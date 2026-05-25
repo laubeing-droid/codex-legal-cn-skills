@@ -1,4 +1,4 @@
----
+﻿---
 name: conflict-checker
 description: 律所利益冲突排查专家。接案前必经审查流程：将新案件当事人与本所历史案件库比对，输出结构化的利益冲突排查报告。当用户需要接案前利冲审查、拟接受委托前风险评估时使用。在用户表达接案意向前应自动触发。不应触发：案件当事人信息不全（缺少对方当事人姓名）、用户仅咨询利益冲突规则而非执行排查时不应触发。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 08-risk-compliance
   original-name: "利冲检索器"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 利冲检索器
 

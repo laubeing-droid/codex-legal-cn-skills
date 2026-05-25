@@ -3,6 +3,9 @@ name: labor-dispute-analysis
 description: >
   针对中国劳动争议纠纷（如事实劳动关系认定、违法辞退、经济补偿/赔偿金争议、工伤待遇及加班费等），依据《中华人民共和国劳动合同法》及最高院司法解释进行多维审查，输出集劳动关系认定、合法性审查、金额测算及仲裁策略于一体的实务方案。
 argument-hint: 请提供争议背景（如口头辞退、未签合同、工伤未赔等）、员工入司时间、离职前12个月平均工资及诉求。
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 # /employment-legal:labor-dispute-analysis
 

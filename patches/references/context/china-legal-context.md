@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # WorkBuddy 中国法律语境总则
 
 本参考文件适用于本仓库所有从 `claude-for-legal` 转换而来的 WorkBuddy skill。除非用户明确指定其他法域，默认工作语境为**中国大陆**；香港、澳门、台湾以及境外法域需单独确认。

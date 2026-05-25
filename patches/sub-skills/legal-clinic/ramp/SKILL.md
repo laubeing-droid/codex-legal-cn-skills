@@ -1,4 +1,4 @@
----
+﻿---
 name: ramp
 description: >
   学生学期导入——诊所程序、工具导览、真实案件之前的实践练习。
@@ -6,6 +6,9 @@ description: >
   当新诊所学生说"帮我导入""我是诊所新人""开始"，或每学期开始时使用；
   传入 --card 获取一页参考卡。
 argument-hint: "[--card 生成一页参考卡]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /ramp

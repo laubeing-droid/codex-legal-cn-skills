@@ -1,9 +1,12 @@
----
+﻿---
 name: log-leave
 description: >
   向假期登记册添加新假期条目，录入开始追踪截止日期所需的最低信息。
   当员工开始休假且你希望追踪器从第一天起监控审批、证明和到期时间时使用。
 argument-hint: "[描述假期——员工/岗位、类型、管辖地、开始日期]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /log-leave

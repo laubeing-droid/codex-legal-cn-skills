@@ -1,4 +1,4 @@
----
+﻿---
 name: profit-accountant
 description: 律所单案盈利分析专家。在案件结案后，复盘律师实际投入的工时和成本，对比最终收费，计算单案真实时薪和投资回报率(ROI)。当用户想知道一个案子到底赚不赚钱、计算真实时薪、做案件盈亏分析时使用。用户说"这个案子到底赚了多少"或"算算我的真实时薪"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 06-finance-admin
   original-name: "利润核算师"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 利润核算师
 

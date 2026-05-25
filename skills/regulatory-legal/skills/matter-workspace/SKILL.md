@@ -1,7 +1,10 @@
----
+﻿---
 name: matter-workspace
 description: 管理事务工作区——创建、列表、切换、关闭或解除活跃事务（实践层面）。适用于多客户/多事务工作场景，需要将一项委托的上下文与另一项隔离开，或实质技能需要知道它在哪个事务中工作时。
 argument-hint: "<new | list | switch | close | none> [slug]"
+version: 2.9.0
+module: regulatory-legal
+status: active
 ---
 
 # /matter-workspace

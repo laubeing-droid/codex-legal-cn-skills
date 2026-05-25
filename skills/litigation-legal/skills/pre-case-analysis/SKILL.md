@@ -1,10 +1,13 @@
----
+﻿---
 name: pre-case-analysis
 description: >
   委托代理前案件系统性分析——10步流程覆盖起诉前评估/应诉/二审/再审全阶段。
   输出结构化分析报告，回答：这案子能不能接、怎么打、风险在哪。
   当用户说"分析案件""能不能接这个案子""胜算多大""代理前分析""案件评估"时触发。
 argument-hint: "[案件材料路径或描述]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /litigation-legal:pre-case-analysis

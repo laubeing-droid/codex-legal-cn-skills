@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
 # Allowlist Configuration
 
 The installer supports an allowlist at:

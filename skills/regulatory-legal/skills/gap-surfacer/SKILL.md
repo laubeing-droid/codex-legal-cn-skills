@@ -1,4 +1,4 @@
----
+﻿---
 name: gap-surfacer
 description: >
   参考资料：支持 /regulatory-legal:gaps 和 /regulatory-legal:comments
@@ -7,6 +7,9 @@ description: >
   并通过企业通讯工具通知差距负责人，每次发送前需确认。
   由 gaps 和 comments 技能在实质工作前加载。
 user-invocable: false
+version: 2.9.0
+module: regulatory-legal
+status: active
 ---
 
 # 差距呈现

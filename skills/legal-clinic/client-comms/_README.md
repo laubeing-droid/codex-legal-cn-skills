@@ -1,4 +1,10 @@
-﻿# client-comms/ — per-case communication logs
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
+# client-comms/ — per-case communication logs
 
 One folder per case. Inside, a running `log.md` tracking every client contact — incoming and outgoing, across phone, email, text, letter, and in-person meetings. Produced and appended by `/legal-clinic:client-comms-log`.
 

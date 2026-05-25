@@ -1,10 +1,13 @@
----
+﻿---
 name: flashcards
 description: >
   生成或训练法条概念记忆卡片——莱特纳式记忆桶，按科目的 Markdown 存储，
   带自我评估的训练模式。当用户说"训练记忆卡片""根据[材料]制作记忆卡片"
   "考我卡片"或想记忆法条时使用。
 argument-hint: "[科目] [--generate | --drill | --review | --stats | --session <n>]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /flashcards

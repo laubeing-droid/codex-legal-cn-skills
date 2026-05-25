@@ -1,4 +1,4 @@
----
+﻿---
 name: aia-generation
 description: >
   为AI系统或模型生成风险定级和合规概要评估——涵盖数据、公平性、
@@ -6,6 +6,9 @@ description: >
   产品或工程团队提出"我们需要做AI影响评估"时使用，或定期重新
   认证已部署系统时使用。采用快速/全面双轨制。
 argument-hint: "[系统名称或AI用例描述]"
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 
 # /aia-generation

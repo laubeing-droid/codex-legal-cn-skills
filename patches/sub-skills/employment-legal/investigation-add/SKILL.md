@@ -1,10 +1,13 @@
----
+﻿---
 name: investigation-add
 description: >
   向进行中的调查添加数据——文件、访谈记录或观察意见。
   按已记录的筛选标准批量处理，浮现重要事项，记录所有已审查内容
   以供覆盖验证。当新的证据、访谈记录或文件材料进入进行中的调查时使用。
 argument-hint: "[调查事项名称，然后粘贴或附上数据]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /investigation-add

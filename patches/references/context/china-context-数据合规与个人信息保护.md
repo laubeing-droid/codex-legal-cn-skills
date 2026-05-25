@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # 数据合规与个人信息保护：中国语境
 
 默认适用中国大陆个人信息和数据合规框架。

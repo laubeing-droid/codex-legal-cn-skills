@@ -1,4 +1,4 @@
----
+﻿---
 name: judge-preference-analyst
 description: 中国法院法官裁判偏好分析专家。批量分析特定法院或法官的历史判决文书，提炼其在事实认定、法律适用、自由裁量权行使上的裁判倾向和说理偏好。当用户需要了解某个法官的判案风格、准备针对性庭审策略、分析特定法院的裁判尺度时使用。用户说"这个法官怎么判的"或"XX法院的尺度松不松"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 07-knowledge-management
   original-name: "法官偏好解析"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 法官偏好解析
 

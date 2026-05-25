@@ -1,4 +1,10 @@
-﻿# patches/ 目录说明
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
+# patches/ 目录说明
 
 > 本目录存放本仓库对上游内容的增量修改（Overlay）。
 

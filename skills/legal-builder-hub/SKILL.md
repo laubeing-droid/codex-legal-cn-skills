@@ -1,6 +1,9 @@
 ﻿---
 name: legal-builder-hub
 description: 技能安装管理、注册表浏览、QA评估、自动更新
+version: 2.9.0
+module: legal-builder-hub
+status: active
 ---
 
 # 技能治理中心 法务技能

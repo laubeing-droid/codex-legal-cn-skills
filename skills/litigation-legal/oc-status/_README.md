@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
 # oc-status/ — weekly OC status-request drafts
 
 Output from `/litigation-legal:oc-status`. Per-run folders dated by day; each contains one markdown file per matter drafted, plus a `_summary.md`.

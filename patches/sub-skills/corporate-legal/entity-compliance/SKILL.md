@@ -1,4 +1,4 @@
----
+﻿---
 name: entity-compliance
 description: >
   主体合规追踪器——初始化、报告即将到来的截止日、更新状态、运行健康审计、
@@ -6,6 +6,9 @@ description: >
   注册地计算申报截止日，呈现未来30/60/90天内的待办事项。当用户说"主体合规"
   "申报截止日""年报到期""主体追踪器""什么申报到期""主体健康"或"存续状态"时使用。
 argument-hint: "[--init | --report [--days N] | --update [--from-report] | --sweep | --audit | --export [--format csv|table]]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /entity-compliance

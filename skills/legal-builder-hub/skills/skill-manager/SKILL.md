@@ -1,10 +1,13 @@
----
+﻿---
 name: skill-manager
 description: >
   参考：针对通过法律构建中心安装的社区技能的详细卸载、禁用和重新启用工作流。
   默认安全——拒绝触碰第一方插件技能，删除文件前确认，记录每次操作。
   由 /legal-builder-hub:uninstall 和 /legal-builder-hub:disable 技能加载。
 user-invocable: false
+version: 2.9.0
+module: legal-builder-hub
+status: active
 ---
 
 # 技能管理器

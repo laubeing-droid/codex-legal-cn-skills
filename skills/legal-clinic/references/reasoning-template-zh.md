@@ -1,4 +1,10 @@
-﻿# 法律援助/咨询中国法推理模板
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
+# 法律援助/咨询中国法推理模板
 
 > 用途：替代 U.S. pro se clinic / legal aid / hotline triage 等美国法推理
 

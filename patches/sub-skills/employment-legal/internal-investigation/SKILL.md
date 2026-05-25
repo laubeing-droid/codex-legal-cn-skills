@@ -1,4 +1,4 @@
----
+﻿---
 name: internal-investigation
 description: >
   Reference: shared framework for managing internal investigations from intake
@@ -8,6 +8,9 @@ description: >
   /investigation-query, /investigation-memo, and /investigation-summary; not
   invoked directly.
 user-invocable: false
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # Internal Investigation Skill

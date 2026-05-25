@@ -1,4 +1,4 @@
----
+﻿---
 name: build-guide
 description: >
   帮助诊所指导老师撰写实践领域指南，配置面向学生技能的行为——接待问题、
@@ -6,6 +6,9 @@ description: >
   当指导律师需要撰写或修订按实践领域的指南、调整诊所技能在其诊所类型
   下的行为或将其教学理念设定为插件配置时使用。
 argument-hint: "[可选：实践领域 — 如 '劳动争议', '婚姻家庭']"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /build-guide

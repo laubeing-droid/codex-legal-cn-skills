@@ -1,10 +1,13 @@
----
+﻿---
 name: legal-research
 description: >
   中国法律全领域系统性检索——覆盖法律/行政法规/司法解释/部门规章/指导性案例/典型案例，
   按身份差异化输出（普通人/法学生/律师/法官/企业法务）。当用户要求查法条、判合法性、
   找赔偿标准、问法律依据、或说"根据什么法律"时触发。
 argument-hint: "[检索问题]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /litigation-legal:legal-research

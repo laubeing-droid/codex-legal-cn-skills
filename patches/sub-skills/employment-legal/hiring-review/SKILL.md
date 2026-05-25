@@ -1,4 +1,4 @@
----
+﻿---
 name: hiring-review
 description: >
   审查录用通知书及竞业限制/保密条款——含管辖地检查。实质性规则（竞业限制可执行性、
@@ -6,6 +6,9 @@ description: >
   "审查这个录用通知"、"这里能用竞业限制吗"、"检查这份录用通知书"、
   "在[某地]招聘"或附上录用通知书时使用。
 argument-hint: "[录用通知书文件，或描述录用情况]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /hiring-review

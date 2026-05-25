@@ -1,4 +1,4 @@
----
+﻿---
 name: equity-penetration-analyst
 description: 中国企业股权结构穿透分析专家。层层追溯目标企业的股东链条，识别隐名股东、代持安排、实际控制人、关联交易方，输出股权穿透图谱。当用户需要查清楚公司背后的真正老板是谁、分析股权代持关系、梳理关联方网络时使用。用户说"这个公司背后是谁""帮我穿透一下股权"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 04-due-diligence
   original-name: "股权穿透分析"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 股权穿透分析
 

@@ -1,4 +1,10 @@
-﻿# 架构文档
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 架构文档
 
 > 最后更新：2026-05-25
 

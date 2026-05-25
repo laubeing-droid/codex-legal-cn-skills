@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
 # 法律构建中心插件（Legal Builder Hub）
 
 社区法律技能发现与安装。浏览 GitHub 注册表（lpm-skills、[附加注册表 — 通过 `/legal-builder-hub:registry-browser` 添加] 等），安装与自动更新，在你的其他法律插件中浮现相关社区技能。cold-start 访谈本身就是入门技能包推荐器 — 询问你的实践类型，推荐安装内容。

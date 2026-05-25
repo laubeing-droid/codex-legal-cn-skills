@@ -1,4 +1,10 @@
-﻿# 数据/隐私中国法推理模板
+﻿<!--
+version: 2.9.0
+module: privacy-legal
+status: active
+-->
+
+# 数据/隐私中国法推理模板
 
 > 用途：替代 GDPR / CCPA / U.S. sectoral privacy laws 等域外推理
 

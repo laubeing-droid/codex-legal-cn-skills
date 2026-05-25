@@ -5,6 +5,9 @@ description: >
   提出响应方案并附建议，必要时转交案件登记或律师函起草。
   当用户说"收到一封律师函"、"审查这个来函"或附上来函要求评估时使用。
 argument-hint: "[来函文件路径] [--slug=自定义代号]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /demand-received

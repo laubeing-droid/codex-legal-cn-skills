@@ -1,4 +1,10 @@
-﻿# 合同审查清单 — AI 可执行版
+﻿<!--
+version: 2.9.0
+module: commercial-legal
+status: active
+-->
+
+# 合同审查清单 — AI 可执行版
 
 > 基于 contract-review-playbook.md，逐条可勾选。AI 审查合同时按本清单逐项执行。
 > 来源标签：`[民法典第X条]` | `[合同监管办法第X条]` | `[消保条例第X条]`

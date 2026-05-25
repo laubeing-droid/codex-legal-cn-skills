@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: employment-legal
+status: active
+-->
+
 # 中国劳动法核心规则手册
 
 > 面向劳动法律师的日常高频参考。每个规则均附法条原文，可直接在审查意见和法律意见书中引用。

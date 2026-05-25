@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-clinic
+status: active
+-->
+
 # Practice-Area Intake Templates
 
 Populated at cold-start from the professor's intake form(s). If none provided,

@@ -1,4 +1,4 @@
----
+﻿---
 name: cold-start-interview
 description: >
   首次配置访谈——从你的劳动规章制度和解除备忘录中学习你的管辖范围
@@ -6,6 +6,9 @@ description: >
   管辖地感知的上报表。在首次安装、CLAUDE.md 中仍有 [PLACEHOLDER]
   标记时使用，或使用 --redo 或 --check-integrations 重新运行时使用。
 argument-hint: "[--redo | --check-integrations]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /cold-start-interview

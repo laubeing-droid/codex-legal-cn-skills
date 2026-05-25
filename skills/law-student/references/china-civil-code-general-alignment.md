@@ -1,4 +1,10 @@
-﻿> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+﻿<!--
+version: 2.9.0
+module: law-student
+status: active
+-->
+
+> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 
 ## 2.2 （一）民法·总则编

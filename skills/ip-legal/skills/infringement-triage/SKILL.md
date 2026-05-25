@@ -5,6 +5,9 @@ description: >
   标注各方有利/不利因素，不作侵权结论。用于评估他人是否侵犯你的知识产权、
   你是否可能侵犯他人权利、出现山寨产品或抄袭者时，或判断事项是否值得追诉及如何追诉。
 argument-hint: "[描述事实和涉及的权利类型——或仅提供事实，由我询问涉及的权利]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /infringement-triage

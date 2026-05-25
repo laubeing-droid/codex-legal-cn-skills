@@ -1,4 +1,10 @@
-﻿# matters/ — portfolio data
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
+# matters/ — portfolio data
 
 This folder holds the portfolio. Two layers:
 

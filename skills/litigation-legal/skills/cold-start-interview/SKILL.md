@@ -1,4 +1,4 @@
----
+﻿---
 name: cold-start-interview
 description: >
   诉讼插件首次配置——按角色分流（法务、律所律师、独立执业）、
@@ -6,6 +6,9 @@ description: >
   写入实践画像 CLAUDE.md。在全新安装时、用户想设置或重做实践画像时、
   或重新检查可用集成时使用。
 argument-hint: "[--redo | --check-integrations]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /cold-start-interview

@@ -1,4 +1,10 @@
-﻿# 网络反不正当竞争暂行规定
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
+# 网络反不正当竞争暂行规定
 
 > 来源: Daknniel-0881/qulv-china-legal-counsel-skill | 条文章节化
 > 以全国人大公布的正式法律文本为准

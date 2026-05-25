@@ -1,4 +1,10 @@
-﻿> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+﻿<!--
+version: 2.9.0
+module: employment-legal
+status: active
+-->
+
+> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 
 ## 2.15 （十四）劳动与社会保障法编

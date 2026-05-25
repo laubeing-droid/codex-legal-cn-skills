@@ -1,7 +1,10 @@
----
+﻿---
 name: comments
 description: 审阅公开的征求意见期，记录决策，跟踪截止日期。适用于征求意见稿征求意见窗口开启时，你需要呈现截止日期、决定是否提交意见或记录已提交/不提交/放弃的决策时（--decide CMT-ID）。
 argument-hint: "[可选: --decide CMT-ID]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /comments

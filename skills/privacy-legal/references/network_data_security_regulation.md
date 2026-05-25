@@ -1,4 +1,10 @@
-﻿# 网络数据安全管理条例
+﻿<!--
+version: 2.9.0
+module: privacy-legal
+status: active
+-->
+
+# 网络数据安全管理条例
 
 > 来源: Daknniel-0881/qulv-china-legal-counsel-skill | 条文章节化
 > 以全国人大公布的正式法律文本为准

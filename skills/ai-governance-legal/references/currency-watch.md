@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: ai-governance-legal
+status: active
+-->
+
 # AI 治理时效监测
 
 **最近核实：2026-05-10。**

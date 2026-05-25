@@ -1,4 +1,4 @@
----
+﻿---
 name: vendor-ai-review
 description: >
   审查AI供应商条款——重点核查训练数据来源合规性、责任分配、
@@ -6,6 +6,9 @@ description: >
   AI模型授权、AI API服务条款，或采购团队提出"这个AI供应商
   合同有问题吗"时使用。
 argument-hint: "[粘贴AI供应商合同条款]"
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 
 # /vendor-ai-review

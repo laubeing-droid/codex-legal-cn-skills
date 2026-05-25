@@ -1,4 +1,10 @@
-﻿---
+﻿<!--
+version: 2.9.0
+module: product-legal
+status: active
+-->
+
+---
 name: launch-watcher
 description: >
   Monitors the launch tracker (Jira/Linear) for upcoming launches that likely

@@ -6,6 +6,9 @@ description: >
   或需要在专利律师审查前对最可能的专利构建初步权利要求对照表时使用。
   本技能绝不作出产品可自由实施的结论。
 argument-hint: "[描述产品 / 工艺 / 功能及法域 — 或仅描述对象，我会继续询问]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /fto-triage

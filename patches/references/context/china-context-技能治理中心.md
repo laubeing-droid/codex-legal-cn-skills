@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # 技能治理中心：WorkBuddy 中国语境
 
 默认用于 WorkBuddy 技能的发现、评估、安装、更新和停用。

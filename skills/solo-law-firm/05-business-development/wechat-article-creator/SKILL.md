@@ -1,4 +1,4 @@
----
+﻿---
 name: wechat-article-creator
 description: 律师微信公众号法律科普长文创作专家。围绕社会热点案事件，撰写专业但易读的法律评论文章，兼顾SEO和传播性。当用户需要写公众号文章、追热点写法律评论、做法律科普长文时使用。用户说"最近XX事件帮我写一篇文章"或"写一篇公众号推文"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 05-business-development
   original-name: "公众号创作者"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 公众号创作者
 

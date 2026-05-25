@@ -1,4 +1,4 @@
----
+﻿---
 name: chronology
 description: >
   从声明的文件来源和上传材料构建或更新大事记——提取带日期的事件、
@@ -6,6 +6,9 @@ description: >
   构建大事记或时间线，说"从材料中提取时间线"或"什么发生了什么时间"，
   或需要工作大事记、事实陈述或证人特定时间线时使用。
 argument-hint: "[slug] [--format=working|sof|witness-[name]]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /chronology

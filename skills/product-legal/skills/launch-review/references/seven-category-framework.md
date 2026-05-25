@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: product-legal
+status: active
+-->
+
 # Eight-Category Launch Review Framework
 
 Default framework if the team doesn't have their own. Adapted from internal

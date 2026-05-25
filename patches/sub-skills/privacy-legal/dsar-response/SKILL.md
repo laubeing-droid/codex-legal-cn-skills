@@ -1,4 +1,4 @@
----
+﻿---
 name: dsar-response
 description: >
   处理个人信息主体权利请求（查阅、复制、删除、可携带、更正等）并起草回复——验证身份、
@@ -6,6 +6,9 @@ description: >
   用户粘贴查阅/删除/可携带/更正请求，或说"来了个DSAR""查阅请求""删除权""有人想要
   他们的数据"时使用。
 argument-hint: "[粘贴请求，或描述请求]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /dsar-response

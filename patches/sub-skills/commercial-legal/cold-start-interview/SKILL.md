@@ -1,10 +1,13 @@
----
+﻿---
 name: cold-start-interview
 description: >
   运行冷启动访谈以了解你的商事合同实务并写入团队业务领域配置。在首次使用插件时、
   配置文件缺失或仍为模板占位符时、或当用户说"设置插件""配置商事合同"
   "引导我""我们开始吧"时使用。这是全新安装时应运行的唯一技能。
 argument-hint: "[--redo 在已配置插件上重新运行] [--check-integrations 仅重新检测集成] [--side sales|purchasing 仅重新运行某一方的审查指引部分]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /cold-start-interview

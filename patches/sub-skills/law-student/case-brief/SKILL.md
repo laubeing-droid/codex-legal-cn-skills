@@ -1,9 +1,12 @@
----
+﻿---
 name: case-brief
 description: >
   按你偏好的格式撰写案例摘要。在训练模式下，要求学生在写摘要前先陈述裁判要旨。
   当用户说"摘要[案例]""[案例]的裁判要旨是什么""案例摘要"或粘贴案例文本时使用。
 argument-hint: "[案例名称或案号, 或粘贴案例文本]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /case-brief

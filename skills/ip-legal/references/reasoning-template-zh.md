@@ -1,4 +1,10 @@
-﻿# 知识产权中国法推理模板
+﻿<!--
+version: 2.9.0
+module: ip-legal
+status: active
+-->
+
+# 知识产权中国法推理模板
 
 > 用途：替代 U.S. Patent Act / Lanham Act / DMCA 等美国法推理
 

@@ -8,6 +8,9 @@ description: >
   the user says "change my [thing]", "update my profile", "edit my config",
   or "customize".
 argument-hint: "[section name, or describe what you want to change]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /customize

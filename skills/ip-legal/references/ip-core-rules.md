@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: ip-legal
+status: active
+-->
+
 # 知识产权法核心规则参考
 
 > 最后更新：2026-05-14

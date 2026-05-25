@@ -8,6 +8,9 @@ description: >
   /investigation-query, /investigation-memo, and /investigation-summary; not
   invoked directly.
 user-invocable: false
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # Internal Investigation Skill

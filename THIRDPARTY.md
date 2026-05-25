@@ -1,4 +1,10 @@
-﻿# THIRDPARTY.md — 第三方内容声明
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# THIRDPARTY.md — 第三方内容声明
 
 > 本文档列出本仓库中包含的所有第三方代码、文件和数据的来源、许可及引用位置。
 > 这是法律合规文件，与 CREDITS.md（致谢信）互补。

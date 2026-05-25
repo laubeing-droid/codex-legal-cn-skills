@@ -1,4 +1,4 @@
----
+﻿---
 name: legal-document-drafter
 description: 中国民商事法律文书撰写专家。按照法院体例要求起草起诉状、答辩状、代理词、保全申请书、律师函等法律文书。当用户需要起草诉讼文书、写律师函、撰写法律意见书、准备代理词时使用。用户说"帮我写一份起诉状"或"拟一封律师函"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 01-case-practice
   original-name: "法律文书撰写师"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 法律文书撰写师
 

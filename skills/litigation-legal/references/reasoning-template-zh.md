@@ -1,4 +1,10 @@
-﻿# 诉讼/仲裁中国法推理模板
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
+# 诉讼/仲裁中国法推理模板
 
 > 用途：替代 adversarial / discovery-driven 推理骨架，按中国民商事审判逻辑进行分析
 

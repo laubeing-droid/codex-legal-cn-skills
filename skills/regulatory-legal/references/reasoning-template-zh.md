@@ -1,4 +1,10 @@
-﻿# 行政/监管中国法推理模板
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
+# 行政/监管中国法推理模板
 
 > 用途：替代 APA / Chevron deference / rulemaking notice-and-comment 等美国法推理
 

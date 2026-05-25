@@ -1,4 +1,10 @@
-﻿# 贡献指南
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 贡献指南
 
 ## 本仓库不是普通项目
 

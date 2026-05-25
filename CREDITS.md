@@ -1,4 +1,10 @@
-﻿# CREDITS — 致谢
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# CREDITS — 致谢
 
 本仓库的诞生离不开以下开源项目的贡献。在此向每一位维护者致谢。
 

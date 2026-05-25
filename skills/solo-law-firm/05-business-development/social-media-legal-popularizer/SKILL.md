@@ -1,4 +1,4 @@
----
+﻿---
 name: social-media-legal-popularizer
 description: 律师小红书/知乎法律科普图文创作专家。针对高客单价法律场景，创作高收藏、高赞的干货型图文笔记或知乎回答。当用户需要写小红书笔记、回答知乎法律问题、做图文形式的法律科普时使用。用户说"帮我写个小红书笔记"或"这个知乎问题怎么回答"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 05-business-development
   original-name: "小红书知乎科普"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 小红书/知乎科普
 

@@ -1,4 +1,10 @@
-﻿# 快速入门
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# 快速入门
 
 ## 这是目前 Codex 上功能最全的中国法律 AI 技能包
 

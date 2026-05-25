@@ -1,10 +1,13 @@
----
+﻿---
 name: pia-generation
 description: >
   生成符合内部格式的个人信息保护影响评估（PIA），适用于新功能、产品或处理活动，
   使用从种子PIA学习到的结构。当用户说"写一份PIA""个人信息保护影响评估""我们需要
   为这个做PIA吗""对这个功能做隐私审查"，或描述一项新的个人信息处理活动时使用。
 argument-hint: "[功能名称或描述]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /pia-generation

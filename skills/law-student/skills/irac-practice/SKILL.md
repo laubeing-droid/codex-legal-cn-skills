@@ -1,10 +1,13 @@
----
+﻿---
 name: irac-practice
 description: >
   给 IRAC 论文评分——结构、考点识别、规则准确性、分析深度和组织。绝不代写
   论文或展示范文；追踪跨练习的模式。当用户说"批改我的 IRAC""检查我的论文"
   或"我写了这个，给我反馈"时使用。
 argument-hint: "[粘贴论文 或 草稿路径 或 --generate-hypo]"
+version: 2.9.0
+module: law-student
+status: active
 ---
 
 # /irac-practice

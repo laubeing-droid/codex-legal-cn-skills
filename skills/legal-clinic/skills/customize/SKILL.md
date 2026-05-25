@@ -1,4 +1,4 @@
----
+﻿---
 name: customize
 description: >
   引导式定制你的法律诊所画像——无需重新运行整个冷启动访谈即可更改一项内容。
@@ -6,6 +6,9 @@ description: >
   当用户说"更改我的[某内容]""新学期""添加实践领域""更新我的配置"
   或"定制"时使用。
 argument-hint: "[节名称，或描述你想更改的内容]"
+version: 2.9.0
+module: legal-clinic
+status: active
 ---
 
 # /customize

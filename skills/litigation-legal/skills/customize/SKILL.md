@@ -1,4 +1,4 @@
----
+﻿---
 name: customize
 description: >
   引导式自定义你的诉讼实践画像——修改一项而不重新运行整个首次配置访谈。
@@ -6,6 +6,9 @@ description: >
   文书风格、上报表联系人、严重性词汇或案件工作空间路径。
   当用户说"修改我的[某项目]"、"更新我的画像"、"编辑我的配置"或"自定义"时使用。
 argument-hint: "[部分名称，或描述你想修改的内容]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /customize

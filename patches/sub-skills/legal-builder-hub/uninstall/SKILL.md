@@ -1,10 +1,13 @@
----
+﻿---
 name: uninstall
 description: >
   卸载通过本中心安装的社区技能。删除文件前确认，拒绝触碰第一方插件技能，
   并记录每次操作。当用户想完全移除某个社区技能（"卸载[技能]"、
   "移除这个技能"）而非仅禁用它时使用。
 argument-hint: "[技能名称]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /uninstall

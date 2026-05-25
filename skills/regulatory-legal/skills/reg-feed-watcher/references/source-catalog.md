@@ -1,4 +1,10 @@
-﻿# Regulatory Source Catalog
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
+# Regulatory Source Catalog
 
 A starting catalog for the reg-feed-watcher. The cold-start interview configures
 which sources to watch; this catalog provides the options. URLs verified as of

@@ -1,4 +1,4 @@
----
+﻿---
 name: draft
 description: >
   常见诊所文件的初稿——实践领域模板（劳动争议仲裁申请书、离婚起诉状、
@@ -6,6 +6,9 @@ description: >
   和指导律师审查的起手点。当学生需要起诉状、信函、申请书、陈述书或
   其他诊所文件的初稿时使用。
 argument-hint: "[文件类型 — 如 '劳动争议仲裁申请书', '离婚起诉状', '律师函']"
+version: 2.9.0
+module: legal-clinic
+status: active
 ---
 
 # /draft

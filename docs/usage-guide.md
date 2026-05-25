@@ -1,4 +1,10 @@
-﻿# 使用指南
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 使用指南
 
 ## 本仓库 vs 原版的使用差异
 

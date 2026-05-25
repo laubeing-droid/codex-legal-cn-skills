@@ -1,4 +1,10 @@
-﻿# 公司法中国法推理模板
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
+# 公司法中国法推理模板
 
 > 用途：替代 Delaware corporation / U.S. securities law / fiduciary duty 等美国法推理
 

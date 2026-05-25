@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: law-student
+status: active
+-->
+
 # 法学学生插件（Law Student Plugin）
 
 学习模式，而非答案模式。互动式问答训练（Socratic drilling）——向你提问，指出你推理中的漏洞。案例摘要（case brief）、知识体系搭建（outline builder）、记忆卡片（flashcards）、IRAC 写作评估、课堂提问准备（cold-call prep）、写作反馈（绝不代写），以及基于同一位教授历年考题的考试预测（exam forecast）。一切适配你的情况——你的课程、你的法考报考地、你希望被"追问训练（drill-me）"还是"讲解引导（explain-to-me）"。

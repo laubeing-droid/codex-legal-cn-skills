@@ -1,4 +1,10 @@
-﻿# 商事合同中国法推理模板
+﻿<!--
+version: 2.9.0
+module: commercial-legal
+status: active
+-->
+
+# 商事合同中国法推理模板
 
 > 用途：替代 common-law / adversarial 推理骨架，按中国民商事审判逻辑进行分析
 

@@ -1,4 +1,4 @@
----
+﻿---
 name: privilege-log-review
 description: >
   证据三性审查——对证据清单进行首轮审查，做出明显的
@@ -6,6 +6,9 @@ description: >
   当用户说"审查证据清单"、"证据三性审查"、
   "检查这些证据的可采性"或有证据清单需要在质证前审核时使用。
 argument-hint: "[证据清单文件，或证据材料集]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /privilege-log-review

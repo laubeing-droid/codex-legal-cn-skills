@@ -1,4 +1,10 @@
-﻿# 劳动法中国法推理模板
+﻿<!--
+version: 2.9.0
+module: employment-legal
+status: active
+-->
+
+# 劳动法中国法推理模板
 
 > 用途：替代 at-will employment / severance negotiation 等美国法推理骨架
 

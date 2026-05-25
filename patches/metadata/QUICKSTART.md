@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # 快速入门
 
 **60 秒**即可开始使用插件。

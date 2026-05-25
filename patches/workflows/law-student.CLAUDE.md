@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 <!--
 CONFIGURATION LOCATION
 

@@ -1,4 +1,4 @@
----
+﻿---
 name: expansion-kickoff
 description: >
   启动在新省/直辖市或地域的用工扩张规划——收集基础信息，运行
@@ -6,6 +6,9 @@ description: >
   浮现该地域的特定风险标记，并创建持续追踪文件。当有人说"我们要在[地域]招人"、
   "扩张到[省/直辖市]"或"在[地域]的首次用工"时使用。
 argument-hint: "[省/直辖市/地域名称]"
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # /expansion-kickoff

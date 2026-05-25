@@ -1,4 +1,10 @@
-﻿# Benchmark 修复指南
+﻿<!--
+version: 2.9.0
+module: benchmark
+status: active
+-->
+
+# Benchmark 修复指南
 
 > 跑完对抗测试发现护栏没拦住？按这个流程修。
 

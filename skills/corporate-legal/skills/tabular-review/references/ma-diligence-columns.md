@@ -1,4 +1,10 @@
-﻿# M&A Diligence — Standard Column Set
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
+# M&A Diligence — Standard Column Set
 
 The default schema for a buy-side target contract review. Start here, then add or cut columns based on the deal. This is a starting point, not a checklist — the purchase agreement's reps and the request list drive what actually matters.
 

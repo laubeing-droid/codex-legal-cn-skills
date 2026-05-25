@@ -1,4 +1,4 @@
----
+﻿---
 name: claim-chart
 description: >
   构建或审查要件分析表——专利权利要求对照表（侵权、无效或审查）或
@@ -6,6 +6,9 @@ description: >
   缺口检测为优先输出。当用户要求要件分析表、权利要求对照表、
   证据对照表、侵权或无效主张、逐要件映射，或问"我们证明[主张]还缺什么"时使用。
 argument-hint: '[--patent | --civil] [--infringement | --invalidity | --review] [--claim <n>] [--count <name>] [--target <slug>]'
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /claim-chart

@@ -1,4 +1,10 @@
-﻿> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
+> 来源: laubeing-droid/PRC-US-Legal-Semantic-Alignment-Framework
 > 许可: Apache 2.0
 
 ## 2.11 （十）公司法编（2024年修订）

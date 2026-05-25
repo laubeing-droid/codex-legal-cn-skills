@@ -1,4 +1,4 @@
----
+﻿---
 name: renewal-tracker
 description: >
   展示具有即将到来的取消截止日期的合同，在通知窗口关闭前发出预警，
@@ -6,6 +6,9 @@ description: >
   "我们是否错过了取消窗口""将此添加到续约追踪器"时使用，或按计划运行。
   接收来自 saas-msa-review 的交接数据。
 argument-hint: "[--days N 变更窗口 | --missed 查看已过期的窗口]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /renewal-tracker

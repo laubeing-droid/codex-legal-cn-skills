@@ -1,6 +1,9 @@
 ﻿---
 name: product-legal
 description: 产品上线审查、功能风险评估、广告宣传审查
+version: 2.9.0
+module: product-legal
+status: active
 ---
 
 # 产品合规 法务技能

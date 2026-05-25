@@ -1,4 +1,10 @@
-﻿# 中国化适配原则
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 中国化适配原则
 
 > 本仓库对上游 Anthropic 法律 AI 做了哪些中国化改造、遵循什么原则、不做什么。
 

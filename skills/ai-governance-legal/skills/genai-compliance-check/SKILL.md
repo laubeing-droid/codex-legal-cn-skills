@@ -3,6 +3,9 @@ name: genai-compliance-check
 description: >
   针对生成式人工智能、算法推荐、深度合成类AI产品，对照国内AI监管专项法规（《生成式人工智能服务管理暂行办法》《互联网信息服务算法推荐管理规定》《互联网信息服务深度合成管理规定》），分类核查备案、安全评估、内容管控、数据合规事项，输出合规差距与整改清单。
 argument-hint: 输入AI产品类型、功能模式、训练数据来源、对外服务场景
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 # /ai-governance-legal:genai-compliance-check
 

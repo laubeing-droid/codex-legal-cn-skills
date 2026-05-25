@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # AI 治理法务：中国语境
 
 默认按中国大陆 AI 产品、模型、算法和企业内部 AI 使用场景处理。

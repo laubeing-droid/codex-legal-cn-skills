@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # 商事合同法务：中国语境
 
 默认按中国大陆商事合同和企业法务场景处理。

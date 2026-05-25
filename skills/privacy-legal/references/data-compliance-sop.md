@@ -1,4 +1,10 @@
-﻿# 数据合规 SOP — AI 可执行版
+﻿<!--
+version: 2.9.0
+module: privacy-legal
+status: active
+-->
+
+# 数据合规 SOP — AI 可执行版
 
 > 覆盖数据全生命周期：分类分级→收集→存储→使用→共享→出境→删除→应急。
 > 来源：`skills/privacy-legal/references/pipil-core-provisions.md` 及配套法规

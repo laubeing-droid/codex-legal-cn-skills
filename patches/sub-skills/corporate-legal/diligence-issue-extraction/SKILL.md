@@ -1,10 +1,13 @@
----
+﻿---
 name: diligence-issue-extraction
 description: >
   读取数据室文件并按内部类别和重要性阈值提取问题，以内部备忘录格式产出发现。
   当用户说"审查数据室""从[文件夹]提取问题""尽调审查""数据室里有什么"
   或指向数据室文件时使用。
 argument-hint: "[数据室文件夹路径或类别名称]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /diligence-issue-extraction

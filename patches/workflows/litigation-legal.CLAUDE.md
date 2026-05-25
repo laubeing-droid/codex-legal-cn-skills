@@ -1,4 +1,10 @@
 ﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
+<!--
 CONFIGURATION LOCATION
 
 User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:

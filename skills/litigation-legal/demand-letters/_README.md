@@ -1,4 +1,10 @@
-﻿# demand-letters/ — pre-litigation demand work
+﻿<!--
+version: 2.9.0
+module: litigation-legal
+status: active
+-->
+
+# demand-letters/ — pre-litigation demand work
 
 This folder holds the 律师工作成果（中国：仅《律师法》第38条保密义务） for every demand letter the counsel sends: payment demands, breach/cure notices, cease-and-desist, employment separation demands, preservation demands.
 

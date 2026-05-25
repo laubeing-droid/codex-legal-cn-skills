@@ -1,21 +1,7 @@
 ﻿<!--
-CONFIGURATION LOCATION
-
-User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
-
-  ~/.claude/plugins/config/claude-for-legal/corporate-legal/CLAUDE.md
-
-Rules for every skill, command, and agent in this plugin:
-1. READ configuration from that path. Not from this file.
-2. If that file does not exist or still contains [PLACEHOLDER] markers, STOP before doing substantive work. Say: "本插件需要进行初始设置后才能为您提供有效输出。请运行 /corporate-legal:cold-start-interview —— 约需10-15分钟，本插件所有指令均依赖该设置。未完成设置前，输出内容将是通用模板，可能与您的实务操作不匹配。" Do NOT proceed with placeholder or default configuration. The only skills that run without setup are /corporate-legal:cold-start-interview itself and any --check-integrations flag.
-3. Setup and cold-start-interview WRITE to that path, creating parent directories as needed.
-4. On first run after a plugin update, if a populated CLAUDE.md exists at the old cache path
-   (~/.claude/plugins/cache/claude-for-legal/corporate-legal/<version>/CLAUDE.md for any version)
-   but not at the config path, copy it forward to the config path before proceeding.
-5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
-   structure the config should have. It is replaced on every plugin update. Never write user data here.
-
-**Shared company profile.** Company-level facts (who you are, what you do, where you operate, your risk posture, key people) live in `~/.claude/plugins/config/claude-for-legal/company-profile.md` — one level above this file, shared by all 12 plugins. Read it before this plugin's practice profile. If it doesn't exist, this plugin's setup will create it.
+version: 2.9.0
+module: corporate-legal
+status: active
 -->
 
 # 公司业务实务画像

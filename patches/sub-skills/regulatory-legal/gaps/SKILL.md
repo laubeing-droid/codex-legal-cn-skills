@@ -1,7 +1,10 @@
----
+﻿---
 name: gaps
 description: 开放差距跟踪器——已标记但尚未关闭的事项。适用于用户询问"有哪些开放的差距"、"差距跟踪器"、"整改状态"，或想关闭（--close GAP-ID）或风险接受（--accept GAP-ID）一个已跟踪的差距时。
 argument-hint: "[可选: --close GAP-ID | --accept GAP-ID]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /gaps

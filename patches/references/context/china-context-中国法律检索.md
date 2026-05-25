@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: patches
+status: active
+-->
+
 # 中国法律检索：WorkBuddy 语境
 
 原 CoCounsel/Westlaw 深度研究 skill 在本适配版中改为中国法律检索工作流。

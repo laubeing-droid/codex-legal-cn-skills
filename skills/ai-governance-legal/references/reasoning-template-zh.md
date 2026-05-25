@@ -1,4 +1,10 @@
-﻿# AI治理中国法推理模板
+﻿<!--
+version: 2.9.0
+module: ai-governance-legal
+status: active
+-->
+
+# AI治理中国法推理模板
 
 > 用途：替代 EU AI Act / U.S. Executive Orders / NIST framework 等域外推理
 

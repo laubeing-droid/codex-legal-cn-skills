@@ -1,4 +1,4 @@
----
+﻿---
 name: litigation-strategist
 description: 中国民商事诉讼策略分析与方案设计专家。综合法律关系、证据强弱、管辖法院、司法实践，设计最优诉讼路径和备选应对方案。当用户需要确定诉讼方案、评估是否起诉、选择管辖法院、决定诉讼请求策略时使用。不应触发：缺乏基本事实描述、用户仅询问法条含义而不涉及策略选择时不应触发。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 01-case-practice
   original-name: "诉讼策略师"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 诉讼策略师
 

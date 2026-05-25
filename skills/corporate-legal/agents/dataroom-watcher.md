@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
 ---
 name: dataroom-watcher
 description: >

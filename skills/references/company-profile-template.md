@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: references
+status: active
+-->
+
 # 公司/律所画像
 
 *由所有 Claude for Legal 插件共享。你首次设置的插件写入此文件；其余插件读取。直接编辑或重新运行任意插件的冷启动面试来更新。*

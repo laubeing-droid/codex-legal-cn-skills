@@ -1,9 +1,12 @@
----
+﻿---
 name: tiered-review
 description: >
   合同分级审查——按合同金额分A/B/C三档执行不同审查深度，直接在Word文档生成批注。
   当用户说"审查合同""合同批注""分级审查"时触发。来源: fayayy888/contract-review。
 argument-hint: "[合同路径/金额]"
+version: 2.9.0
+module: commercial-legal
+status: active
 ---
 
 # /commercial-legal:tiered-review

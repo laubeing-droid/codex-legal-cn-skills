@@ -1,4 +1,10 @@
-﻿# 中国法律知识库索引
+﻿<!--
+version: 2.9.0
+module: knowledge-base
+status: active
+-->
+
+# 中国法律知识库索引
 
 > 来源: Daknniel-0881/qulv-china-legal-counsel-skill
 > 条文章节化文本，供AI法律分析参考。以全国人大公布的正式法律文本为准。

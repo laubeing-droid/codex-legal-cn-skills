@@ -1,4 +1,10 @@
-﻿# 故障排除
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 故障排除
 
 ## 安装问题
 

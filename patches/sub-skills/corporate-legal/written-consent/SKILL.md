@@ -1,4 +1,4 @@
----
+﻿---
 name: written-consent
 description: >
   以内部格式起草董事会或专门委员会的一致书面决议，从决议存储库中检索先例。
@@ -6,6 +6,9 @@ description: >
   包含对重大单项行动的内置范围警示。当用户说"书面决议""一致决议"
   "董事会决议""替代会议的决议""书面审定"或描述一项需要董事会批准但无需召开会议的行动时使用。
 argument-hint: "[描述需要董事会批准的行动]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /written-consent

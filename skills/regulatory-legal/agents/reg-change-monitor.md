@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: regulatory-legal
+status: active
+-->
+
 ---
 name: reg-change-monitor
 description: >

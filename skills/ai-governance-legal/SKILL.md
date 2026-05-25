@@ -1,6 +1,9 @@
 ﻿---
 name: ai-governance-legal
 description: 人工智能影响评估、AI政策起草、算法伦理审查
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 
 # AI治理 法务技能

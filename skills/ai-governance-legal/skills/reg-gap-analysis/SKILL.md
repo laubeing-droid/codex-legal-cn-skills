@@ -1,4 +1,4 @@
----
+﻿---
 name: reg-gap-analysis
 description: >
   将新的或修订的AI法规与当前AI政策和实践进行差异分析——
@@ -6,6 +6,9 @@ description: >
   出台、用户询问"[某法规]是否影响我们"、"
   AI法规差距分析"或粘贴法规文本时。
 argument-hint: "[法规名称，或粘贴法规文本/摘要]"
+version: 2.9.0
+module: ai-governance-legal
+status: active
 ---
 
 # /reg-gap-analysis

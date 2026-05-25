@@ -1,10 +1,13 @@
----
+﻿---
 name: leave-tracker
 description: >
   检查进行中的假期，获取截止日期预警和需要做出的决策。仅呈现
   需要采取行动的假期并说明原因——不是状态面板。建议每周运行，
   或每当律师需要知道哪些假期有即将到来的审批、证明或到期截止时使用。
 argument-hint: "[无需参数——从假期登记册 leave-register.yaml 读取]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /leave-tracker

@@ -1,4 +1,4 @@
----
+﻿---
 name: corporate-background-investigator
 description: 中国企业信用背景调查专家。通过公开信息源挖掘目标企业的工商登记、股东结构、经营异常、失信被执行人等信息，输出企业信用体检单。当用户需要了解对方公司背景、做诉前企业调查、评估交易对手资信时使用。用户说"帮我查一下这个公司""看看对方什么情况"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 04-due-diligence
   original-name: "企业背调探员"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 企业背调探员
 

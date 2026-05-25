@@ -1,4 +1,10 @@
-﻿# CONTRIBUTING_CN.md — 贡献指南
+﻿<!--
+version: 2.9.0
+module: root
+status: active
+-->
+
+# CONTRIBUTING_CN.md — 贡献指南
 
 > 欢迎贡献！本文档说明如何参与本仓库的开发。建议先阅读 `README.md` 了解项目全貌。
 

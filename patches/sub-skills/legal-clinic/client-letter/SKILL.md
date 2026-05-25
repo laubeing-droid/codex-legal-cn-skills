@@ -1,10 +1,13 @@
----
+﻿---
 name: client-letter
 description: >
   基于模板的常规当事人信函——预约确认、文件索取、"已提交"简报。
   使用通俗语言，包含必要元素，附指导路由。不含实质性建议。
   当学生需要发送常规信函、预约确认、文件索取信或向当事人发送简短状态说明时使用。
 argument-hint: "[预约 | 文件索取 | 状态更新]"
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /client-letter

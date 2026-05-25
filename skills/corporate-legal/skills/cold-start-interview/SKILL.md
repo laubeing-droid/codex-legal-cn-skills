@@ -1,4 +1,4 @@
----
+﻿---
 name: cold-start-interview
 description: >
   内部冷启动访谈（需求清单 + 先前备忘录），或用于逐项交易上下文的
@@ -7,6 +7,9 @@ description: >
   仅将相关章节写入插件配置。在全新安装时、CLAUDE.md 仍有 [PLACEHOLDER]
   标记时、开始新交易时、或重新检查集成或刷新某一模块时使用。
 argument-hint: "[--redo | --new-deal | --check-integrations | --module [m&a | board | public | entities]]"
+version: 2.9.0
+module: corporate-legal
+status: active
 ---
 
 # /cold-start-interview

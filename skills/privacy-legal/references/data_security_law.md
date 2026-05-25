@@ -1,4 +1,10 @@
-﻿# 中华人民共和国数据安全法
+﻿<!--
+version: 2.9.0
+module: privacy-legal
+status: active
+-->
+
+# 中华人民共和国数据安全法
 
 > 来源: Daknniel-0881/qulv-china-legal-counsel-skill | 条文章节化
 > 以全国人大公布的正式法律文本为准

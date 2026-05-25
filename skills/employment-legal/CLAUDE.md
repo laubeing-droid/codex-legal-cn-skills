@@ -1,21 +1,7 @@
 ﻿<!--
-CONFIGURATION LOCATION
-
-User-specific configuration for this plugin lives at a version-independent path that survives plugin updates:
-
-  ~/.claude/plugins/config/claude-for-legal/employment-legal/CLAUDE.md
-
-Rules for every skill, command, and agent in this plugin:
-1. READ configuration from that path. Not from this file.
-2. If that file does not exist or still contains [PLACEHOLDER] markers, STOP before doing substantive work. Say: "此插件需要完成设置才能提供有用输出。请运行 /employment-legal:cold-start-interview —— 约需 10-15 分钟，插件中所有命令均依赖此设置。未完成设置前输出的内容将是通用的，可能不匹配你的实务操作。" Do NOT proceed with placeholder or default configuration. The only skills that run without setup are /employment-legal:cold-start-interview itself and any --check-integrations flag.
-3. Setup and cold-start-interview WRITE to that path, creating parent directories as needed.
-4. On first run after a plugin update, if a populated CLAUDE.md exists at the old cache path
-   (~/.claude/plugins/cache/claude-for-legal/employment-legal/<version>/CLAUDE.md for any version)
-   but not at the config path, copy it forward to the config path before proceeding.
-5. This file (the one you are reading) is the TEMPLATE. It ships with the plugin and shows the
-   structure the config should have. It is replaced on every plugin update. Never write user data here.
-
-**共享公司画像。** 公司级别信息（你是谁、你做什么、你在哪运营、你的风险偏好、关键人员）存储在 `~/.claude/plugins/config/claude-for-legal/company-profile.md`——位于本文件上层，由全部插件共享。在读取本插件的实践画像前先读取该文件。如该文件不存在，本插件的设置流程会创建它。
+version: 2.9.0
+module: employment-legal
+status: active
 -->
 
 # 中国劳动法实践画像

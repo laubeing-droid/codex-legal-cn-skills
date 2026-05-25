@@ -1,4 +1,4 @@
----
+﻿---
 name: integration-management
 description: >
   交割后并购整合追踪器——分阶段工作计划、同意追踪、规模化合同转让、
@@ -7,6 +7,9 @@ description: >
   closing-checklist.yaml。当用户说"整合""交割后""同意未决"
   "合同转让""整合状态"或"交易还差什么"时使用。
 argument-hint: "[--init | --contracts | --report | --update | --export [--format csv|table] [--section all|consents|contracts|workplan]] [--deal [代码]]"
+version: 2.9.0
+module: corporate-legal
+status: active
 ---
 
 # /integration-management

@@ -6,6 +6,9 @@ description: >
   "审查这个录用通知"、"这里能用竞业限制吗"、"检查这份录用通知书"、
   "在[某地]招聘"或附上录用通知书时使用。
 argument-hint: "[录用通知书文件，或描述录用情况]"
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # /hiring-review

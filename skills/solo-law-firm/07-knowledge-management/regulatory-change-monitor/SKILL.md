@@ -1,4 +1,4 @@
----
+﻿---
 name: regulatory-change-monitor
 description: 中国法律法规动态监控预警专家。追踪最高人民法院、全国人大等机构发布的最新法律修正、司法解释、会议纪要及废止通知，评估对在办案件的影响并发出预警。当用户需要了解最新法规变动、检查是否有新的司法解释出台、评估法规变化对现有案件的影响时使用。用户说"最近有什么新的司法解释吗"或"这个法规是不是改了"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 07-knowledge-management
   original-name: "法规动态监控"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 法规动态监控
 

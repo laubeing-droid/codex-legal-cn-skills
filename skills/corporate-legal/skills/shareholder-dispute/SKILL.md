@@ -3,6 +3,9 @@ name: shareholder-dispute
 description: >
   依据《中华人民共和国公司法（2024年修订）》及相关司法解释，针对公司股东间因权利滥用、公司人格否认、异议股东回购请求权、强制解散等引发的纠纷进行深度法律风险评估，提供实务分析框架与应对策略。
 argument-hint: 请输入股东纠纷的基本案情、争议焦点（如大股东侵占、公司僵局、要求回购等）以及核心诉求。
+version: 2.9.0
+module: corporate-legal
+status: active
 ---
 # /corporate-legal:shareholder-dispute
 

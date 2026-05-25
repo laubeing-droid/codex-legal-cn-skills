@@ -1,4 +1,10 @@
-﻿# 劳动用工合规 SOP — AI 可执行版
+﻿<!--
+version: 2.9.0
+module: employment-legal
+status: active
+-->
+
+# 劳动用工合规 SOP — AI 可执行版
 
 > 覆盖招聘→在职→离职全生命周期。逐项可勾选，附法条原文引用。
 > 来源：`skills/employment-legal/references/labor-core-rules.md`

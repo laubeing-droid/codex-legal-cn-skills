@@ -1,4 +1,10 @@
-﻿---
+﻿<!--
+version: 2.9.0
+module: commercial-legal
+status: active
+-->
+
+---
 name: deal-debrief
 description: >
   Weekly agent that surfaces recently signed agreements containing playbook deviations

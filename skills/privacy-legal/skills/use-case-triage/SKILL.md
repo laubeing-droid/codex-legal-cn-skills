@@ -6,6 +6,9 @@ description: >
   要做PIA吗""对这个功能做隐私分诊""对X做隐私检查""从隐私角度看这个行不行"，或描述一
   项新的个人信息处理活动、产品功能或供应商关系时使用。
 argument-hint: "[描述个人信息处理活动或功能]"
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # /use-case-triage

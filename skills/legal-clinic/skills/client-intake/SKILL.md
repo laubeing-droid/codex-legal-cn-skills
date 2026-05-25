@@ -1,10 +1,13 @@
----
+﻿---
 name: client-intake
 description: >
   结构化接待——实践领域模板、跨领域考点识别、利益冲突标记、分流分类。
   生成学生分析、指导老师审查的格式化案件摘要。不决定是否受理案件。
   当开始新当事人接待、进行接待访谈或记录新当事人情况时使用。
 argument-hint: "[可选：实践领域提示]"
+version: 2.9.0
+module: legal-clinic
+status: active
 ---
 
 # /client-intake

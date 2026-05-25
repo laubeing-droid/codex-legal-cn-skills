@@ -1,4 +1,10 @@
-﻿# Privacy Currency Watch
+﻿<!--
+version: 2.9.0
+module: privacy-legal
+status: active
+-->
+
+# Privacy Currency Watch
 
 **Last verified: 2026-05-10.**
 

@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: legal-builder-hub
+status: active
+-->
+
 ---
 name: registry-sync
 description: >

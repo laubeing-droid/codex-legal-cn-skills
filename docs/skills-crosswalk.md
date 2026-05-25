@@ -1,4 +1,10 @@
-﻿# 技能对照
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# 技能对照
 
 ## 上游溯源
 

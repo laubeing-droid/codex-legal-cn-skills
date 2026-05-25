@@ -1,3 +1,9 @@
+﻿<!--
+version: 2.9.0
+module: ai-governance-legal
+status: active
+-->
+
 # AI 治理核心法规参考
 
 > 最后更新：2026-05-14 | 基于知识库 wiki 概念文章、currency-watch.md 及模型知识编译

@@ -1,4 +1,4 @@
----
+﻿---
 name: trial-preparation-checker
 description: 律所庭前准备核查专家。在开庭前梳理需要携带的全部文件原件、装订案卷、出庭证件及突发事项注意点，输出庭前必带核查清单。当用户即将出庭、需要检查庭审材料是否齐备、准备出庭物品时使用。用户说"明天要开庭"或"帮我检查一下开庭要带什么"时应触发本技能。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 02-case-management
   original-name: "庭审准备清单员"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 庭审准备清单员
 

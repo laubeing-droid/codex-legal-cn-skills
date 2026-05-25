@@ -5,6 +5,9 @@ description: >
   被提出、被询问某商标是否可用或需要进行排除检索、或在完整专业检索前评估混淆可能性因素
   时使用。本技能绝不作出商标无冲突的结论。
 argument-hint: "[描述拟议商标、商品/服务及法域——或仅提供商标，我会继续询问]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /clearance

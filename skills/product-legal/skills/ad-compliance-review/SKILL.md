@@ -3,6 +3,9 @@ name: ad-compliance-review
 description: >
   依据《中华人民共和国广告法（2021修正）》及《互联网广告管理办法（2023）》，针对互联网产品、行销文案、投放广告语进行前置合规审查，精准识别绝对化用语、虚假广告及敏感行业违规风险。
 argument-hint: 请提供待审查的广告文案、宣传物料描述及所属产品行业分类（如：大众消费、医美、金融、教育）。
+version: 2.9.0
+module: product-legal
+status: active
 ---
 # /product-legal:ad-compliance-review
 

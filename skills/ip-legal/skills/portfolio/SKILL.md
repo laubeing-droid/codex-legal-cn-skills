@@ -5,6 +5,9 @@ description: >
   用于检查到期续展事项、添加或更新资产、记录维持费缴纳，
   或审计登记簿中的空白、失效及商业使用问题。
 argument-hint: "[--report [--days N] | --add | --update | --audit]"
+version: 2.9.0
+module: ip-legal
+status: active
 ---
 
 # /portfolio

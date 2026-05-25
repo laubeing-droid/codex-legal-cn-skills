@@ -5,6 +5,9 @@ description: >
   分类、分析范围/负担/保密、生成异议框架、合规方案和期限日历。
   当用户说"收到了调查令"、"收到协查通知"、"法院调证"时使用。
 argument-hint: "[调查令/协查通知路径]"
+version: 2.9.0
+module: litigation-legal
+status: active
 ---
 
 # /司法协查响应

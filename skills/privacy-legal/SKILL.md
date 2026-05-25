@@ -1,6 +1,9 @@
 ﻿---
 name: privacy-legal
 description: 个人信息保护法合规、数据安全评估、隐私协议审查
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # 数据合规与隐私 法务技能

@@ -1,4 +1,4 @@
----
+﻿---
 name: legal-research-expert
 description: 中国民商事法律检索专家。根据案情事实，检索现行有效的法律、司法解释、会议纪要及类案裁判规则，输出带效力验证的法律依据清单。当用户需要查找法条依据、请求权基础分析、类案检索、司法解释查询、法理支撑时使用。即使用户只是简单描述了一个纠纷场景，也应主动触发本技能进行法律检索。不应触发：用户仅进行日常法律交流、无需引用具体法条时不应触发；用户询问个人观点或理论问题时不应自动检索。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 01-case-practice
   original-name: "法律检索专家"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 法律检索专家
 

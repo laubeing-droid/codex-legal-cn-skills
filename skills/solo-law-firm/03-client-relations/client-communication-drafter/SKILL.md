@@ -1,4 +1,4 @@
----
+﻿---
 name: client-communication-drafter
 description: 律师与当事人沟通文稿起草专家。将复杂的法律风险、败诉可能等专业判断，转化为当事人能理解的白话措辞，起草风险告知书、案件进展说明、律师建议函等沟通文本。同时支持生成简洁、有获得感的阶段性服务周报和里程碑通报。当用户需要给当事人写邮件、微信回复、风险告知、案件进度汇报、或需要把法律术语翻译成大白话时使用。用户说"帮我拟一下给客户的回复""这个风险怎么跟当事人说""客户问案件进度""给客户写个汇报"时应触发本技能。
 license: MIT
@@ -8,6 +8,9 @@ metadata:
   department: 03-client-relations
   original-name: "客户沟通起草"
   merged-from: "案件进展通报"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 客户沟通起草
 

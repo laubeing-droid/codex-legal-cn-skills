@@ -1,4 +1,10 @@
-﻿# Google Sheets Output Spec
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
+# Google Sheets Output Spec
 
 For teams on Google Workspace. Same structure as the Excel output, different mechanics. If both Excel and Sheets paths are available, ask the user which they prefer — don't guess from your environment.
 

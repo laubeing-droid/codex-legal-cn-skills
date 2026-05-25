@@ -1,4 +1,4 @@
----
+﻿---
 name: customize
 description: >
   Guided customization of your privacy practice profile — change one thing
@@ -8,6 +8,9 @@ description: >
   "change my [thing]", "update my profile", "edit my playbook", or
   "customize".
 argument-hint: "[section name, or describe what you want to change]"
+version: 2.9.0
+module: privacy-legal
+status: active
 ---
 
 # /customize

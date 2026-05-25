@@ -1,6 +1,9 @@
 ﻿---
 name: regulatory-legal
 description: 监管动态监测、合规缺口分析、征求意见稿跟踪
+version: 2.9.0
+module: regulatory-legal
+status: active
 ---
 
 # 监管合规 法务技能

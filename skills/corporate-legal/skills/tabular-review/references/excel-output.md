@@ -1,4 +1,10 @@
-﻿# Excel Output Spec
+﻿<!--
+version: 2.9.0
+module: corporate-legal
+status: active
+-->
+
+# Excel Output Spec
 
 The Excel file is the deliverable most deal teams will actually open. Get it right.
 

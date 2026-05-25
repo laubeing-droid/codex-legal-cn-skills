@@ -1,4 +1,10 @@
-﻿# Claude-for-Legal-CN-to-Codex — 项目双审评估报告
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# Claude-for-Legal-CN-to-Codex — 项目双审评估报告
 
 > 上篇：项目自述与代理词（本仓库提交给外部 LLM 的评估材料）
 > 下篇：外部 LLM 独立评估意见

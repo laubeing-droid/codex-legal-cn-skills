@@ -1,6 +1,9 @@
 ﻿---
 name: employment-legal
 description: 劳动合同、竞业限制、社保工伤、规章制度的起草与审查
+version: 2.9.0
+module: employment-legal
+status: active
 ---
 
 # 劳动用工 法务技能

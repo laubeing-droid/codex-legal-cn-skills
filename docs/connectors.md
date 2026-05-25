@@ -1,4 +1,10 @@
-﻿# MCP 连接器
+﻿<!--
+version: 2.9.0
+module: docs
+status: active
+-->
+
+# MCP 连接器
 
 ## 为什么单独搞一个仓库？
 

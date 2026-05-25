@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 02-case-management
   original-name: "庭审提纲自动生成器"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 庭审提纲自动生成器
 

@@ -1,9 +1,12 @@
----
+﻿---
 name: related-skills-surfacer
 description: >
   基于其他插件中的近期活动推荐社区技能。检查社区是否已构建了与某任务
   相关的内容，并以非侵入方式提及一次。当用户说"这个有没有社区技能"
   "还有什么可用的"或询问技能推荐时使用；也作为其他插件工作流的被动环节运行。
+version: 2.9.0
+module: patches
+status: active
 ---
 
 # /related-skills-surfacer

@@ -1,4 +1,4 @@
----
+﻿---
 name: contract-reviewer
 description: 中国民商事合同审查专家。逐条扫描商业合同，按高/中/低风险等级标识问题条款，提供修改建议与新旧条文对比。当用户提交合同要求审查、需要识别合同风险、要求修改合同条款、请求合同条文对比时使用。即使用户只说【帮我看看这个合同】，也应触发本技能。不应触发：合同文本不完整（缺少核心条款）、用户仅询问合同范本而非审查合同时不应触发。
 license: MIT
@@ -7,6 +7,9 @@ metadata:
   version: "1.0.0"
   department: 01-case-practice
   original-name: "合同审查师"
+version: 2.9.0
+module: solo-law-firm
+status: active
 ---
 # 合同审查师
 
