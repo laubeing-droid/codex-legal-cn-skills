@@ -1,4 +1,4 @@
-﻿name: Sync from ALN Framework
+name: Sync from ALN Framework
 
 on:
   repository_dispatch:
