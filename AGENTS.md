@@ -524,3 +524,30 @@ $EXAMPLE_TOKEN = "ghp_example_do_not_use"
 ```
 
 > 豁免必须在同一行注释中说明理由，否则视为违规。
+
+---
+
+## 十六、技能参数映射（`@param:` 引用）
+
+### 16.1 规则
+
+技能文件中的行为调优参数**不得硬编码数字**。统一使用 `@param:KEY` 格式引用，
+实际值从 `skills/references/guidance-defaults.md` 解析。
+
+```
+✅ 目标覆盖 `@param:cold-start:target-items` 项
+❌ 目标覆盖 10-20 项
+```
+
+### 16.2 解析流程
+
+AI Agent 执行技能时：
+1. 遇到 `@param:KEY` → 读取 `guidance-defaults.md` 中对应值
+2. 值可能是数字范围（`2-5`）、阈值（`10`）、语义描述（`适量`）
+3. 数字范围解析为推荐区间，AI 根据上下文选择具体值
+4. 找不到键 → 使用文件中内联的默认值
+
+### 16.3 新增参数
+
+在 `guidance-defaults.md` 中添加一行即可，无需修改任何技能文件。
+键名规范：`@param:<类别>:<描述>`，全小写，连字符分隔。

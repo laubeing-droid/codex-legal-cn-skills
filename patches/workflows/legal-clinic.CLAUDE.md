@@ -178,7 +178,7 @@ Rules for every skill, command, and agent in this plugin:
 
 ## Seed documents
 
-*指导老师在 cold-start 时上传的内容。`/ramp` 和 `/draft` 读取这些。设置目标：覆盖全面。条目不足时适用 LIMITED DATA 标记。*
+*指导老师在 cold-start 时上传的内容。`/ramp` 和 `/draft` 读取这些。设置目标：@param:cold-start:target-items 项。少于 @param:cold-start:min-items 项适用 LIMITED DATA 标记。*
 
 **上传合计（Total uploaded）：** [N] 项
 **数据有限（LIMITED DATA）：** [是/否]

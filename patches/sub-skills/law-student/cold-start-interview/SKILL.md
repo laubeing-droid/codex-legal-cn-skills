@@ -213,7 +213,7 @@ status: active
 - 授课教师说过的关于他们强调什么的任何内容
 - 你信任的课程特定学习小组产出
 
-目标覆盖各类别适量条目。条目不足时：实践画像上的 LIMITED DATA 标记。条目过少时：强烈的 LIMITED DATA 警告——技能在更多补充前将是通用的。
+目标跨这些类别 @param:cold-start:target-items 项。低于 @param:cold-start:min-items 项：实践画像上的 LIMITED DATA 标记。@param:cold-start:min-items 项或更少：强烈的 LIMITED DATA 警告——技能在更多补充前将是通用的。
 
 **如果学生没有分享提纲：** 在本节结束时，提供："想让我为你的最回避科目写一份入门提纲骨架，用你描述的格式？你可以边学边编辑，它为未来的提纲构建器运行播种。"
 
